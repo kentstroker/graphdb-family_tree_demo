@@ -1,0 +1,6 @@
+# Override GitHub Linguist language detection
+*.sparql linguist-language=SPARQL
+*.cypher linguist-language=Cypher
+*.ttl linguist-language=Turtle
+*.pie linguist-detectable=false
+out_graphdb/*.cypher linguist-generated=true
