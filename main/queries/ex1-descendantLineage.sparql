@@ -1,0 +1,59 @@
+# =============================================================================
+# ex1-descendantLineage.sparql — Exercise 1: Inference vs. No Inference
+# Author:  Kent Stroker
+#
+# Tabular lineage report starting from Anthony Blanchard (person/0-0),
+# walking down the parentOf chain through all generations.  For each
+# descendant the query returns the generation number, full name, the
+# *inferred* kinship relationship that person/0-0 holds toward them,
+# and the name of the descendant (e.g. "fatherOf → Russell Blanchard").
+#
+# The key observation: this query is run RIGHT AFTER data loading — no
+# extra SPARQL UPDATE has been executed.  Because GraphDB's SHACL rules
+# fire automatically on import, the Relationship column is already
+# populated with fatherOf, grandfatherOf, greatGrandfatherOf, etc.
+#
+# Usage: Run in GraphDB SPARQL tab (SELECT mode).
+# Requires: schema.ttl and 000.ttl imported; load_rules.sparql run to
+#           activate SHACL inference.
+# =============================================================================
+
+PREFIX ex:   <http://example.org/family/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?Generation ?Name ?Relationship ?DescendantName
+WHERE {
+  BIND(<http://example.org/family/person/0-0> AS ?root)
+
+  # Union across explicit hop counts to capture the generation number
+  {
+    BIND(1 AS ?Generation)
+    ?root ex:parentOf ?descendant .
+  }
+  UNION
+  {
+    BIND(2 AS ?Generation)
+    ?root ex:parentOf/ex:parentOf ?descendant .
+  }
+  UNION
+  {
+    BIND(3 AS ?Generation)
+    ?root ex:parentOf/ex:parentOf/ex:parentOf ?descendant .
+  }
+
+  ?descendant rdfs:label ?DescendantName .
+
+  # Look up the inferred kinship relationship from person/0-0 to each
+  # descendant.  GraphDB populates these automatically via SHACLMove rules —
+  # fatherOf (gen 1), grandfatherOf (gen 2), greatGrandfatherOf (gen 3).
+  OPTIONAL {
+    ?root ?rel ?descendant .
+    FILTER(?rel NOT IN (ex:parentOf, ex:marriedTo))
+    FILTER(STRSTARTS(STR(?rel), STR(ex:)))
+  }
+  BIND(IF(BOUND(?rel), STRAFTER(STR(?rel), STR(ex:)), "") AS ?Relationship)
+
+  # Resolve the root person's name
+  ?root rdfs:label ?Name .
+}
+ORDER BY ?Generation ?DescendantName

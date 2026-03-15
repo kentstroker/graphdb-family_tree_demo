@@ -1,0 +1,48 @@
+# =============================================================================
+# ex2-lastGenKinship.sparql — Exercise 2: Adding Data (Incremental Load)
+# Author:  Kent Stroker
+#
+# Shows all kinship relationships for the last generation — people born
+# after 2000 who have no children of their own.  These are the people
+# added in the incremental load (000-lastgen.ttl).
+#
+# The key observation: this query is run RIGHT AFTER importing the last-
+# generation data — no extra steps required.  Because GraphDB's SHACL
+# rules fire automatically on import, the Relationship column is already
+# populated with siblingOf, grandchildOf, nieceNephewOf, cousinOf, etc.
+#
+# Compare the output with ex2-lastGenKinship.cypher in Neo4j, where the
+# Relationship column will be EMPTY until neo4j-materialize_rules.cypher
+# is re-run.
+#
+# Usage: Run in GraphDB SPARQL tab (SELECT mode).
+# Requires: schema.ttl, 000.ttl, and 000-lastgen.ttl imported;
+#           load_rules.sparql run to activate SHACL inference.
+# =============================================================================
+
+PREFIX ex:   <http://example.org/family/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?PersonName ?Relationship ?RelatedToName
+WHERE {
+  # Identify last-generation people: born after 2000, no children
+  ?person a ex:Person ;
+          rdfs:label ?PersonName ;
+          ex:dateOfBirth ?dob .
+  FILTER(?dob > "2000-01-01"^^xsd:date)
+  FILTER NOT EXISTS { ?person ex:parentOf ?anyChild }
+
+  # Find all inferred kinship relationships (exclude base edges)
+  ?person ?rel ?related .
+  FILTER(?rel NOT IN (ex:parentOf, ex:marriedTo))
+  FILTER(STRSTARTS(STR(?rel), STR(ex:)))
+  FILTER(?rel NOT IN (
+    rdf:type, rdfs:label, ex:givenName, ex:surname,
+    ex:dateOfBirth, ex:dateOfDeath
+  ))
+
+  ?related rdfs:label ?RelatedToName .
+  BIND(REPLACE(STR(?rel), "^.*family/", "") AS ?Relationship)
+}
+ORDER BY ?PersonName ?Relationship ?RelatedToName

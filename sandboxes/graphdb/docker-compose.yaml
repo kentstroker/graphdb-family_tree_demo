@@ -1,0 +1,17 @@
+services:
+  graphdb:
+    image: ontotext/graphdb:${VERSION}
+    container_name: graphdb
+    ports:
+      - "7200:7200"
+    networks:
+      - demo-network
+    environment:
+      - GDB_JAVA_OPTS=-Dgraphdb.workbench.importDirectory=/root/graphdb-import -Dgraphdb.license.file=/opt/graphdb/home/conf/graphdb.license -Dregister-plugins=com.ontotext.trree.plugin.provenance.ProvenancePlugin
+    volumes:
+      - ./graphdb-data:/opt/graphdb/home
+      - ./graphdb-import:/root/graphdb-import
+    restart: unless-stopped
+networks:
+  demo-network:
+    external: true

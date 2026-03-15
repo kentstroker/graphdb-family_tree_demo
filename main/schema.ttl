@@ -1,0 +1,202 @@
+# =============================================================================
+# schema.ttl
+# OWL ontology for the family tree demo.
+#
+# Defines all classes, datatype properties, and object properties used in
+# the family tree knowledge graph.  Only two relationships (parentOf and
+# marriedTo) are asserted in the data; the remaining 41 are derived by
+# inference rules in rules.ttl / kinship.pie.
+#
+# Total: 3 classes, 4 datatype properties, 43 object properties (2 base +
+#        13 gender-neutral derived + 28 gendered derived).
+#
+# In-law relationships (6 additional properties) are defined separately in
+# schema-inlaws.ttl and can be added as a later exercise.
+# =============================================================================
+
+@prefix ex:   <http://example.org/family/> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+
+# =============================================================================
+# CLASSES
+#
+# Every person is typed as exactly one of ex:female or ex:male, both of
+# which are subclasses of ex:Person.  Gender class membership drives the
+# gendered inference rules (e.g. parentOf + female → motherOf).
+# =============================================================================
+
+ex:Person  a owl:Class .                                # Any individual in the family tree
+ex:female  a owl:Class ; rdfs:subClassOf ex:Person .    # A female person (subclass of Person)
+ex:male    a owl:Class ; rdfs:subClassOf ex:Person .    # A male person (subclass of Person)
+
+
+# =============================================================================
+# DATATYPE PROPERTIES
+#
+# Attributes stored on every Person node.  rdfs:label (full name) is also
+# used but is a built-in RDFS property and not redeclared here.
+# =============================================================================
+
+ex:givenName   a owl:DatatypeProperty ; rdfs:domain ex:Person ; rdfs:range xsd:string .  # First name
+ex:surname     a owl:DatatypeProperty ; rdfs:domain ex:Person ; rdfs:range xsd:string .  # Family name (current/active)
+ex:dateOfBirth a owl:DatatypeProperty ; rdfs:domain ex:Person ; rdfs:range xsd:date .    # Birth date (YYYY-MM-DD); always present
+ex:dateOfDeath a owl:DatatypeProperty ; rdfs:domain ex:Person ; rdfs:range xsd:date .    # Death date (YYYY-MM-DD); absent = living
+
+
+# =============================================================================
+# BASE OBJECT PROPERTIES (Asserted)
+#
+# These two relationships are the only ones explicitly stored in the
+# generated data.  All other object properties below are derived by
+# inference rules from these two plus gender class membership.
+# =============================================================================
+
+# Spouse link; written one direction in the data, symmetric by OWL declaration
+ex:marriedTo  a owl:ObjectProperty, owl:SymmetricProperty ;   # X is married to Y
+              rdfs:domain ex:Person ;
+              rdfs:range  ex:Person .
+
+# Direct parent → child link (asserted, not symmetric)
+ex:parentOf   a owl:ObjectProperty ;                          # X is a parent of Y
+              rdfs:domain ex:Person ;
+              rdfs:range  ex:Person .
+
+
+# =============================================================================
+# DERIVED OBJECT PROPERTIES — Gender-Neutral (13)
+#
+# Derived by inference rules from parentOf and marriedTo.
+# Symmetric properties are marked with owl:SymmetricProperty.
+# =============================================================================
+
+# -- Direct inverse of parentOf -----------------------------------------------
+ex:childOf                     a owl:ObjectProperty ;                          # X is a child of Y (inverse of parentOf)
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+
+# -- Siblings (shared parent, different person) --------------------------------
+ex:siblingOf                   a owl:ObjectProperty, owl:SymmetricProperty ;   # X and Y share a parent (X ≠ Y)
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+
+# -- Grandparent / grandchild chain -------------------------------------------
+ex:grandparentOf               a owl:ObjectProperty ;                          # X is parent of a parent of Y
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+ex:grandchildOf                a owl:ObjectProperty ;                          # X is a grandchild of Y (inverse of grandparentOf)
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+
+# -- Great-grandparent / great-grandchild chain --------------------------------
+ex:greatGrandparentOf          a owl:ObjectProperty ;                          # X is parent of a grandparent of Y
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+ex:greatGrandchildOf           a owl:ObjectProperty ;                          # X is a great-grandchild of Y (inverse)
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+
+# -- Aunt/uncle and niece/nephew -----------------------------------------------
+ex:auntUncleOf                 a owl:ObjectProperty ;                          # X is a sibling of a parent of Y
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+ex:nieceNephewOf               a owl:ObjectProperty ;                          # X is a niece/nephew of Y (inverse of auntUncleOf)
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+
+# -- Great-aunt/uncle and second aunt/uncle ------------------------------------
+ex:greatAuntUncleOf            a owl:ObjectProperty ;                          # X is a sibling of a grandparent of Y
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+ex:secondAuntUncleOf           a owl:ObjectProperty ;                          # X is a child of a great-aunt/uncle of Y
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+
+# -- Cousins -------------------------------------------------------------------
+ex:cousinOf                    a owl:ObjectProperty, owl:SymmetricProperty ;   # X is a first cousin of Y
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+ex:secondCousinOf              a owl:ObjectProperty, owl:SymmetricProperty ;   # X is a second cousin of Y
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+ex:firstCousinOnceRemovedOf    a owl:ObjectProperty ;                          # X is a first cousin once removed of Y
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+
+
+# =============================================================================
+# DERIVED OBJECT PROPERTIES — Gendered (28)
+#
+# Each gender-neutral property specialises into female and male variants
+# via the person's rdf:type (ex:female or ex:male).
+# =============================================================================
+
+# -- Parent (gendered) ---------------------------------------------------------
+ex:motherOf                    a owl:ObjectProperty ;   # Female parent of Y
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+ex:fatherOf                    a owl:ObjectProperty ;   # Male parent of Y
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+
+# -- Child (gendered) ----------------------------------------------------------
+ex:daughterOf                  a owl:ObjectProperty ;   # Female child of Y
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+ex:sonOf                       a owl:ObjectProperty ;   # Male child of Y
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+
+# -- Sibling (gendered) --------------------------------------------------------
+ex:sisterOf                    a owl:ObjectProperty ;   # Female sibling of Y
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+ex:brotherOf                   a owl:ObjectProperty ;   # Male sibling of Y
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+
+# -- Grandparent (gendered) ----------------------------------------------------
+ex:grandmotherOf               a owl:ObjectProperty ;   # Female grandparent of Y
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+ex:grandfatherOf               a owl:ObjectProperty ;   # Male grandparent of Y
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+
+# -- Grandchild (gendered) -----------------------------------------------------
+ex:granddaughterOf             a owl:ObjectProperty ;   # Female grandchild of Y
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+ex:grandsonOf                  a owl:ObjectProperty ;   # Male grandchild of Y
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+
+# -- Great-grandparent (gendered) ----------------------------------------------
+ex:greatGrandmotherOf          a owl:ObjectProperty ;   # Female great-grandparent of Y
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+ex:greatGrandfatherOf          a owl:ObjectProperty ;   # Male great-grandparent of Y
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+
+# -- Great-grandchild (gendered) -----------------------------------------------
+ex:greatGranddaughterOf        a owl:ObjectProperty ;   # Female great-grandchild of Y
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+ex:greatGrandsonOf             a owl:ObjectProperty ;   # Male great-grandchild of Y
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+
+# -- Aunt/uncle (gendered) -----------------------------------------------------
+ex:auntOf                      a owl:ObjectProperty ;   # Female aunt/uncle of Y
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+ex:uncleOf                     a owl:ObjectProperty ;   # Male aunt/uncle of Y
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+
+# -- Great-aunt/uncle (gendered) -----------------------------------------------
+ex:greatAuntOf                 a owl:ObjectProperty ;   # Female great-aunt/uncle of Y
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+ex:greatUncleOf                a owl:ObjectProperty ;   # Male great-aunt/uncle of Y
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+
+# -- Second aunt/uncle (gendered) ----------------------------------------------
+ex:secondAuntOf                a owl:ObjectProperty ;   # Female second aunt/uncle of Y
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+ex:secondUncleOf               a owl:ObjectProperty ;   # Male second aunt/uncle of Y
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+
+# -- Niece/nephew (gendered) ---------------------------------------------------
+ex:nieceOf                     a owl:ObjectProperty ;   # Female niece/nephew of Y
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+ex:nephewOf                    a owl:ObjectProperty ;   # Male niece/nephew of Y
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+
+# -- Cousin (gendered) ---------------------------------------------------------
+ex:girlCousinOf                a owl:ObjectProperty ;   # Female first cousin of Y
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+ex:boyCousinOf                 a owl:ObjectProperty ;   # Male first cousin of Y
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+ex:girlSecondCousinOf          a owl:ObjectProperty ;   # Female second cousin of Y
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+ex:boySecondCousinOf           a owl:ObjectProperty ;   # Male second cousin of Y
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+ex:girlFirstCousinOnceRemovedOf a owl:ObjectProperty ;  # Female first cousin once removed of Y
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+ex:boyFirstCousinOnceRemovedOf a owl:ObjectProperty ;   # Male first cousin once removed of Y
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .

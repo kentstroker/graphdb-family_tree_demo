@@ -1,0 +1,98 @@
+/*
+ * kinship-inlaws.pie
+ * Author:  Kent Stroker
+ * Date:    2026-03-12
+ *
+ * GraphDB custom ruleset extension for in-law kinship inference.
+ * Forward-chaining rules that derive 6 in-law relationship types
+ * (8 rules — brother/sister-in-law each have two derivation paths)
+ * from marriedTo combined with parentOf, childOf, or siblingOf plus gender.
+ *
+ * Depends on: childOf and siblingOf must already be inferred by the base
+ * kinship.pie ruleset before these rules can fire.
+ *
+ * NOTE: GraphDB does not support loading multiple .pie rulesets on the
+ * same repository.  To use these rules, merge them into kinship.pie
+ * before creating the repository, or use the SHACL-based approach
+ * (rules-inlaws.ttl) which CAN be loaded incrementally.
+ */
+
+Prefices
+{
+    rdf  : http://www.w3.org/1999/02/22-rdf-syntax-ns#
+    ex   : http://example.org/family/
+}
+
+Rules
+{
+    /* ═══════════════════════════════════════════════════════════════════════════
+     * IN-LAW RELATIONSHIPS (6 standard designations)
+     * Depends on: parentOf, childOf, siblingOf, marriedTo, rdf:type
+     * ═══════════════════════════════════════════════════════════════════════════ */
+
+    /* ── Parent-in-law ─────────────────────────────────────────────────────── */
+
+    Id: fatherInLawOf
+        x <ex:parentOf> z
+        z <ex:marriedTo> y
+        x <rdf:type> <ex:male>
+        --------------------------------
+        x <ex:fatherInLawOf> y
+
+    Id: motherInLawOf
+        x <ex:parentOf> z
+        z <ex:marriedTo> y
+        x <rdf:type> <ex:female>
+        --------------------------------
+        x <ex:motherInLawOf> y
+
+    /* ── Child-in-law ──────────────────────────────────────────────────────── */
+
+    Id: sonInLawOf
+        x <ex:marriedTo> z
+        z <ex:childOf> y
+        x <rdf:type> <ex:male>
+        --------------------------------
+        x <ex:sonInLawOf> y
+
+    Id: daughterInLawOf
+        x <ex:marriedTo> z
+        z <ex:childOf> y
+        x <rdf:type> <ex:female>
+        --------------------------------
+        x <ex:daughterInLawOf> y
+
+    /* ── Sibling-in-law (two paths each) ───────────────────────────────────── */
+
+    /* brother-in-law: spouse's brother */
+    Id: brotherInLawOf_A
+        y <ex:marriedTo> z
+        z <ex:siblingOf> x
+        x <rdf:type> <ex:male>
+        --------------------------------
+        x <ex:brotherInLawOf> y
+
+    /* brother-in-law: sibling's husband */
+    Id: brotherInLawOf_B
+        x <ex:marriedTo> z
+        z <ex:siblingOf> y
+        x <rdf:type> <ex:male>
+        --------------------------------
+        x <ex:brotherInLawOf> y
+
+    /* sister-in-law: spouse's sister */
+    Id: sisterInLawOf_A
+        y <ex:marriedTo> z
+        z <ex:siblingOf> x
+        x <rdf:type> <ex:female>
+        --------------------------------
+        x <ex:sisterInLawOf> y
+
+    /* sister-in-law: sibling's wife */
+    Id: sisterInLawOf_B
+        x <ex:marriedTo> z
+        z <ex:siblingOf> y
+        x <rdf:type> <ex:female>
+        --------------------------------
+        x <ex:sisterInLawOf> y
+}

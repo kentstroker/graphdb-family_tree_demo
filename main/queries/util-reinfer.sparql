@@ -1,0 +1,5 @@
+PREFIX sys: <http://www.ontotext.com/owlim/system#>
+
+INSERT DATA {
+    [] sys:reinfer []
+}

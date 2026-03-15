@@ -1,0 +1,23 @@
+# =============================================================================
+# ex3-husbandsAndMotherInLaws.sparql
+# Author:  Kent Stroker
+# Date:    2026-03-14
+#
+# Lists all husbands and their mothers-in-law.
+# Uses the inferred ex:motherInLawOf relationship (derived from kinship-full.pie).
+#
+# Usage: Run in GraphDB SPARQL tab (SELECT mode).
+# Requires: kinship-full.pie active and schema-inlaws.ttl imported.
+# =============================================================================
+
+PREFIX ex:   <http://example.org/family/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?husbandName ?motherInLawName
+WHERE {
+  ?motherInLaw ex:motherInLawOf ?husband .
+  ?husband a ex:male .
+  ?husband    rdfs:label ?husbandName .
+  ?motherInLaw rdfs:label ?motherInLawName .
+}
+ORDER BY ?husbandName

@@ -1,0 +1,1 @@
+SELECT * FROM <http://www.ontotext.com/implicit> WHERE { ?s ?p ?o } ORDER BY ?s

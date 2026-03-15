@@ -1,0 +1,9 @@
+ PREFIX ex: <http://example.org/family/>
+
+  SELECT ?subject ?predicate ?object
+  WHERE {
+    ?subject ?predicate ?object .
+    FILTER(STRSTARTS(STR(?subject), STR(ex:)))
+    FILTER(!STRSTARTS(STR(?subject), STR(ex:person/)))
+  }
+  ORDER BY ?subject ?predicate

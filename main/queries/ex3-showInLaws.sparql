@@ -1,0 +1,38 @@
+# =============================================================================
+# ex3-showInLaws.sparql
+# Author:  Kent Stroker
+# Date:    2026-03-14
+#
+# Lists all in-law relationships in the family tree, showing the person,
+# their in-law, the specific relationship type, and both names.
+#
+# The 6 in-law relationship types:
+#   fatherInLawOf, motherInLawOf, sonInLawOf, daughterInLawOf,
+#   brotherInLawOf, sisterInLawOf
+#
+# Usage: Run in GraphDB SPARQL tab (SELECT mode).
+# Requires: schema.ttl, schema-inlaws.ttl, and data loaded; kinship-full.pie
+#           ruleset active (or rules-inlaws.ttl loaded into SHACL shape graph).
+# =============================================================================
+
+PREFIX ex:   <http://example.org/family/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?personName ?relationship ?inLawName
+WHERE {
+  VALUES ?rel {
+    ex:fatherInLawOf
+    ex:motherInLawOf
+    ex:sonInLawOf
+    ex:daughterInLawOf
+    ex:brotherInLawOf
+    ex:sisterInLawOf
+  }
+
+  ?person ?rel ?inLaw .
+  ?person rdfs:label ?personName .
+  ?inLaw  rdfs:label ?inLawName .
+
+  BIND(REPLACE(STR(?rel), "^.*family/", "") AS ?relationship)
+}
+ORDER BY ?relationship ?personName

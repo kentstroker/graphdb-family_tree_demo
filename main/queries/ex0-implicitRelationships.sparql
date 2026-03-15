@@ -1,0 +1,31 @@
+# =============================================================================
+# ex0-implicitRelationships.sparql — Exercise 0: What did inference add?
+# Author:  Kent Stroker
+#
+# Counts the distinct relationship types between persons that exist only in
+# the implicit (inferred) graph — these were derived automatically by
+# GraphDB's SHACL reasoning engine from the rules in rules.ttl.
+#
+# Compare with ex0-explicitRelationships.sparql to see the contrast:
+#   explicit = 2 types (parentOf, marriedTo)
+#   implicit = 47 derived types (childOf, siblingOf, grandparentOf, etc.)
+#
+# Usage: Run in GraphDB SPARQL tab (SELECT mode).
+# Requires: schema.ttl and 000.ttl imported; load_rules.sparql run to
+#           activate SHACL inference.
+# =============================================================================
+
+PREFIX ex:   <http://example.org/family/>
+
+SELECT ?Relationship (COUNT(*) AS ?Count)
+FROM <http://www.ontotext.com/implicit>
+WHERE {
+  ?person ?rel ?related .
+  FILTER(STRSTARTS(STR(?person), "http://example.org/family/person/"))
+  FILTER(STRSTARTS(STR(?related), "http://example.org/family/person/"))
+  FILTER(STRSTARTS(STR(?rel), STR(ex:)))
+
+  BIND(REPLACE(STR(?rel), "^.*family/", "") AS ?Relationship)
+}
+GROUP BY ?Relationship
+ORDER BY ?Relationship

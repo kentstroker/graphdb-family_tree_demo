@@ -1,0 +1,92 @@
+# =============================================================================
+# rules-inlaws.ttl
+# SHACL SPARQLRules for in-law kinship inference in GraphDB.
+#
+# Derives 6 in-law relationship types (8 rules — brother/sister-in-law each
+# have two derivation paths) from marriedTo combined with parentOf, childOf,
+# or siblingOf plus gender.
+#
+# Depends on: childOf and siblingOf must already be inferred (from the base
+# rules.ttl) before these rules can fire.
+#
+# Load into GraphDB's SHACL shape graph using a SPARQL UPDATE analogous to
+# load_rules.sparql.  Inference will fire automatically on existing data.
+# =============================================================================
+
+@prefix ex:   <http://example.org/family/> .
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+ex:InLawRulesShape
+  a sh:NodeShape ;
+  sh:targetClass ex:Person ;
+
+  # -- Parent-in-law -----------------------------------------------------------
+
+  # fatherInLawOf: X is father of Z, Z is married to Y, X is male
+  # "Y's father-in-law is X" — the father of Y's spouse
+  sh:rule [ a sh:SPARQLRule ; sh:construct """
+    PREFIX ex: <http://example.org/family/>
+    CONSTRUCT { ?x ex:fatherInLawOf ?y . }
+    WHERE { ?x ex:parentOf ?z . ?z ex:marriedTo ?y . ?x a ex:male . }
+  """ ] ;
+
+  # motherInLawOf: X is mother of Z, Z is married to Y, X is female
+  # "Y's mother-in-law is X" — the mother of Y's spouse
+  sh:rule [ a sh:SPARQLRule ; sh:construct """
+    PREFIX ex: <http://example.org/family/>
+    CONSTRUCT { ?x ex:motherInLawOf ?y . }
+    WHERE { ?x ex:parentOf ?z . ?z ex:marriedTo ?y . ?x a ex:female . }
+  """ ] ;
+
+  # -- Child-in-law ------------------------------------------------------------
+
+  # sonInLawOf: X is married to Z, Z is a child of Y, X is male
+  # "Y's son-in-law is X" — the husband of Y's child
+  sh:rule [ a sh:SPARQLRule ; sh:construct """
+    PREFIX ex: <http://example.org/family/>
+    CONSTRUCT { ?x ex:sonInLawOf ?y . }
+    WHERE { ?x ex:marriedTo ?z . ?z ex:childOf ?y . ?x a ex:male . }
+  """ ] ;
+
+  # daughterInLawOf: X is married to Z, Z is a child of Y, X is female
+  # "Y's daughter-in-law is X" — the wife of Y's child
+  sh:rule [ a sh:SPARQLRule ; sh:construct """
+    PREFIX ex: <http://example.org/family/>
+    CONSTRUCT { ?x ex:daughterInLawOf ?y . }
+    WHERE { ?x ex:marriedTo ?z . ?z ex:childOf ?y . ?x a ex:female . }
+  """ ] ;
+
+  # -- Sibling-in-law (two paths each) ----------------------------------------
+
+  # brotherInLawOf — path A: spouse's brother
+  # X is brother-in-law of Y when Y is married to Z, Z is a sibling of X, X is male
+  sh:rule [ a sh:SPARQLRule ; sh:construct """
+    PREFIX ex: <http://example.org/family/>
+    CONSTRUCT { ?x ex:brotherInLawOf ?y . }
+    WHERE { ?y ex:marriedTo ?z . ?z ex:siblingOf ?x . ?x a ex:male . }
+  """ ] ;
+
+  # brotherInLawOf — path B: sibling's husband
+  # X is brother-in-law of Y when X is married to Z, Z is a sibling of Y, X is male
+  sh:rule [ a sh:SPARQLRule ; sh:construct """
+    PREFIX ex: <http://example.org/family/>
+    CONSTRUCT { ?x ex:brotherInLawOf ?y . }
+    WHERE { ?x ex:marriedTo ?z . ?z ex:siblingOf ?y . ?x a ex:male . }
+  """ ] ;
+
+  # sisterInLawOf — path A: spouse's sister
+  # X is sister-in-law of Y when Y is married to Z, Z is a sibling of X, X is female
+  sh:rule [ a sh:SPARQLRule ; sh:construct """
+    PREFIX ex: <http://example.org/family/>
+    CONSTRUCT { ?x ex:sisterInLawOf ?y . }
+    WHERE { ?y ex:marriedTo ?z . ?z ex:siblingOf ?x . ?x a ex:female . }
+  """ ] ;
+
+  # sisterInLawOf — path B: sibling's wife
+  # X is sister-in-law of Y when X is married to Z, Z is a sibling of Y, X is female
+  sh:rule [ a sh:SPARQLRule ; sh:construct """
+    PREFIX ex: <http://example.org/family/>
+    CONSTRUCT { ?x ex:sisterInLawOf ?y . }
+    WHERE { ?x ex:marriedTo ?z . ?z ex:siblingOf ?y . ?x a ex:female . }
+  """ ] .

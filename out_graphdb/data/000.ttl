@@ -1,0 +1,4092 @@
+@prefix ex:   <http://example.org/family/> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/family/person/0-0> rdf:type ex:Person, ex:male ;
+  ex:givenName "Anthony" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Anthony Blanchard" ;
+  ex:dateOfBirth "1923-07-14"^^xsd:date ;
+  ex:dateOfDeath "2005-01-09"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1> rdf:type ex:Person, ex:female ;
+  ex:givenName "Angela" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Angela Blanchard" ;
+  ex:dateOfBirth "1917-01-06"^^xsd:date ;
+  ex:dateOfDeath "1990-06-07"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-2> rdf:type ex:Person, ex:male ;
+  ex:givenName "Russell" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Russell Blanchard" ;
+  ex:dateOfBirth "1940-07-03"^^xsd:date ;
+  ex:dateOfDeath "2026-02-11"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-3> rdf:type ex:Person, ex:male ;
+  ex:givenName "Noah" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Noah Blanchard" ;
+  ex:dateOfBirth "1941-05-09"^^xsd:date ;
+  ex:dateOfDeath "2023-11-27"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-4> rdf:type ex:Person, ex:male ;
+  ex:givenName "Michael" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Michael Blanchard" ;
+  ex:dateOfBirth "1942-02-18"^^xsd:date ;
+  ex:dateOfDeath "2005-05-10"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-5> rdf:type ex:Person, ex:male ;
+  ex:givenName "Eric" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Eric Blanchard" ;
+  ex:dateOfBirth "1947-03-04"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-6> rdf:type ex:Person, ex:male ;
+  ex:givenName "Larry" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Larry Blanchard" ;
+  ex:dateOfBirth "1947-08-14"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-7> rdf:type ex:Person, ex:male ;
+  ex:givenName "Lawrence" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Lawrence Blanchard" ;
+  ex:dateOfBirth "1948-06-17"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-8> rdf:type ex:Person, ex:male ;
+  ex:givenName "Kevin" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Kevin Blanchard" ;
+  ex:dateOfBirth "1949-10-03"^^xsd:date ;
+  ex:dateOfDeath "2020-08-25"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-9> rdf:type ex:Person, ex:female ;
+  ex:givenName "Brooke" ;
+  ex:surname "Lyons" ;
+  rdfs:label "Brooke Lyons" ;
+  ex:dateOfBirth "1949-12-10"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-10> rdf:type ex:Person, ex:female ;
+  ex:givenName "Jennifer" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Jennifer Blanchard" ;
+  ex:dateOfBirth "1945-08-20"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-11> rdf:type ex:Person, ex:male ;
+  ex:givenName "Nathan" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Nathan Blanchard" ;
+  ex:dateOfBirth "1965-08-01"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-12> rdf:type ex:Person, ex:male ;
+  ex:givenName "Zachary" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Zachary Blanchard" ;
+  ex:dateOfBirth "1969-06-21"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-13> rdf:type ex:Person, ex:female ;
+  ex:givenName "Kimberly" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Kimberly Blanchard" ;
+  ex:dateOfBirth "1942-10-27"^^xsd:date ;
+  ex:dateOfDeath "2025-12-01"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-14> rdf:type ex:Person, ex:female ;
+  ex:givenName "Jill" ;
+  ex:surname "Gilmore" ;
+  rdfs:label "Jill Gilmore" ;
+  ex:dateOfBirth "1965-01-22"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-15> rdf:type ex:Person, ex:female ;
+  ex:givenName "Debra" ;
+  ex:surname "Daniel" ;
+  rdfs:label "Debra Daniel" ;
+  ex:dateOfBirth "1965-07-23"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-16> rdf:type ex:Person, ex:male ;
+  ex:givenName "Andrew" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Andrew Blanchard" ;
+  ex:dateOfBirth "1971-07-26"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-17> rdf:type ex:Person, ex:female ;
+  ex:givenName "Julie" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Julie Blanchard" ;
+  ex:dateOfBirth "1948-07-13"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-18> rdf:type ex:Person, ex:male ;
+  ex:givenName "Fernando" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Fernando Blanchard" ;
+  ex:dateOfBirth "1961-02-08"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-19> rdf:type ex:Person, ex:male ;
+  ex:givenName "James" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "James Blanchard" ;
+  ex:dateOfBirth "1962-07-10"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-20> rdf:type ex:Person, ex:female ;
+  ex:givenName "Stephanie" ;
+  ex:surname "Brown" ;
+  rdfs:label "Stephanie Brown" ;
+  ex:dateOfBirth "1964-01-07"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-21> rdf:type ex:Person, ex:female ;
+  ex:givenName "Kelly" ;
+  ex:surname "Reid" ;
+  rdfs:label "Kelly Reid" ;
+  ex:dateOfBirth "1965-03-28"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-22> rdf:type ex:Person, ex:female ;
+  ex:givenName "Kristina" ;
+  ex:surname "Garza" ;
+  rdfs:label "Kristina Garza" ;
+  ex:dateOfBirth "1965-10-07"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-23> rdf:type ex:Person, ex:female ;
+  ex:givenName "Cynthia" ;
+  ex:surname "Henderson" ;
+  rdfs:label "Cynthia Henderson" ;
+  ex:dateOfBirth "1966-07-19"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-24> rdf:type ex:Person, ex:female ;
+  ex:givenName "Breanna" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Breanna Blanchard" ;
+  ex:dateOfBirth "1942-07-02"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-25> rdf:type ex:Person, ex:female ;
+  ex:givenName "Katrina" ;
+  ex:surname "Hall" ;
+  rdfs:label "Katrina Hall" ;
+  ex:dateOfBirth "1965-06-07"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-26> rdf:type ex:Person, ex:female ;
+  ex:givenName "Yvonne" ;
+  ex:surname "Collins" ;
+  rdfs:label "Yvonne Collins" ;
+  ex:dateOfBirth "1967-01-09"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-27> rdf:type ex:Person, ex:female ;
+  ex:givenName "Megan" ;
+  ex:surname "Hamilton" ;
+  rdfs:label "Megan Hamilton" ;
+  ex:dateOfBirth "1967-07-11"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-28> rdf:type ex:Person, ex:male ;
+  ex:givenName "Christopher" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Christopher Blanchard" ;
+  ex:dateOfBirth "1968-03-23"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-29> rdf:type ex:Person, ex:male ;
+  ex:givenName "Steven" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Steven Blanchard" ;
+  ex:dateOfBirth "1968-07-16"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-30> rdf:type ex:Person, ex:male ;
+  ex:givenName "Robert" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Robert Blanchard" ;
+  ex:dateOfBirth "1970-04-14"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-31> rdf:type ex:Person, ex:male ;
+  ex:givenName "Nicholas" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Nicholas Blanchard" ;
+  ex:dateOfBirth "1971-08-21"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-32> rdf:type ex:Person, ex:male ;
+  ex:givenName "Terry" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Terry Blanchard" ;
+  ex:dateOfBirth "1971-08-28"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-33> rdf:type ex:Person, ex:female ;
+  ex:givenName "Rachel" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Rachel Blanchard" ;
+  ex:dateOfBirth "1949-07-02"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-34> rdf:type ex:Person, ex:female ;
+  ex:givenName "Heather" ;
+  ex:surname "Brock" ;
+  rdfs:label "Heather Brock" ;
+  ex:dateOfBirth "1963-06-10"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-35> rdf:type ex:Person, ex:male ;
+  ex:givenName "William" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "William Blanchard" ;
+  ex:dateOfBirth "1964-11-07"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-36> rdf:type ex:Person, ex:female ;
+  ex:givenName "Tonya" ;
+  ex:surname "Kelly" ;
+  rdfs:label "Tonya Kelly" ;
+  ex:dateOfBirth "1969-08-11"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-37> rdf:type ex:Person, ex:male ;
+  ex:givenName "Paul" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Paul Blanchard" ;
+  ex:dateOfBirth "1971-02-04"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-38> rdf:type ex:Person, ex:female ;
+  ex:givenName "Julia" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Julia Blanchard" ;
+  ex:dateOfBirth "1941-04-08"^^xsd:date ;
+  ex:dateOfDeath "2003-09-16"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-39> rdf:type ex:Person, ex:male ;
+  ex:givenName "Joseph" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Joseph Blanchard" ;
+  ex:dateOfBirth "1968-08-01"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-40> rdf:type ex:Person, ex:male ;
+  ex:givenName "John" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "John Blanchard" ;
+  ex:dateOfBirth "1968-08-21"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-41> rdf:type ex:Person, ex:male ;
+  ex:givenName "Tim" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Tim Blanchard" ;
+  ex:dateOfBirth "1969-06-10"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-42> rdf:type ex:Person, ex:female ;
+  ex:givenName "Sandra" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Sandra Blanchard" ;
+  ex:dateOfBirth "1947-07-06"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-43> rdf:type ex:Person, ex:male ;
+  ex:givenName "Hector" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Hector Blanchard" ;
+  ex:dateOfBirth "1964-10-11"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-44> rdf:type ex:Person, ex:male ;
+  ex:givenName "Stephen" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Stephen Blanchard" ;
+  ex:dateOfBirth "1965-08-05"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-45> rdf:type ex:Person, ex:male ;
+  ex:givenName "Joel" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Joel Blanchard" ;
+  ex:dateOfBirth "1966-11-14"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-46> rdf:type ex:Person, ex:male ;
+  ex:givenName "Keith" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Keith Blanchard" ;
+  ex:dateOfBirth "1966-12-27"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-47> rdf:type ex:Person, ex:male ;
+  ex:givenName "Thomas" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Thomas Blanchard" ;
+  ex:dateOfBirth "1967-06-18"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-48> rdf:type ex:Person, ex:male ;
+  ex:givenName "Nathaniel" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Nathaniel Blanchard" ;
+  ex:dateOfBirth "1969-10-07"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-49> rdf:type ex:Person, ex:male ;
+  ex:givenName "Daniel" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Daniel Blanchard" ;
+  ex:dateOfBirth "1971-11-02"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-50> rdf:type ex:Person, ex:male ;
+  ex:givenName "Christopher" ;
+  ex:surname "Lyons" ;
+  rdfs:label "Christopher Lyons" ;
+  ex:dateOfBirth "1943-11-05"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-51> rdf:type ex:Person, ex:female ;
+  ex:givenName "Susan" ;
+  ex:surname "Jackson" ;
+  rdfs:label "Susan Jackson" ;
+  ex:dateOfBirth "1961-02-18"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-52> rdf:type ex:Person, ex:female ;
+  ex:givenName "Debra" ;
+  ex:surname "Dorsey" ;
+  rdfs:label "Debra Dorsey" ;
+  ex:dateOfBirth "1963-07-06"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-53> rdf:type ex:Person, ex:female ;
+  ex:givenName "Emily" ;
+  ex:surname "Brooks" ;
+  rdfs:label "Emily Brooks" ;
+  ex:dateOfBirth "1965-07-11"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-54> rdf:type ex:Person, ex:male ;
+  ex:givenName "Tyler" ;
+  ex:surname "Lyons" ;
+  rdfs:label "Tyler Lyons" ;
+  ex:dateOfBirth "1965-10-20"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-55> rdf:type ex:Person, ex:female ;
+  ex:givenName "Michelle" ;
+  ex:surname "Newton" ;
+  rdfs:label "Michelle Newton" ;
+  ex:dateOfBirth "1968-01-28"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-56> rdf:type ex:Person, ex:female ;
+  ex:givenName "Kathy" ;
+  ex:surname "Foster" ;
+  rdfs:label "Kathy Foster" ;
+  ex:dateOfBirth "1971-10-03"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-57> rdf:type ex:Person, ex:female ;
+  ex:givenName "Marisa" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Marisa Blanchard" ;
+  ex:dateOfBirth "1971-01-22"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-58> rdf:type ex:Person, ex:female ;
+  ex:givenName "Leah" ;
+  ex:surname "Bell" ;
+  rdfs:label "Leah Bell" ;
+  ex:dateOfBirth "1984-12-04"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-59> rdf:type ex:Person, ex:female ;
+  ex:givenName "Emily" ;
+  ex:surname "Young" ;
+  rdfs:label "Emily Young" ;
+  ex:dateOfBirth "1985-03-08"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-60> rdf:type ex:Person, ex:male ;
+  ex:givenName "Jose" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Jose Blanchard" ;
+  ex:dateOfBirth "1986-08-21"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-61> rdf:type ex:Person, ex:female ;
+  ex:givenName "Taylor" ;
+  ex:surname "Thomas" ;
+  rdfs:label "Taylor Thomas" ;
+  ex:dateOfBirth "1987-01-04"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-62> rdf:type ex:Person, ex:male ;
+  ex:givenName "Marcus" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Marcus Blanchard" ;
+  ex:dateOfBirth "1989-04-14"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-63> rdf:type ex:Person, ex:female ;
+  ex:givenName "Samantha" ;
+  ex:surname "Rodriguez" ;
+  rdfs:label "Samantha Rodriguez" ;
+  ex:dateOfBirth "1990-01-13"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-64> rdf:type ex:Person, ex:male ;
+  ex:givenName "Corey" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Corey Blanchard" ;
+  ex:dateOfBirth "1990-04-11"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-65> rdf:type ex:Person, ex:female ;
+  ex:givenName "Amy" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Amy Blanchard" ;
+  ex:dateOfBirth "1962-03-28"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-66> rdf:type ex:Person, ex:male ;
+  ex:givenName "Matthew" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Matthew Blanchard" ;
+  ex:dateOfBirth "1983-09-18"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-67> rdf:type ex:Person, ex:female ;
+  ex:givenName "Denise" ;
+  ex:surname "Hatfield" ;
+  rdfs:label "Denise Hatfield" ;
+  ex:dateOfBirth "1985-08-25"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-68> rdf:type ex:Person, ex:female ;
+  ex:givenName "Cristina" ;
+  ex:surname "Harris" ;
+  rdfs:label "Cristina Harris" ;
+  ex:dateOfBirth "1985-11-10"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-69> rdf:type ex:Person, ex:male ;
+  ex:givenName "Shawn" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Shawn Blanchard" ;
+  ex:dateOfBirth "1986-07-23"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-70> rdf:type ex:Person, ex:male ;
+  ex:givenName "Brian" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Brian Blanchard" ;
+  ex:dateOfBirth "1987-09-19"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-71> rdf:type ex:Person, ex:male ;
+  ex:givenName "Scott" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Scott Blanchard" ;
+  ex:dateOfBirth "1988-12-07"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-72> rdf:type ex:Person, ex:female ;
+  ex:givenName "Danielle" ;
+  ex:surname "Edwards" ;
+  rdfs:label "Danielle Edwards" ;
+  ex:dateOfBirth "1990-06-26"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-73> rdf:type ex:Person, ex:female ;
+  ex:givenName "Christine" ;
+  ex:surname "Alexander" ;
+  rdfs:label "Christine Alexander" ;
+  ex:dateOfBirth "1991-04-08"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-74> rdf:type ex:Person, ex:male ;
+  ex:givenName "Jay" ;
+  ex:surname "Gilmore" ;
+  rdfs:label "Jay Gilmore" ;
+  ex:dateOfBirth "1967-09-22"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-75> rdf:type ex:Person, ex:female ;
+  ex:givenName "Michelle" ;
+  ex:surname "Riley" ;
+  rdfs:label "Michelle Riley" ;
+  ex:dateOfBirth "1983-12-22"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-76> rdf:type ex:Person, ex:female ;
+  ex:givenName "Amanda" ;
+  ex:surname "Bennett" ;
+  rdfs:label "Amanda Bennett" ;
+  ex:dateOfBirth "1984-02-16"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-77> rdf:type ex:Person, ex:male ;
+  ex:givenName "Jack" ;
+  ex:surname "Gilmore" ;
+  rdfs:label "Jack Gilmore" ;
+  ex:dateOfBirth "1985-05-11"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-78> rdf:type ex:Person, ex:female ;
+  ex:givenName "Carolyn" ;
+  ex:surname "Padilla" ;
+  rdfs:label "Carolyn Padilla" ;
+  ex:dateOfBirth "1986-12-12"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-79> rdf:type ex:Person, ex:female ;
+  ex:givenName "Megan" ;
+  ex:surname "Howell" ;
+  rdfs:label "Megan Howell" ;
+  ex:dateOfBirth "1989-08-13"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-80> rdf:type ex:Person, ex:female ;
+  ex:givenName "Angela" ;
+  ex:surname "Wells" ;
+  rdfs:label "Angela Wells" ;
+  ex:dateOfBirth "1992-02-05"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-81> rdf:type ex:Person, ex:male ;
+  ex:givenName "Troy" ;
+  ex:surname "Gilmore" ;
+  rdfs:label "Troy Gilmore" ;
+  ex:dateOfBirth "1993-07-20"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-82> rdf:type ex:Person, ex:male ;
+  ex:givenName "Alex" ;
+  ex:surname "Daniel" ;
+  rdfs:label "Alex Daniel" ;
+  ex:dateOfBirth "1971-10-11"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-83> rdf:type ex:Person, ex:female ;
+  ex:givenName "Dawn" ;
+  ex:surname "Dixon" ;
+  rdfs:label "Dawn Dixon" ;
+  ex:dateOfBirth "1989-12-24"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-84> rdf:type ex:Person, ex:female ;
+  ex:givenName "Robin" ;
+  ex:surname "Morris" ;
+  rdfs:label "Robin Morris" ;
+  ex:dateOfBirth "1991-08-19"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-85> rdf:type ex:Person, ex:female ;
+  ex:givenName "Brooke" ;
+  ex:surname "Santiago" ;
+  rdfs:label "Brooke Santiago" ;
+  ex:dateOfBirth "1992-11-25"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-86> rdf:type ex:Person, ex:female ;
+  ex:givenName "Melissa" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Melissa Blanchard" ;
+  ex:dateOfBirth "1969-10-05"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-87> rdf:type ex:Person, ex:male ;
+  ex:givenName "Christian" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Christian Blanchard" ;
+  ex:dateOfBirth "1983-01-13"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-88> rdf:type ex:Person, ex:female ;
+  ex:givenName "Amanda" ;
+  ex:surname "Atkins" ;
+  rdfs:label "Amanda Atkins" ;
+  ex:dateOfBirth "1983-07-03"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-89> rdf:type ex:Person, ex:male ;
+  ex:givenName "Gregory" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Gregory Blanchard" ;
+  ex:dateOfBirth "1985-02-04"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-90> rdf:type ex:Person, ex:female ;
+  ex:givenName "Lisa" ;
+  ex:surname "Smith" ;
+  rdfs:label "Lisa Smith" ;
+  ex:dateOfBirth "1985-03-25"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-91> rdf:type ex:Person, ex:female ;
+  ex:givenName "Natalie" ;
+  ex:surname "Rose" ;
+  rdfs:label "Natalie Rose" ;
+  ex:dateOfBirth "1986-11-07"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-92> rdf:type ex:Person, ex:female ;
+  ex:givenName "Ashley" ;
+  ex:surname "Beltran" ;
+  rdfs:label "Ashley Beltran" ;
+  ex:dateOfBirth "1990-03-11"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-93> rdf:type ex:Person, ex:female ;
+  ex:givenName "Joan" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Joan Blanchard" ;
+  ex:dateOfBirth "1964-12-07"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-94> rdf:type ex:Person, ex:female ;
+  ex:givenName "Pamela" ;
+  ex:surname "Wheeler" ;
+  rdfs:label "Pamela Wheeler" ;
+  ex:dateOfBirth "1983-04-11"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-95> rdf:type ex:Person, ex:female ;
+  ex:givenName "Nicole" ;
+  ex:surname "Wright" ;
+  rdfs:label "Nicole Wright" ;
+  ex:dateOfBirth "1983-09-23"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-96> rdf:type ex:Person, ex:male ;
+  ex:givenName "Darius" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Darius Blanchard" ;
+  ex:dateOfBirth "1985-09-08"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-97> rdf:type ex:Person, ex:female ;
+  ex:givenName "Mary" ;
+  ex:surname "Benjamin" ;
+  rdfs:label "Mary Benjamin" ;
+  ex:dateOfBirth "1986-12-15"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-98> rdf:type ex:Person, ex:male ;
+  ex:givenName "Eugene" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Eugene Blanchard" ;
+  ex:dateOfBirth "1991-07-10"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-99> rdf:type ex:Person, ex:male ;
+  ex:givenName "Jerome" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Jerome Blanchard" ;
+  ex:dateOfBirth "1993-09-05"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-100> rdf:type ex:Person, ex:female ;
+  ex:givenName "Bethany" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Bethany Blanchard" ;
+  ex:dateOfBirth "1969-01-06"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-101> rdf:type ex:Person, ex:female ;
+  ex:givenName "Lauren" ;
+  ex:surname "Gonzalez" ;
+  rdfs:label "Lauren Gonzalez" ;
+  ex:dateOfBirth "1984-10-21"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-102> rdf:type ex:Person, ex:male ;
+  ex:givenName "Charles" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Charles Blanchard" ;
+  ex:dateOfBirth "1986-02-12"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-103> rdf:type ex:Person, ex:female ;
+  ex:givenName "Tina" ;
+  ex:surname "Zamora" ;
+  rdfs:label "Tina Zamora" ;
+  ex:dateOfBirth "1986-03-01"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-104> rdf:type ex:Person, ex:female ;
+  ex:givenName "Deanna" ;
+  ex:surname "Morgan" ;
+  rdfs:label "Deanna Morgan" ;
+  ex:dateOfBirth "1986-07-11"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-105> rdf:type ex:Person, ex:female ;
+  ex:givenName "Alicia" ;
+  ex:surname "Horn" ;
+  rdfs:label "Alicia Horn" ;
+  ex:dateOfBirth "1988-10-15"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-106> rdf:type ex:Person, ex:male ;
+  ex:givenName "Justin" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Justin Blanchard" ;
+  ex:dateOfBirth "1990-02-08"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-107> rdf:type ex:Person, ex:female ;
+  ex:givenName "Brenda" ;
+  ex:surname "Turner" ;
+  rdfs:label "Brenda Turner" ;
+  ex:dateOfBirth "1992-01-25"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-108> rdf:type ex:Person, ex:male ;
+  ex:givenName "Andrew" ;
+  ex:surname "Brown" ;
+  rdfs:label "Andrew Brown" ;
+  ex:dateOfBirth "1965-03-20"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-109> rdf:type ex:Person, ex:female ;
+  ex:givenName "Candace" ;
+  ex:surname "Davis" ;
+  rdfs:label "Candace Davis" ;
+  ex:dateOfBirth "1984-01-28"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-110> rdf:type ex:Person, ex:male ;
+  ex:givenName "Brendan" ;
+  ex:surname "Brown" ;
+  rdfs:label "Brendan Brown" ;
+  ex:dateOfBirth "1992-08-10"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-111> rdf:type ex:Person, ex:male ;
+  ex:givenName "Jordan" ;
+  ex:surname "Reid" ;
+  rdfs:label "Jordan Reid" ;
+  ex:dateOfBirth "1967-12-04"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-112> rdf:type ex:Person, ex:male ;
+  ex:givenName "William" ;
+  ex:surname "Reid" ;
+  rdfs:label "William Reid" ;
+  ex:dateOfBirth "1983-05-19"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-113> rdf:type ex:Person, ex:female ;
+  ex:givenName "Taylor" ;
+  ex:surname "Cannon" ;
+  rdfs:label "Taylor Cannon" ;
+  ex:dateOfBirth "1985-06-21"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-114> rdf:type ex:Person, ex:male ;
+  ex:givenName "Zachary" ;
+  ex:surname "Reid" ;
+  rdfs:label "Zachary Reid" ;
+  ex:dateOfBirth "1985-10-26"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-115> rdf:type ex:Person, ex:female ;
+  ex:givenName "Crystal" ;
+  ex:surname "Shaw" ;
+  rdfs:label "Crystal Shaw" ;
+  ex:dateOfBirth "1987-01-07"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-116> rdf:type ex:Person, ex:female ;
+  ex:givenName "Jill" ;
+  ex:surname "Spencer" ;
+  rdfs:label "Jill Spencer" ;
+  ex:dateOfBirth "1987-10-04"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-117> rdf:type ex:Person, ex:male ;
+  ex:givenName "David" ;
+  ex:surname "Reid" ;
+  rdfs:label "David Reid" ;
+  ex:dateOfBirth "1988-11-26"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-118> rdf:type ex:Person, ex:male ;
+  ex:givenName "Marcus" ;
+  ex:surname "Garza" ;
+  rdfs:label "Marcus Garza" ;
+  ex:dateOfBirth "1961-07-12"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-119> rdf:type ex:Person, ex:female ;
+  ex:givenName "Rebecca" ;
+  ex:surname "Norton" ;
+  rdfs:label "Rebecca Norton" ;
+  ex:dateOfBirth "1985-10-02"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-120> rdf:type ex:Person, ex:male ;
+  ex:givenName "Michael" ;
+  ex:surname "Garza" ;
+  rdfs:label "Michael Garza" ;
+  ex:dateOfBirth "1986-07-24"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-121> rdf:type ex:Person, ex:female ;
+  ex:givenName "Dawn" ;
+  ex:surname "Kirby" ;
+  rdfs:label "Dawn Kirby" ;
+  ex:dateOfBirth "1987-08-21"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-122> rdf:type ex:Person, ex:male ;
+  ex:givenName "Joseph" ;
+  ex:surname "Henderson" ;
+  rdfs:label "Joseph Henderson" ;
+  ex:dateOfBirth "1966-03-19"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-123> rdf:type ex:Person, ex:male ;
+  ex:givenName "Aaron" ;
+  ex:surname "Henderson" ;
+  rdfs:label "Aaron Henderson" ;
+  ex:dateOfBirth "1985-05-09"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-124> rdf:type ex:Person, ex:male ;
+  ex:givenName "Andrew" ;
+  ex:surname "Henderson" ;
+  rdfs:label "Andrew Henderson" ;
+  ex:dateOfBirth "1985-11-12"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-125> rdf:type ex:Person, ex:male ;
+  ex:givenName "Jason" ;
+  ex:surname "Henderson" ;
+  rdfs:label "Jason Henderson" ;
+  ex:dateOfBirth "1985-11-25"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-126> rdf:type ex:Person, ex:female ;
+  ex:givenName "Ashley" ;
+  ex:surname "Mcclain" ;
+  rdfs:label "Ashley Mcclain" ;
+  ex:dateOfBirth "1987-04-03"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-127> rdf:type ex:Person, ex:male ;
+  ex:givenName "Nathaniel" ;
+  ex:surname "Henderson" ;
+  rdfs:label "Nathaniel Henderson" ;
+  ex:dateOfBirth "1990-06-03"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-128> rdf:type ex:Person, ex:female ;
+  ex:givenName "Cynthia" ;
+  ex:surname "Osborn" ;
+  rdfs:label "Cynthia Osborn" ;
+  ex:dateOfBirth "1990-09-01"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-129> rdf:type ex:Person, ex:male ;
+  ex:givenName "Brett" ;
+  ex:surname "Henderson" ;
+  rdfs:label "Brett Henderson" ;
+  ex:dateOfBirth "1991-08-18"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-130> rdf:type ex:Person, ex:female ;
+  ex:givenName "Catherine" ;
+  ex:surname "Carter" ;
+  rdfs:label "Catherine Carter" ;
+  ex:dateOfBirth "1992-06-23"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-131> rdf:type ex:Person, ex:male ;
+  ex:givenName "Daniel" ;
+  ex:surname "Hall" ;
+  rdfs:label "Daniel Hall" ;
+  ex:dateOfBirth "1967-03-13"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-132> rdf:type ex:Person, ex:male ;
+  ex:givenName "Joseph" ;
+  ex:surname "Hall" ;
+  rdfs:label "Joseph Hall" ;
+  ex:dateOfBirth "1984-09-21"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-133> rdf:type ex:Person, ex:male ;
+  ex:givenName "John" ;
+  ex:surname "Hall" ;
+  rdfs:label "John Hall" ;
+  ex:dateOfBirth "1989-06-09"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-134> rdf:type ex:Person, ex:male ;
+  ex:givenName "Martin" ;
+  ex:surname "Collins" ;
+  rdfs:label "Martin Collins" ;
+  ex:dateOfBirth "1961-05-13"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-135> rdf:type ex:Person, ex:female ;
+  ex:givenName "Christy" ;
+  ex:surname "Maldonado" ;
+  rdfs:label "Christy Maldonado" ;
+  ex:dateOfBirth "1984-07-18"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-136> rdf:type ex:Person, ex:female ;
+  ex:givenName "Susan" ;
+  ex:surname "Ponce" ;
+  rdfs:label "Susan Ponce" ;
+  ex:dateOfBirth "1984-11-27"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-137> rdf:type ex:Person, ex:male ;
+  ex:givenName "Victor" ;
+  ex:surname "Collins" ;
+  rdfs:label "Victor Collins" ;
+  ex:dateOfBirth "1990-03-06"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-138> rdf:type ex:Person, ex:male ;
+  ex:givenName "Jorge" ;
+  ex:surname "Hamilton" ;
+  rdfs:label "Jorge Hamilton" ;
+  ex:dateOfBirth "1969-07-27"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-139> rdf:type ex:Person, ex:male ;
+  ex:givenName "Kevin" ;
+  ex:surname "Hamilton" ;
+  rdfs:label "Kevin Hamilton" ;
+  ex:dateOfBirth "1985-04-01"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-140> rdf:type ex:Person, ex:female ;
+  ex:givenName "Amber" ;
+  ex:surname "Stephens" ;
+  rdfs:label "Amber Stephens" ;
+  ex:dateOfBirth "1990-01-08"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-141> rdf:type ex:Person, ex:male ;
+  ex:givenName "Jason" ;
+  ex:surname "Hamilton" ;
+  rdfs:label "Jason Hamilton" ;
+  ex:dateOfBirth "1990-12-26"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-142> rdf:type ex:Person, ex:male ;
+  ex:givenName "Joseph" ;
+  ex:surname "Hamilton" ;
+  rdfs:label "Joseph Hamilton" ;
+  ex:dateOfBirth "1991-11-25"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-143> rdf:type ex:Person, ex:male ;
+  ex:givenName "Christopher" ;
+  ex:surname "Hamilton" ;
+  rdfs:label "Christopher Hamilton" ;
+  ex:dateOfBirth "1991-12-24"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-144> rdf:type ex:Person, ex:female ;
+  ex:givenName "Anna" ;
+  ex:surname "Cunningham" ;
+  rdfs:label "Anna Cunningham" ;
+  ex:dateOfBirth "1993-12-08"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-145> rdf:type ex:Person, ex:female ;
+  ex:givenName "Holly" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Holly Blanchard" ;
+  ex:dateOfBirth "1965-10-26"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-146> rdf:type ex:Person, ex:female ;
+  ex:givenName "Tammy" ;
+  ex:surname "Sandoval" ;
+  rdfs:label "Tammy Sandoval" ;
+  ex:dateOfBirth "1983-10-11"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-147> rdf:type ex:Person, ex:male ;
+  ex:givenName "Leroy" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Leroy Blanchard" ;
+  ex:dateOfBirth "1984-03-16"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-148> rdf:type ex:Person, ex:male ;
+  ex:givenName "Dylan" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Dylan Blanchard" ;
+  ex:dateOfBirth "1986-05-16"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-149> rdf:type ex:Person, ex:male ;
+  ex:givenName "Jacob" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Jacob Blanchard" ;
+  ex:dateOfBirth "1986-09-28"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-150> rdf:type ex:Person, ex:female ;
+  ex:givenName "Elizabeth" ;
+  ex:surname "Lamb" ;
+  rdfs:label "Elizabeth Lamb" ;
+  ex:dateOfBirth "1987-05-20"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-151> rdf:type ex:Person, ex:female ;
+  ex:givenName "Sara" ;
+  ex:surname "Wilson" ;
+  rdfs:label "Sara Wilson" ;
+  ex:dateOfBirth "1989-08-17"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-152> rdf:type ex:Person, ex:male ;
+  ex:givenName "Alan" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Alan Blanchard" ;
+  ex:dateOfBirth "1993-01-12"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-153> rdf:type ex:Person, ex:female ;
+  ex:givenName "Katelyn" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Katelyn Blanchard" ;
+  ex:dateOfBirth "1966-04-09"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-154> rdf:type ex:Person, ex:female ;
+  ex:givenName "Diane" ;
+  ex:surname "Walton" ;
+  rdfs:label "Diane Walton" ;
+  ex:dateOfBirth "1988-10-10"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-155> rdf:type ex:Person, ex:female ;
+  ex:givenName "Jacqueline" ;
+  ex:surname "Clark" ;
+  rdfs:label "Jacqueline Clark" ;
+  ex:dateOfBirth "1991-04-15"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-156> rdf:type ex:Person, ex:female ;
+  ex:givenName "Cheryl" ;
+  ex:surname "Bailey" ;
+  rdfs:label "Cheryl Bailey" ;
+  ex:dateOfBirth "1991-08-11"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-157> rdf:type ex:Person, ex:male ;
+  ex:givenName "Kenneth" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Kenneth Blanchard" ;
+  ex:dateOfBirth "1993-08-01"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-158> rdf:type ex:Person, ex:female ;
+  ex:givenName "Barbara" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Barbara Blanchard" ;
+  ex:dateOfBirth "1970-06-09"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-159> rdf:type ex:Person, ex:male ;
+  ex:givenName "Bryan" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Bryan Blanchard" ;
+  ex:dateOfBirth "1987-11-11"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-160> rdf:type ex:Person, ex:female ;
+  ex:givenName "Sarah" ;
+  ex:surname "Franklin" ;
+  rdfs:label "Sarah Franklin" ;
+  ex:dateOfBirth "1991-07-18"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-161> rdf:type ex:Person, ex:female ;
+  ex:givenName "Margaret" ;
+  ex:surname "Morton" ;
+  rdfs:label "Margaret Morton" ;
+  ex:dateOfBirth "1991-09-13"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-162> rdf:type ex:Person, ex:female ;
+  ex:givenName "Allison" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Allison Blanchard" ;
+  ex:dateOfBirth "1971-03-03"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-163> rdf:type ex:Person, ex:male ;
+  ex:givenName "Richard" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Richard Blanchard" ;
+  ex:dateOfBirth "1988-09-16"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-164> rdf:type ex:Person, ex:female ;
+  ex:givenName "Misty" ;
+  ex:surname "Carson" ;
+  rdfs:label "Misty Carson" ;
+  ex:dateOfBirth "1993-03-10"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-165> rdf:type ex:Person, ex:female ;
+  ex:givenName "Joyce" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Joyce Blanchard" ;
+  ex:dateOfBirth "1970-05-22"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-166> rdf:type ex:Person, ex:female ;
+  ex:givenName "Rebecca" ;
+  ex:surname "Peters" ;
+  rdfs:label "Rebecca Peters" ;
+  ex:dateOfBirth "1984-10-18"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-167> rdf:type ex:Person, ex:female ;
+  ex:givenName "Kelsey" ;
+  ex:surname "Fleming" ;
+  rdfs:label "Kelsey Fleming" ;
+  ex:dateOfBirth "1987-02-22"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-168> rdf:type ex:Person, ex:male ;
+  ex:givenName "Troy" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Troy Blanchard" ;
+  ex:dateOfBirth "1992-12-27"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-169> rdf:type ex:Person, ex:male ;
+  ex:givenName "Timothy" ;
+  ex:surname "Brock" ;
+  rdfs:label "Timothy Brock" ;
+  ex:dateOfBirth "1970-02-25"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-170> rdf:type ex:Person, ex:male ;
+  ex:givenName "Russell" ;
+  ex:surname "Brock" ;
+  rdfs:label "Russell Brock" ;
+  ex:dateOfBirth "1986-08-27"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-171> rdf:type ex:Person, ex:female ;
+  ex:givenName "Elizabeth" ;
+  ex:surname "Fisher" ;
+  rdfs:label "Elizabeth Fisher" ;
+  ex:dateOfBirth "1990-06-12"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-172> rdf:type ex:Person, ex:male ;
+  ex:givenName "David" ;
+  ex:surname "Brock" ;
+  rdfs:label "David Brock" ;
+  ex:dateOfBirth "1992-07-21"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-173> rdf:type ex:Person, ex:female ;
+  ex:givenName "Katherine" ;
+  ex:surname "Preston" ;
+  rdfs:label "Katherine Preston" ;
+  ex:dateOfBirth "1993-11-02"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-174> rdf:type ex:Person, ex:female ;
+  ex:givenName "Jessica" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Jessica Blanchard" ;
+  ex:dateOfBirth "1961-09-17"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-175> rdf:type ex:Person, ex:female ;
+  ex:givenName "Meghan" ;
+  ex:surname "Baker" ;
+  rdfs:label "Meghan Baker" ;
+  ex:dateOfBirth "1984-07-18"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-176> rdf:type ex:Person, ex:female ;
+  ex:givenName "Tamara" ;
+  ex:surname "Lopez" ;
+  rdfs:label "Tamara Lopez" ;
+  ex:dateOfBirth "1986-11-18"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-177> rdf:type ex:Person, ex:female ;
+  ex:givenName "Laurie" ;
+  ex:surname "Walker" ;
+  rdfs:label "Laurie Walker" ;
+  ex:dateOfBirth "1990-04-16"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-178> rdf:type ex:Person, ex:female ;
+  ex:givenName "Sabrina" ;
+  ex:surname "Avila" ;
+  rdfs:label "Sabrina Avila" ;
+  ex:dateOfBirth "1992-07-06"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-179> rdf:type ex:Person, ex:male ;
+  ex:givenName "Brendan" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Brendan Blanchard" ;
+  ex:dateOfBirth "1992-10-24"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-180> rdf:type ex:Person, ex:male ;
+  ex:givenName "Zachary" ;
+  ex:surname "Kelly" ;
+  rdfs:label "Zachary Kelly" ;
+  ex:dateOfBirth "1971-07-11"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-181> rdf:type ex:Person, ex:male ;
+  ex:givenName "Charles" ;
+  ex:surname "Kelly" ;
+  rdfs:label "Charles Kelly" ;
+  ex:dateOfBirth "1987-02-08"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-182> rdf:type ex:Person, ex:male ;
+  ex:givenName "Jason" ;
+  ex:surname "Kelly" ;
+  rdfs:label "Jason Kelly" ;
+  ex:dateOfBirth "1987-05-26"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-183> rdf:type ex:Person, ex:female ;
+  ex:givenName "Andrea" ;
+  ex:surname "Tran" ;
+  rdfs:label "Andrea Tran" ;
+  ex:dateOfBirth "1989-07-21"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-184> rdf:type ex:Person, ex:female ;
+  ex:givenName "Virginia" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Virginia Blanchard" ;
+  ex:dateOfBirth "1961-06-01"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-185> rdf:type ex:Person, ex:female ;
+  ex:givenName "Maria" ;
+  ex:surname "Campos" ;
+  rdfs:label "Maria Campos" ;
+  ex:dateOfBirth "1985-04-14"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-186> rdf:type ex:Person, ex:female ;
+  ex:givenName "Betty" ;
+  ex:surname "Powers" ;
+  rdfs:label "Betty Powers" ;
+  ex:dateOfBirth "1985-10-02"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-187> rdf:type ex:Person, ex:male ;
+  ex:givenName "Edward" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Edward Blanchard" ;
+  ex:dateOfBirth "1987-12-23"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-188> rdf:type ex:Person, ex:male ;
+  ex:givenName "David" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "David Blanchard" ;
+  ex:dateOfBirth "1989-12-25"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-189> rdf:type ex:Person, ex:female ;
+  ex:givenName "Melanie" ;
+  ex:surname "Juarez" ;
+  rdfs:label "Melanie Juarez" ;
+  ex:dateOfBirth "1990-10-15"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-190> rdf:type ex:Person, ex:male ;
+  ex:givenName "Jeffrey" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Jeffrey Blanchard" ;
+  ex:dateOfBirth "1991-09-02"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-191> rdf:type ex:Person, ex:female ;
+  ex:givenName "Tiffany" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Tiffany Blanchard" ;
+  ex:dateOfBirth "1962-02-14"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-192> rdf:type ex:Person, ex:female ;
+  ex:givenName "Anne" ;
+  ex:surname "Burton" ;
+  rdfs:label "Anne Burton" ;
+  ex:dateOfBirth "1988-05-18"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-193> rdf:type ex:Person, ex:female ;
+  ex:givenName "Kelli" ;
+  ex:surname "Hart" ;
+  rdfs:label "Kelli Hart" ;
+  ex:dateOfBirth "1991-12-14"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-194> rdf:type ex:Person, ex:female ;
+  ex:givenName "Dawn" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Dawn Blanchard" ;
+  ex:dateOfBirth "1962-11-26"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-195> rdf:type ex:Person, ex:female ;
+  ex:givenName "Michele" ;
+  ex:surname "Simpson" ;
+  rdfs:label "Michele Simpson" ;
+  ex:dateOfBirth "1985-12-28"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-196> rdf:type ex:Person, ex:male ;
+  ex:givenName "Jared" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Jared Blanchard" ;
+  ex:dateOfBirth "1986-01-16"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-197> rdf:type ex:Person, ex:female ;
+  ex:givenName "Whitney" ;
+  ex:surname "Dunn" ;
+  rdfs:label "Whitney Dunn" ;
+  ex:dateOfBirth "1988-07-18"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-198> rdf:type ex:Person, ex:male ;
+  ex:givenName "Jeremy" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Jeremy Blanchard" ;
+  ex:dateOfBirth "1989-08-21"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-199> rdf:type ex:Person, ex:female ;
+  ex:givenName "Alyssa" ;
+  ex:surname "Knapp" ;
+  rdfs:label "Alyssa Knapp" ;
+  ex:dateOfBirth "1990-02-14"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-200> rdf:type ex:Person, ex:male ;
+  ex:givenName "Kurt" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Kurt Blanchard" ;
+  ex:dateOfBirth "1991-01-05"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-201> rdf:type ex:Person, ex:male ;
+  ex:givenName "Jordan" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Jordan Blanchard" ;
+  ex:dateOfBirth "1992-07-09"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-202> rdf:type ex:Person, ex:male ;
+  ex:givenName "Timothy" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Timothy Blanchard" ;
+  ex:dateOfBirth "1993-10-19"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-203> rdf:type ex:Person, ex:female ;
+  ex:givenName "Kaitlyn" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Kaitlyn Blanchard" ;
+  ex:dateOfBirth "1965-07-14"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-204> rdf:type ex:Person, ex:female ;
+  ex:givenName "Erin" ;
+  ex:surname "Macias" ;
+  rdfs:label "Erin Macias" ;
+  ex:dateOfBirth "1983-02-05"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-205> rdf:type ex:Person, ex:male ;
+  ex:givenName "Patrick" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Patrick Blanchard" ;
+  ex:dateOfBirth "1985-08-09"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-206> rdf:type ex:Person, ex:male ;
+  ex:givenName "Philip" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Philip Blanchard" ;
+  ex:dateOfBirth "1986-12-11"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-207> rdf:type ex:Person, ex:male ;
+  ex:givenName "Samuel" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Samuel Blanchard" ;
+  ex:dateOfBirth "1989-04-13"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-208> rdf:type ex:Person, ex:male ;
+  ex:givenName "Danny" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Danny Blanchard" ;
+  ex:dateOfBirth "1991-03-16"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-209> rdf:type ex:Person, ex:male ;
+  ex:givenName "Marc" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Marc Blanchard" ;
+  ex:dateOfBirth "1992-02-12"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-210> rdf:type ex:Person, ex:female ;
+  ex:givenName "Vanessa" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Vanessa Blanchard" ;
+  ex:dateOfBirth "1962-02-19"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-211> rdf:type ex:Person, ex:female ;
+  ex:givenName "Madison" ;
+  ex:surname "Moran" ;
+  rdfs:label "Madison Moran" ;
+  ex:dateOfBirth "1983-08-19"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-212> rdf:type ex:Person, ex:male ;
+  ex:givenName "Adam" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Adam Blanchard" ;
+  ex:dateOfBirth "1986-12-13"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-213> rdf:type ex:Person, ex:female ;
+  ex:givenName "Michelle" ;
+  ex:surname "Casey" ;
+  rdfs:label "Michelle Casey" ;
+  ex:dateOfBirth "1987-08-06"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-214> rdf:type ex:Person, ex:male ;
+  ex:givenName "Tony" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Tony Blanchard" ;
+  ex:dateOfBirth "1987-09-07"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-215> rdf:type ex:Person, ex:female ;
+  ex:givenName "Monica" ;
+  ex:surname "Ortiz" ;
+  rdfs:label "Monica Ortiz" ;
+  ex:dateOfBirth "1987-09-23"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-216> rdf:type ex:Person, ex:female ;
+  ex:givenName "Susan" ;
+  ex:surname "Cook" ;
+  rdfs:label "Susan Cook" ;
+  ex:dateOfBirth "1992-01-28"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-217> rdf:type ex:Person, ex:female ;
+  ex:givenName "Ashlee" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Ashlee Blanchard" ;
+  ex:dateOfBirth "1966-05-14"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-218> rdf:type ex:Person, ex:female ;
+  ex:givenName "Robyn" ;
+  ex:surname "Goodwin" ;
+  rdfs:label "Robyn Goodwin" ;
+  ex:dateOfBirth "1988-12-28"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-219> rdf:type ex:Person, ex:male ;
+  ex:givenName "Randall" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Randall Blanchard" ;
+  ex:dateOfBirth "1993-08-27"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-220> rdf:type ex:Person, ex:female ;
+  ex:givenName "Christina" ;
+  ex:surname "Roberts" ;
+  rdfs:label "Christina Roberts" ;
+  ex:dateOfBirth "1993-10-13"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-221> rdf:type ex:Person, ex:female ;
+  ex:givenName "Regina" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Regina Blanchard" ;
+  ex:dateOfBirth "1968-11-12"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-222> rdf:type ex:Person, ex:female ;
+  ex:givenName "Kylie" ;
+  ex:surname "Barnes" ;
+  rdfs:label "Kylie Barnes" ;
+  ex:dateOfBirth "1983-11-03"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-223> rdf:type ex:Person, ex:female ;
+  ex:givenName "Tracy" ;
+  ex:surname "Moore" ;
+  rdfs:label "Tracy Moore" ;
+  ex:dateOfBirth "1984-01-01"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-224> rdf:type ex:Person, ex:female ;
+  ex:givenName "Angel" ;
+  ex:surname "Perez" ;
+  rdfs:label "Angel Perez" ;
+  ex:dateOfBirth "1985-09-01"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-225> rdf:type ex:Person, ex:female ;
+  ex:givenName "April" ;
+  ex:surname "Dillon" ;
+  rdfs:label "April Dillon" ;
+  ex:dateOfBirth "1987-10-02"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-226> rdf:type ex:Person, ex:female ;
+  ex:givenName "Karina" ;
+  ex:surname "Zimmerman" ;
+  rdfs:label "Karina Zimmerman" ;
+  ex:dateOfBirth "1990-07-05"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-227> rdf:type ex:Person, ex:female ;
+  ex:givenName "Frances" ;
+  ex:surname "Hill" ;
+  rdfs:label "Frances Hill" ;
+  ex:dateOfBirth "1993-09-16"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-228> rdf:type ex:Person, ex:female ;
+  ex:givenName "Kathryn" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Kathryn Blanchard" ;
+  ex:dateOfBirth "1966-02-03"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-229> rdf:type ex:Person, ex:male ;
+  ex:givenName "Alexander" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Alexander Blanchard" ;
+  ex:dateOfBirth "1985-07-25"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-230> rdf:type ex:Person, ex:female ;
+  ex:givenName "Carrie" ;
+  ex:surname "Middleton" ;
+  rdfs:label "Carrie Middleton" ;
+  ex:dateOfBirth "1985-12-12"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-231> rdf:type ex:Person, ex:female ;
+  ex:givenName "Sharon" ;
+  ex:surname "Tucker" ;
+  rdfs:label "Sharon Tucker" ;
+  ex:dateOfBirth "1987-04-20"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-232> rdf:type ex:Person, ex:female ;
+  ex:givenName "Brandy" ;
+  ex:surname "Cain" ;
+  rdfs:label "Brandy Cain" ;
+  ex:dateOfBirth "1989-07-14"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-233> rdf:type ex:Person, ex:male ;
+  ex:givenName "Walter" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Walter Blanchard" ;
+  ex:dateOfBirth "1993-04-27"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-234> rdf:type ex:Person, ex:female ;
+  ex:givenName "Janet" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Janet Blanchard" ;
+  ex:dateOfBirth "1965-03-13"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-235> rdf:type ex:Person, ex:male ;
+  ex:givenName "Seth" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Seth Blanchard" ;
+  ex:dateOfBirth "1983-02-08"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-236> rdf:type ex:Person, ex:female ;
+  ex:givenName "Mariah" ;
+  ex:surname "Webb" ;
+  rdfs:label "Mariah Webb" ;
+  ex:dateOfBirth "1984-09-14"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-237> rdf:type ex:Person, ex:male ;
+  ex:givenName "Joshua" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Joshua Blanchard" ;
+  ex:dateOfBirth "1989-04-07"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-238> rdf:type ex:Person, ex:male ;
+  ex:givenName "Billy" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Billy Blanchard" ;
+  ex:dateOfBirth "1993-04-05"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-239> rdf:type ex:Person, ex:female ;
+  ex:givenName "Martha" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Martha Blanchard" ;
+  ex:dateOfBirth "1971-01-12"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-240> rdf:type ex:Person, ex:female ;
+  ex:givenName "Jenna" ;
+  ex:surname "Frye" ;
+  rdfs:label "Jenna Frye" ;
+  ex:dateOfBirth "1983-05-16"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-241> rdf:type ex:Person, ex:female ;
+  ex:givenName "Anna" ;
+  ex:surname "Morse" ;
+  rdfs:label "Anna Morse" ;
+  ex:dateOfBirth "1983-09-10"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-242> rdf:type ex:Person, ex:male ;
+  ex:givenName "Mark" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Mark Blanchard" ;
+  ex:dateOfBirth "1986-05-28"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-243> rdf:type ex:Person, ex:female ;
+  ex:givenName "Lori" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Lori Blanchard" ;
+  ex:dateOfBirth "1970-08-22"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-244> rdf:type ex:Person, ex:male ;
+  ex:givenName "Jim" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Jim Blanchard" ;
+  ex:dateOfBirth "1984-06-05"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-245> rdf:type ex:Person, ex:female ;
+  ex:givenName "Crystal" ;
+  ex:surname "Reese" ;
+  rdfs:label "Crystal Reese" ;
+  ex:dateOfBirth "1984-10-21"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-246> rdf:type ex:Person, ex:male ;
+  ex:givenName "Donald" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Donald Blanchard" ;
+  ex:dateOfBirth "1986-07-15"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-247> rdf:type ex:Person, ex:female ;
+  ex:givenName "Jamie" ;
+  ex:surname "Walters" ;
+  rdfs:label "Jamie Walters" ;
+  ex:dateOfBirth "1987-03-18"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-248> rdf:type ex:Person, ex:female ;
+  ex:givenName "Judith" ;
+  ex:surname "Chase" ;
+  rdfs:label "Judith Chase" ;
+  ex:dateOfBirth "1989-12-06"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-249> rdf:type ex:Person, ex:male ;
+  ex:givenName "Jeremy" ;
+  ex:surname "Jackson" ;
+  rdfs:label "Jeremy Jackson" ;
+  ex:dateOfBirth "1969-07-25"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-250> rdf:type ex:Person, ex:male ;
+  ex:givenName "Edgar" ;
+  ex:surname "Jackson" ;
+  rdfs:label "Edgar Jackson" ;
+  ex:dateOfBirth "1988-03-17"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-251> rdf:type ex:Person, ex:male ;
+  ex:givenName "Steven" ;
+  ex:surname "Jackson" ;
+  rdfs:label "Steven Jackson" ;
+  ex:dateOfBirth "1992-02-06"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-252> rdf:type ex:Person, ex:male ;
+  ex:givenName "Jeremy" ;
+  ex:surname "Dorsey" ;
+  rdfs:label "Jeremy Dorsey" ;
+  ex:dateOfBirth "1965-08-25"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-253> rdf:type ex:Person, ex:male ;
+  ex:givenName "Mark" ;
+  ex:surname "Dorsey" ;
+  rdfs:label "Mark Dorsey" ;
+  ex:dateOfBirth "1986-07-09"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-254> rdf:type ex:Person, ex:female ;
+  ex:givenName "Tara" ;
+  ex:surname "Howard" ;
+  rdfs:label "Tara Howard" ;
+  ex:dateOfBirth "1987-05-09"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-255> rdf:type ex:Person, ex:male ;
+  ex:givenName "Gabriel" ;
+  ex:surname "Dorsey" ;
+  rdfs:label "Gabriel Dorsey" ;
+  ex:dateOfBirth "1988-02-10"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-256> rdf:type ex:Person, ex:female ;
+  ex:givenName "Ariana" ;
+  ex:surname "Drake" ;
+  rdfs:label "Ariana Drake" ;
+  ex:dateOfBirth "1989-11-17"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-257> rdf:type ex:Person, ex:male ;
+  ex:givenName "David" ;
+  ex:surname "Dorsey" ;
+  rdfs:label "David Dorsey" ;
+  ex:dateOfBirth "1992-08-02"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-258> rdf:type ex:Person, ex:male ;
+  ex:givenName "Collin" ;
+  ex:surname "Dorsey" ;
+  rdfs:label "Collin Dorsey" ;
+  ex:dateOfBirth "1993-05-25"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-259> rdf:type ex:Person, ex:female ;
+  ex:givenName "Meghan" ;
+  ex:surname "Woods" ;
+  rdfs:label "Meghan Woods" ;
+  ex:dateOfBirth "1993-12-09"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-260> rdf:type ex:Person, ex:male ;
+  ex:givenName "Henry" ;
+  ex:surname "Brooks" ;
+  rdfs:label "Henry Brooks" ;
+  ex:dateOfBirth "1970-11-22"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-261> rdf:type ex:Person, ex:female ;
+  ex:givenName "Rebecca" ;
+  ex:surname "Weaver" ;
+  rdfs:label "Rebecca Weaver" ;
+  ex:dateOfBirth "1984-06-10"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-262> rdf:type ex:Person, ex:male ;
+  ex:givenName "David" ;
+  ex:surname "Brooks" ;
+  rdfs:label "David Brooks" ;
+  ex:dateOfBirth "1984-10-24"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-263> rdf:type ex:Person, ex:male ;
+  ex:givenName "Robert" ;
+  ex:surname "Brooks" ;
+  rdfs:label "Robert Brooks" ;
+  ex:dateOfBirth "1987-09-12"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-264> rdf:type ex:Person, ex:female ;
+  ex:givenName "Mackenzie" ;
+  ex:surname "Tapia" ;
+  rdfs:label "Mackenzie Tapia" ;
+  ex:dateOfBirth "1989-04-23"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-265> rdf:type ex:Person, ex:male ;
+  ex:givenName "James" ;
+  ex:surname "Brooks" ;
+  rdfs:label "James Brooks" ;
+  ex:dateOfBirth "1992-07-26"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-266> rdf:type ex:Person, ex:female ;
+  ex:givenName "Gloria" ;
+  ex:surname "Lyons" ;
+  rdfs:label "Gloria Lyons" ;
+  ex:dateOfBirth "1962-07-05"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-267> rdf:type ex:Person, ex:female ;
+  ex:givenName "Sherry" ;
+  ex:surname "Mcgee" ;
+  rdfs:label "Sherry Mcgee" ;
+  ex:dateOfBirth "1985-07-16"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-268> rdf:type ex:Person, ex:female ;
+  ex:givenName "Tammy" ;
+  ex:surname "Diaz" ;
+  rdfs:label "Tammy Diaz" ;
+  ex:dateOfBirth "1989-06-03"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-269> rdf:type ex:Person, ex:male ;
+  ex:givenName "Jonathan" ;
+  ex:surname "Lyons" ;
+  rdfs:label "Jonathan Lyons" ;
+  ex:dateOfBirth "1990-03-27"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-270> rdf:type ex:Person, ex:female ;
+  ex:givenName "Melissa" ;
+  ex:surname "Pham" ;
+  rdfs:label "Melissa Pham" ;
+  ex:dateOfBirth "1991-02-22"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-271> rdf:type ex:Person, ex:female ;
+  ex:givenName "Tiffany" ;
+  ex:surname "Ward" ;
+  rdfs:label "Tiffany Ward" ;
+  ex:dateOfBirth "1991-06-14"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-272> rdf:type ex:Person, ex:male ;
+  ex:givenName "Paul" ;
+  ex:surname "Newton" ;
+  rdfs:label "Paul Newton" ;
+  ex:dateOfBirth "1971-09-16"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-273> rdf:type ex:Person, ex:female ;
+  ex:givenName "Sheila" ;
+  ex:surname "Holland" ;
+  rdfs:label "Sheila Holland" ;
+  ex:dateOfBirth "1983-08-10"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-274> rdf:type ex:Person, ex:male ;
+  ex:givenName "Timothy" ;
+  ex:surname "Newton" ;
+  rdfs:label "Timothy Newton" ;
+  ex:dateOfBirth "1985-03-04"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-275> rdf:type ex:Person, ex:female ;
+  ex:givenName "Nicole" ;
+  ex:surname "Miles" ;
+  rdfs:label "Nicole Miles" ;
+  ex:dateOfBirth "1989-11-27"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-276> rdf:type ex:Person, ex:male ;
+  ex:givenName "William" ;
+  ex:surname "Newton" ;
+  rdfs:label "William Newton" ;
+  ex:dateOfBirth "1990-10-01"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-277> rdf:type ex:Person, ex:male ;
+  ex:givenName "Eddie" ;
+  ex:surname "Newton" ;
+  rdfs:label "Eddie Newton" ;
+  ex:dateOfBirth "1991-04-02"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-278> rdf:type ex:Person, ex:male ;
+  ex:givenName "Marcus" ;
+  ex:surname "Newton" ;
+  rdfs:label "Marcus Newton" ;
+  ex:dateOfBirth "1992-05-18"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-279> rdf:type ex:Person, ex:female ;
+  ex:givenName "Megan" ;
+  ex:surname "Pitts" ;
+  rdfs:label "Megan Pitts" ;
+  ex:dateOfBirth "1993-04-12"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-280> rdf:type ex:Person, ex:male ;
+  ex:givenName "Christopher" ;
+  ex:surname "Foster" ;
+  rdfs:label "Christopher Foster" ;
+  ex:dateOfBirth "1964-09-23"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-281> rdf:type ex:Person, ex:female ;
+  ex:givenName "Tina" ;
+  ex:surname "Fox" ;
+  rdfs:label "Tina Fox" ;
+  ex:dateOfBirth "1983-03-24"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-282> rdf:type ex:Person, ex:female ;
+  ex:givenName "Heather" ;
+  ex:surname "Cross" ;
+  rdfs:label "Heather Cross" ;
+  ex:dateOfBirth "1986-05-14"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-283> rdf:type ex:Person, ex:female ;
+  ex:givenName "Karen" ;
+  ex:surname "Perry" ;
+  rdfs:label "Karen Perry" ;
+  ex:dateOfBirth "1986-12-19"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-284> rdf:type ex:Person, ex:female ;
+  ex:givenName "Stephanie" ;
+  ex:surname "Underwood" ;
+  rdfs:label "Stephanie Underwood" ;
+  ex:dateOfBirth "1988-06-21"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-285> rdf:type ex:Person, ex:male ;
+  ex:givenName "Cody" ;
+  ex:surname "Foster" ;
+  rdfs:label "Cody Foster" ;
+  ex:dateOfBirth "1990-05-22"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-286> rdf:type ex:Person, ex:male ;
+  ex:givenName "Tyler" ;
+  ex:surname "Foster" ;
+  rdfs:label "Tyler Foster" ;
+  ex:dateOfBirth "1991-06-07"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-287> rdf:type ex:Person, ex:male ;
+  ex:givenName "Cameron" ;
+  ex:surname "Foster" ;
+  rdfs:label "Cameron Foster" ;
+  ex:dateOfBirth "1992-08-06"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-288> rdf:type ex:Person, ex:male ;
+  ex:givenName "Ian" ;
+  ex:surname "Bell" ;
+  rdfs:label "Ian Bell" ;
+  ex:dateOfBirth "1992-04-25"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-294> rdf:type ex:Person, ex:male ;
+  ex:givenName "Roy" ;
+  ex:surname "Young" ;
+  rdfs:label "Roy Young" ;
+  ex:dateOfBirth "1987-04-27"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-298> rdf:type ex:Person, ex:female ;
+  ex:givenName "Grace" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Grace Blanchard" ;
+  ex:dateOfBirth "1986-04-11"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-301> rdf:type ex:Person, ex:male ;
+  ex:givenName "Samuel" ;
+  ex:surname "Thomas" ;
+  rdfs:label "Samuel Thomas" ;
+  ex:dateOfBirth "1992-10-02"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-304> rdf:type ex:Person, ex:female ;
+  ex:givenName "Gina" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Gina Blanchard" ;
+  ex:dateOfBirth "1988-10-19"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-312> rdf:type ex:Person, ex:male ;
+  ex:givenName "Zachary" ;
+  ex:surname "Rodriguez" ;
+  rdfs:label "Zachary Rodriguez" ;
+  ex:dateOfBirth "1989-12-03"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-317> rdf:type ex:Person, ex:female ;
+  ex:givenName "Alexa" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Alexa Blanchard" ;
+  ex:dateOfBirth "1987-04-23"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-325> rdf:type ex:Person, ex:female ;
+  ex:givenName "Cindy" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Cindy Blanchard" ;
+  ex:dateOfBirth "1990-04-14"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-331> rdf:type ex:Person, ex:male ;
+  ex:givenName "Daryl" ;
+  ex:surname "Hatfield" ;
+  rdfs:label "Daryl Hatfield" ;
+  ex:dateOfBirth "1989-08-12"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-337> rdf:type ex:Person, ex:male ;
+  ex:givenName "Cory" ;
+  ex:surname "Harris" ;
+  rdfs:label "Cory Harris" ;
+  ex:dateOfBirth "1984-09-20"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-346> rdf:type ex:Person, ex:female ;
+  ex:givenName "Linda" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Linda Blanchard" ;
+  ex:dateOfBirth "1991-05-24"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-353> rdf:type ex:Person, ex:female ;
+  ex:givenName "Felicia" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Felicia Blanchard" ;
+  ex:dateOfBirth "1987-03-22"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-360> rdf:type ex:Person, ex:female ;
+  ex:givenName "Karen" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Karen Blanchard" ;
+  ex:dateOfBirth "1988-04-18"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-367> rdf:type ex:Person, ex:male ;
+  ex:givenName "Francis" ;
+  ex:surname "Edwards" ;
+  rdfs:label "Francis Edwards" ;
+  ex:dateOfBirth "1988-06-19"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-371> rdf:type ex:Person, ex:male ;
+  ex:givenName "Jason" ;
+  ex:surname "Alexander" ;
+  rdfs:label "Jason Alexander" ;
+  ex:dateOfBirth "1984-03-10"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-374> rdf:type ex:Person, ex:male ;
+  ex:givenName "Carlos" ;
+  ex:surname "Riley" ;
+  rdfs:label "Carlos Riley" ;
+  ex:dateOfBirth "1983-05-18"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-377> rdf:type ex:Person, ex:male ;
+  ex:givenName "Austin" ;
+  ex:surname "Bennett" ;
+  rdfs:label "Austin Bennett" ;
+  ex:dateOfBirth "1988-04-14"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-382> rdf:type ex:Person, ex:female ;
+  ex:givenName "Sydney" ;
+  ex:surname "Gilmore" ;
+  rdfs:label "Sydney Gilmore" ;
+  ex:dateOfBirth "1987-11-15"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-387> rdf:type ex:Person, ex:male ;
+  ex:givenName "Shannon" ;
+  ex:surname "Padilla" ;
+  rdfs:label "Shannon Padilla" ;
+  ex:dateOfBirth "1993-12-01"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-396> rdf:type ex:Person, ex:male ;
+  ex:givenName "James" ;
+  ex:surname "Howell" ;
+  rdfs:label "James Howell" ;
+  ex:dateOfBirth "1983-05-20"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-399> rdf:type ex:Person, ex:male ;
+  ex:givenName "James" ;
+  ex:surname "Wells" ;
+  rdfs:label "James Wells" ;
+  ex:dateOfBirth "1989-01-22"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-405> rdf:type ex:Person, ex:female ;
+  ex:givenName "Amy" ;
+  ex:surname "Gilmore" ;
+  rdfs:label "Amy Gilmore" ;
+  ex:dateOfBirth "1992-10-28"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-410> rdf:type ex:Person, ex:male ;
+  ex:givenName "Joseph" ;
+  ex:surname "Dixon" ;
+  rdfs:label "Joseph Dixon" ;
+  ex:dateOfBirth "1985-05-04"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-418> rdf:type ex:Person, ex:male ;
+  ex:givenName "Joshua" ;
+  ex:surname "Morris" ;
+  rdfs:label "Joshua Morris" ;
+  ex:dateOfBirth "1983-04-24"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-425> rdf:type ex:Person, ex:male ;
+  ex:givenName "Jeffrey" ;
+  ex:surname "Santiago" ;
+  rdfs:label "Jeffrey Santiago" ;
+  ex:dateOfBirth "1991-05-19"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-428> rdf:type ex:Person, ex:female ;
+  ex:givenName "Heidi" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Heidi Blanchard" ;
+  ex:dateOfBirth "1989-08-28"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-432> rdf:type ex:Person, ex:male ;
+  ex:givenName "Billy" ;
+  ex:surname "Atkins" ;
+  rdfs:label "Billy Atkins" ;
+  ex:dateOfBirth "1984-01-04"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-438> rdf:type ex:Person, ex:female ;
+  ex:givenName "Leslie" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Leslie Blanchard" ;
+  ex:dateOfBirth "1983-04-15"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-443> rdf:type ex:Person, ex:male ;
+  ex:givenName "Jared" ;
+  ex:surname "Smith" ;
+  rdfs:label "Jared Smith" ;
+  ex:dateOfBirth "1989-04-01"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-448> rdf:type ex:Person, ex:male ;
+  ex:givenName "Jamie" ;
+  ex:surname "Rose" ;
+  rdfs:label "Jamie Rose" ;
+  ex:dateOfBirth "1988-09-06"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-454> rdf:type ex:Person, ex:male ;
+  ex:givenName "Kenneth" ;
+  ex:surname "Beltran" ;
+  rdfs:label "Kenneth Beltran" ;
+  ex:dateOfBirth "1990-05-24"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-462> rdf:type ex:Person, ex:male ;
+  ex:givenName "Carl" ;
+  ex:surname "Wheeler" ;
+  rdfs:label "Carl Wheeler" ;
+  ex:dateOfBirth "1990-06-25"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-469> rdf:type ex:Person, ex:male ;
+  ex:givenName "Jeremy" ;
+  ex:surname "Wright" ;
+  rdfs:label "Jeremy Wright" ;
+  ex:dateOfBirth "1986-05-02"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-475> rdf:type ex:Person, ex:female ;
+  ex:givenName "Kristi" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Kristi Blanchard" ;
+  ex:dateOfBirth "1985-01-13"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-479> rdf:type ex:Person, ex:male ;
+  ex:givenName "Bruce" ;
+  ex:surname "Benjamin" ;
+  rdfs:label "Bruce Benjamin" ;
+  ex:dateOfBirth "1988-09-12"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-485> rdf:type ex:Person, ex:female ;
+  ex:givenName "Hannah" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Hannah Blanchard" ;
+  ex:dateOfBirth "1985-03-08"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-489> rdf:type ex:Person, ex:female ;
+  ex:givenName "Courtney" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Courtney Blanchard" ;
+  ex:dateOfBirth "1990-07-14"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-498> rdf:type ex:Person, ex:male ;
+  ex:givenName "Cody" ;
+  ex:surname "Gonzalez" ;
+  rdfs:label "Cody Gonzalez" ;
+  ex:dateOfBirth "1985-07-13"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-503> rdf:type ex:Person, ex:female ;
+  ex:givenName "Renee" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Renee Blanchard" ;
+  ex:dateOfBirth "1992-08-08"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-509> rdf:type ex:Person, ex:male ;
+  ex:givenName "Daniel" ;
+  ex:surname "Zamora" ;
+  rdfs:label "Daniel Zamora" ;
+  ex:dateOfBirth "1987-08-03"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-516> rdf:type ex:Person, ex:male ;
+  ex:givenName "Richard" ;
+  ex:surname "Morgan" ;
+  rdfs:label "Richard Morgan" ;
+  ex:dateOfBirth "1987-07-01"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-523> rdf:type ex:Person, ex:male ;
+  ex:givenName "Christopher" ;
+  ex:surname "Horn" ;
+  rdfs:label "Christopher Horn" ;
+  ex:dateOfBirth "1991-06-05"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-529> rdf:type ex:Person, ex:female ;
+  ex:givenName "Morgan" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Morgan Blanchard" ;
+  ex:dateOfBirth "1990-06-16"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-537> rdf:type ex:Person, ex:male ;
+  ex:givenName "Keith" ;
+  ex:surname "Turner" ;
+  rdfs:label "Keith Turner" ;
+  ex:dateOfBirth "1987-12-02"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-540> rdf:type ex:Person, ex:male ;
+  ex:givenName "Timothy" ;
+  ex:surname "Davis" ;
+  rdfs:label "Timothy Davis" ;
+  ex:dateOfBirth "1984-10-07"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-549> rdf:type ex:Person, ex:female ;
+  ex:givenName "Sandra" ;
+  ex:surname "Brown" ;
+  rdfs:label "Sandra Brown" ;
+  ex:dateOfBirth "1983-12-21"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-553> rdf:type ex:Person, ex:female ;
+  ex:givenName "Cathy" ;
+  ex:surname "Reid" ;
+  rdfs:label "Cathy Reid" ;
+  ex:dateOfBirth "1984-08-13"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-560> rdf:type ex:Person, ex:male ;
+  ex:givenName "Daniel" ;
+  ex:surname "Cannon" ;
+  rdfs:label "Daniel Cannon" ;
+  ex:dateOfBirth "1989-12-04"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-563> rdf:type ex:Person, ex:female ;
+  ex:givenName "Angelica" ;
+  ex:surname "Reid" ;
+  rdfs:label "Angelica Reid" ;
+  ex:dateOfBirth "1986-12-14"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-571> rdf:type ex:Person, ex:male ;
+  ex:givenName "David" ;
+  ex:surname "Shaw" ;
+  rdfs:label "David Shaw" ;
+  ex:dateOfBirth "1984-01-02"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-579> rdf:type ex:Person, ex:male ;
+  ex:givenName "George" ;
+  ex:surname "Spencer" ;
+  rdfs:label "George Spencer" ;
+  ex:dateOfBirth "1988-04-11"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-582> rdf:type ex:Person, ex:female ;
+  ex:givenName "Carolyn" ;
+  ex:surname "Reid" ;
+  rdfs:label "Carolyn Reid" ;
+  ex:dateOfBirth "1991-12-26"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-591> rdf:type ex:Person, ex:male ;
+  ex:givenName "James" ;
+  ex:surname "Norton" ;
+  rdfs:label "James Norton" ;
+  ex:dateOfBirth "1990-12-17"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-597> rdf:type ex:Person, ex:female ;
+  ex:givenName "Ellen" ;
+  ex:surname "Garza" ;
+  rdfs:label "Ellen Garza" ;
+  ex:dateOfBirth "1987-01-28"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-600> rdf:type ex:Person, ex:male ;
+  ex:givenName "Randall" ;
+  ex:surname "Kirby" ;
+  rdfs:label "Randall Kirby" ;
+  ex:dateOfBirth "1990-06-05"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-604> rdf:type ex:Person, ex:female ;
+  ex:givenName "Laura" ;
+  ex:surname "Henderson" ;
+  rdfs:label "Laura Henderson" ;
+  ex:dateOfBirth "1986-11-07"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-612> rdf:type ex:Person, ex:female ;
+  ex:givenName "Kathryn" ;
+  ex:surname "Henderson" ;
+  rdfs:label "Kathryn Henderson" ;
+  ex:dateOfBirth "1986-07-26"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-616> rdf:type ex:Person, ex:female ;
+  ex:givenName "Robin" ;
+  ex:surname "Henderson" ;
+  rdfs:label "Robin Henderson" ;
+  ex:dateOfBirth "1984-01-02"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-623> rdf:type ex:Person, ex:male ;
+  ex:givenName "Christopher" ;
+  ex:surname "Mcclain" ;
+  rdfs:label "Christopher Mcclain" ;
+  ex:dateOfBirth "1984-06-18"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-631> rdf:type ex:Person, ex:female ;
+  ex:givenName "Amanda" ;
+  ex:surname "Henderson" ;
+  rdfs:label "Amanda Henderson" ;
+  ex:dateOfBirth "1989-11-09"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-635> rdf:type ex:Person, ex:male ;
+  ex:givenName "Nicholas" ;
+  ex:surname "Osborn" ;
+  rdfs:label "Nicholas Osborn" ;
+  ex:dateOfBirth "1991-08-06"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-644> rdf:type ex:Person, ex:female ;
+  ex:givenName "Jennifer" ;
+  ex:surname "Henderson" ;
+  rdfs:label "Jennifer Henderson" ;
+  ex:dateOfBirth "1987-05-11"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-649> rdf:type ex:Person, ex:male ;
+  ex:givenName "Tyler" ;
+  ex:surname "Carter" ;
+  rdfs:label "Tyler Carter" ;
+  ex:dateOfBirth "1990-11-03"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-657> rdf:type ex:Person, ex:female ;
+  ex:givenName "Shirley" ;
+  ex:surname "Hall" ;
+  rdfs:label "Shirley Hall" ;
+  ex:dateOfBirth "1984-12-22"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-658> rdf:type ex:Person, ex:female ;
+  ex:givenName "Erica" ;
+  ex:surname "Hall" ;
+  rdfs:label "Erica Hall" ;
+  ex:dateOfBirth "1985-12-15"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-662> rdf:type ex:Person, ex:male ;
+  ex:givenName "Chad" ;
+  ex:surname "Maldonado" ;
+  rdfs:label "Chad Maldonado" ;
+  ex:dateOfBirth "1985-06-08"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-670> rdf:type ex:Person, ex:male ;
+  ex:givenName "Kevin" ;
+  ex:surname "Ponce" ;
+  rdfs:label "Kevin Ponce" ;
+  ex:dateOfBirth "1984-05-27"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-677> rdf:type ex:Person, ex:female ;
+  ex:givenName "Lisa" ;
+  ex:surname "Collins" ;
+  rdfs:label "Lisa Collins" ;
+  ex:dateOfBirth "1991-07-23"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-686> rdf:type ex:Person, ex:female ;
+  ex:givenName "Stephanie" ;
+  ex:surname "Hamilton" ;
+  rdfs:label "Stephanie Hamilton" ;
+  ex:dateOfBirth "1992-02-13"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-694> rdf:type ex:Person, ex:male ;
+  ex:givenName "Andrew" ;
+  ex:surname "Stephens" ;
+  rdfs:label "Andrew Stephens" ;
+  ex:dateOfBirth "1988-05-01"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-703> rdf:type ex:Person, ex:female ;
+  ex:givenName "Lauren" ;
+  ex:surname "Hamilton" ;
+  rdfs:label "Lauren Hamilton" ;
+  ex:dateOfBirth "1985-02-10"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-706> rdf:type ex:Person, ex:female ;
+  ex:givenName "Sherri" ;
+  ex:surname "Hamilton" ;
+  rdfs:label "Sherri Hamilton" ;
+  ex:dateOfBirth "1984-10-21"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-707> rdf:type ex:Person, ex:female ;
+  ex:givenName "Danielle" ;
+  ex:surname "Hamilton" ;
+  rdfs:label "Danielle Hamilton" ;
+  ex:dateOfBirth "1988-04-10"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-713> rdf:type ex:Person, ex:male ;
+  ex:givenName "Matthew" ;
+  ex:surname "Cunningham" ;
+  rdfs:label "Matthew Cunningham" ;
+  ex:dateOfBirth "1985-02-11"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-720> rdf:type ex:Person, ex:male ;
+  ex:givenName "Lee" ;
+  ex:surname "Sandoval" ;
+  rdfs:label "Lee Sandoval" ;
+  ex:dateOfBirth "1993-02-25"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-724> rdf:type ex:Person, ex:female ;
+  ex:givenName "Annette" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Annette Blanchard" ;
+  ex:dateOfBirth "1987-05-09"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-733> rdf:type ex:Person, ex:female ;
+  ex:givenName "Abigail" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Abigail Blanchard" ;
+  ex:dateOfBirth "1987-04-19"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-740> rdf:type ex:Person, ex:female ;
+  ex:givenName "Jenny" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Jenny Blanchard" ;
+  ex:dateOfBirth "1986-10-28"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-748> rdf:type ex:Person, ex:male ;
+  ex:givenName "Jason" ;
+  ex:surname "Lamb" ;
+  rdfs:label "Jason Lamb" ;
+  ex:dateOfBirth "1987-07-10"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-753> rdf:type ex:Person, ex:male ;
+  ex:givenName "Dwayne" ;
+  ex:surname "Wilson" ;
+  rdfs:label "Dwayne Wilson" ;
+  ex:dateOfBirth "1992-08-08"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-760> rdf:type ex:Person, ex:female ;
+  ex:givenName "Sheila" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Sheila Blanchard" ;
+  ex:dateOfBirth "1985-05-24"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-761> rdf:type ex:Person, ex:male ;
+  ex:givenName "Donald" ;
+  ex:surname "Walton" ;
+  rdfs:label "Donald Walton" ;
+  ex:dateOfBirth "1989-07-02"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-769> rdf:type ex:Person, ex:male ;
+  ex:givenName "Roger" ;
+  ex:surname "Clark" ;
+  rdfs:label "Roger Clark" ;
+  ex:dateOfBirth "1987-10-13"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-775> rdf:type ex:Person, ex:male ;
+  ex:givenName "Bradley" ;
+  ex:surname "Bailey" ;
+  rdfs:label "Bradley Bailey" ;
+  ex:dateOfBirth "1983-01-23"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-778> rdf:type ex:Person, ex:female ;
+  ex:givenName "Donna" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Donna Blanchard" ;
+  ex:dateOfBirth "1991-07-18"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-783> rdf:type ex:Person, ex:female ;
+  ex:givenName "Carolyn" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Carolyn Blanchard" ;
+  ex:dateOfBirth "1989-01-09"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-789> rdf:type ex:Person, ex:male ;
+  ex:givenName "Mark" ;
+  ex:surname "Franklin" ;
+  rdfs:label "Mark Franklin" ;
+  ex:dateOfBirth "1985-03-03"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-796> rdf:type ex:Person, ex:male ;
+  ex:givenName "Daniel" ;
+  ex:surname "Morton" ;
+  rdfs:label "Daniel Morton" ;
+  ex:dateOfBirth "1986-12-15"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-802> rdf:type ex:Person, ex:female ;
+  ex:givenName "Erica" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Erica Blanchard" ;
+  ex:dateOfBirth "1986-03-20"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-810> rdf:type ex:Person, ex:male ;
+  ex:givenName "David" ;
+  ex:surname "Carson" ;
+  rdfs:label "David Carson" ;
+  ex:dateOfBirth "1987-07-01"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-818> rdf:type ex:Person, ex:male ;
+  ex:givenName "Jeffrey" ;
+  ex:surname "Peters" ;
+  rdfs:label "Jeffrey Peters" ;
+  ex:dateOfBirth "1984-05-09"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-825> rdf:type ex:Person, ex:male ;
+  ex:givenName "Bobby" ;
+  ex:surname "Fleming" ;
+  rdfs:label "Bobby Fleming" ;
+  ex:dateOfBirth "1985-12-15"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-829> rdf:type ex:Person, ex:female ;
+  ex:givenName "Robin" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Robin Blanchard" ;
+  ex:dateOfBirth "1990-01-01"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-838> rdf:type ex:Person, ex:female ;
+  ex:givenName "Jennifer" ;
+  ex:surname "Brock" ;
+  rdfs:label "Jennifer Brock" ;
+  ex:dateOfBirth "1991-09-28"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-845> rdf:type ex:Person, ex:male ;
+  ex:givenName "Jason" ;
+  ex:surname "Fisher" ;
+  rdfs:label "Jason Fisher" ;
+  ex:dateOfBirth "1987-09-25"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-850> rdf:type ex:Person, ex:female ;
+  ex:givenName "Michelle" ;
+  ex:surname "Brock" ;
+  rdfs:label "Michelle Brock" ;
+  ex:dateOfBirth "1990-01-02"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-854> rdf:type ex:Person, ex:male ;
+  ex:givenName "Jonathan" ;
+  ex:surname "Preston" ;
+  rdfs:label "Jonathan Preston" ;
+  ex:dateOfBirth "1986-12-16"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-860> rdf:type ex:Person, ex:male ;
+  ex:givenName "David" ;
+  ex:surname "Baker" ;
+  rdfs:label "David Baker" ;
+  ex:dateOfBirth "1987-05-06"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-865> rdf:type ex:Person, ex:male ;
+  ex:givenName "Warren" ;
+  ex:surname "Lopez" ;
+  rdfs:label "Warren Lopez" ;
+  ex:dateOfBirth "1992-08-06"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-868> rdf:type ex:Person, ex:male ;
+  ex:givenName "Craig" ;
+  ex:surname "Walker" ;
+  rdfs:label "Craig Walker" ;
+  ex:dateOfBirth "1987-05-16"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-873> rdf:type ex:Person, ex:male ;
+  ex:givenName "Scott" ;
+  ex:surname "Avila" ;
+  rdfs:label "Scott Avila" ;
+  ex:dateOfBirth "1983-09-28"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-880> rdf:type ex:Person, ex:female ;
+  ex:givenName "Kendra" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Kendra Blanchard" ;
+  ex:dateOfBirth "1987-05-09"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-884> rdf:type ex:Person, ex:female ;
+  ex:givenName "Jessica" ;
+  ex:surname "Kelly" ;
+  rdfs:label "Jessica Kelly" ;
+  ex:dateOfBirth "1985-05-10"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-891> rdf:type ex:Person, ex:female ;
+  ex:givenName "Alexis" ;
+  ex:surname "Kelly" ;
+  rdfs:label "Alexis Kelly" ;
+  ex:dateOfBirth "1988-08-16"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-896> rdf:type ex:Person, ex:male ;
+  ex:givenName "Greg" ;
+  ex:surname "Tran" ;
+  rdfs:label "Greg Tran" ;
+  ex:dateOfBirth "1987-05-13"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-899> rdf:type ex:Person, ex:male ;
+  ex:givenName "Scott" ;
+  ex:surname "Campos" ;
+  rdfs:label "Scott Campos" ;
+  ex:dateOfBirth "1989-03-22"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-908> rdf:type ex:Person, ex:male ;
+  ex:givenName "Jesse" ;
+  ex:surname "Powers" ;
+  rdfs:label "Jesse Powers" ;
+  ex:dateOfBirth "1989-10-16"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-913> rdf:type ex:Person, ex:female ;
+  ex:givenName "Rose" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Rose Blanchard" ;
+  ex:dateOfBirth "1988-08-04"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-918> rdf:type ex:Person, ex:female ;
+  ex:givenName "Zoe" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Zoe Blanchard" ;
+  ex:dateOfBirth "1983-12-03"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-924> rdf:type ex:Person, ex:male ;
+  ex:givenName "Patrick" ;
+  ex:surname "Juarez" ;
+  rdfs:label "Patrick Juarez" ;
+  ex:dateOfBirth "1985-05-07"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-925> rdf:type ex:Person, ex:female ;
+  ex:givenName "Sandy" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Sandy Blanchard" ;
+  ex:dateOfBirth "1989-09-03"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-934> rdf:type ex:Person, ex:male ;
+  ex:givenName "Gregory" ;
+  ex:surname "Burton" ;
+  rdfs:label "Gregory Burton" ;
+  ex:dateOfBirth "1983-07-06"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-940> rdf:type ex:Person, ex:male ;
+  ex:givenName "William" ;
+  ex:surname "Hart" ;
+  rdfs:label "William Hart" ;
+  ex:dateOfBirth "1985-01-23"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-948> rdf:type ex:Person, ex:male ;
+  ex:givenName "Jimmy" ;
+  ex:surname "Simpson" ;
+  rdfs:label "Jimmy Simpson" ;
+  ex:dateOfBirth "1989-04-10"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-951> rdf:type ex:Person, ex:female ;
+  ex:givenName "Mindy" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Mindy Blanchard" ;
+  ex:dateOfBirth "1983-05-01"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-955> rdf:type ex:Person, ex:male ;
+  ex:givenName "Michael" ;
+  ex:surname "Dunn" ;
+  rdfs:label "Michael Dunn" ;
+  ex:dateOfBirth "1986-12-24"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-963> rdf:type ex:Person, ex:female ;
+  ex:givenName "Shelly" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Shelly Blanchard" ;
+  ex:dateOfBirth "1983-12-03"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-972> rdf:type ex:Person, ex:male ;
+  ex:givenName "Daniel" ;
+  ex:surname "Knapp" ;
+  rdfs:label "Daniel Knapp" ;
+  ex:dateOfBirth "1986-10-15"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-980> rdf:type ex:Person, ex:female ;
+  ex:givenName "Kristy" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Kristy Blanchard" ;
+  ex:dateOfBirth "1992-06-16"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-981> rdf:type ex:Person, ex:female ;
+  ex:givenName "Jody" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Jody Blanchard" ;
+  ex:dateOfBirth "1991-10-05"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-989> rdf:type ex:Person, ex:female ;
+  ex:givenName "Sierra" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Sierra Blanchard" ;
+  ex:dateOfBirth "1989-11-07"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-994> rdf:type ex:Person, ex:male ;
+  ex:givenName "Pedro" ;
+  ex:surname "Macias" ;
+  rdfs:label "Pedro Macias" ;
+  ex:dateOfBirth "1983-11-21"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-998> rdf:type ex:Person, ex:female ;
+  ex:givenName "Jillian" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Jillian Blanchard" ;
+  ex:dateOfBirth "1984-01-04"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1005> rdf:type ex:Person, ex:female ;
+  ex:givenName "Paige" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Paige Blanchard" ;
+  ex:dateOfBirth "1983-06-14"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1014> rdf:type ex:Person, ex:female ;
+  ex:givenName "Jean" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Jean Blanchard" ;
+  ex:dateOfBirth "1989-02-01"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1022> rdf:type ex:Person, ex:female ;
+  ex:givenName "Cassie" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Cassie Blanchard" ;
+  ex:dateOfBirth "1983-02-01"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1031> rdf:type ex:Person, ex:female ;
+  ex:givenName "Phyllis" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Phyllis Blanchard" ;
+  ex:dateOfBirth "1983-11-27"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1039> rdf:type ex:Person, ex:male ;
+  ex:givenName "Joseph" ;
+  ex:surname "Moran" ;
+  rdfs:label "Joseph Moran" ;
+  ex:dateOfBirth "1984-01-24"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1045> rdf:type ex:Person, ex:female ;
+  ex:givenName "Cathy" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Cathy Blanchard" ;
+  ex:dateOfBirth "1983-08-01"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1050> rdf:type ex:Person, ex:male ;
+  ex:givenName "David" ;
+  ex:surname "Casey" ;
+  rdfs:label "David Casey" ;
+  ex:dateOfBirth "1993-10-18"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1054> rdf:type ex:Person, ex:female ;
+  ex:givenName "Beverly" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Beverly Blanchard" ;
+  ex:dateOfBirth "1983-01-21"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1057> rdf:type ex:Person, ex:male ;
+  ex:givenName "David" ;
+  ex:surname "Ortiz" ;
+  rdfs:label "David Ortiz" ;
+  ex:dateOfBirth "1984-02-11"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1060> rdf:type ex:Person, ex:male ;
+  ex:givenName "Philip" ;
+  ex:surname "Cook" ;
+  rdfs:label "Philip Cook" ;
+  ex:dateOfBirth "1989-08-07"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1064> rdf:type ex:Person, ex:male ;
+  ex:givenName "Nathan" ;
+  ex:surname "Goodwin" ;
+  rdfs:label "Nathan Goodwin" ;
+  ex:dateOfBirth "1984-07-02"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1073> rdf:type ex:Person, ex:female ;
+  ex:givenName "Erika" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Erika Blanchard" ;
+  ex:dateOfBirth "1990-12-23"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1079> rdf:type ex:Person, ex:male ;
+  ex:givenName "Robert" ;
+  ex:surname "Roberts" ;
+  rdfs:label "Robert Roberts" ;
+  ex:dateOfBirth "1986-11-12"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1088> rdf:type ex:Person, ex:male ;
+  ex:givenName "Richard" ;
+  ex:surname "Barnes" ;
+  rdfs:label "Richard Barnes" ;
+  ex:dateOfBirth "1992-11-22"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1091> rdf:type ex:Person, ex:male ;
+  ex:givenName "Brian" ;
+  ex:surname "Moore" ;
+  rdfs:label "Brian Moore" ;
+  ex:dateOfBirth "1993-08-14"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1098> rdf:type ex:Person, ex:male ;
+  ex:givenName "Gregory" ;
+  ex:surname "Perez" ;
+  rdfs:label "Gregory Perez" ;
+  ex:dateOfBirth "1993-03-07"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1105> rdf:type ex:Person, ex:male ;
+  ex:givenName "Christopher" ;
+  ex:surname "Dillon" ;
+  rdfs:label "Christopher Dillon" ;
+  ex:dateOfBirth "1992-07-10"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1112> rdf:type ex:Person, ex:male ;
+  ex:givenName "Todd" ;
+  ex:surname "Zimmerman" ;
+  rdfs:label "Todd Zimmerman" ;
+  ex:dateOfBirth "1984-09-28"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1113> rdf:type ex:Person, ex:male ;
+  ex:givenName "John" ;
+  ex:surname "Hill" ;
+  rdfs:label "John Hill" ;
+  ex:dateOfBirth "1987-04-23"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1122> rdf:type ex:Person, ex:female ;
+  ex:givenName "Alexis" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Alexis Blanchard" ;
+  ex:dateOfBirth "1988-10-04"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1127> rdf:type ex:Person, ex:male ;
+  ex:givenName "David" ;
+  ex:surname "Middleton" ;
+  rdfs:label "David Middleton" ;
+  ex:dateOfBirth "1983-11-04"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1134> rdf:type ex:Person, ex:male ;
+  ex:givenName "Brian" ;
+  ex:surname "Tucker" ;
+  rdfs:label "Brian Tucker" ;
+  ex:dateOfBirth "1989-10-14"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1142> rdf:type ex:Person, ex:male ;
+  ex:givenName "Marc" ;
+  ex:surname "Cain" ;
+  rdfs:label "Marc Cain" ;
+  ex:dateOfBirth "1986-12-05"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1147> rdf:type ex:Person, ex:female ;
+  ex:givenName "Kristie" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Kristie Blanchard" ;
+  ex:dateOfBirth "1983-07-03"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1155> rdf:type ex:Person, ex:female ;
+  ex:givenName "Joanna" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Joanna Blanchard" ;
+  ex:dateOfBirth "1987-09-04"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1158> rdf:type ex:Person, ex:male ;
+  ex:givenName "Stephen" ;
+  ex:surname "Webb" ;
+  rdfs:label "Stephen Webb" ;
+  ex:dateOfBirth "1984-09-10"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1159> rdf:type ex:Person, ex:female ;
+  ex:givenName "Wanda" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Wanda Blanchard" ;
+  ex:dateOfBirth "1990-12-27"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1167> rdf:type ex:Person, ex:female ;
+  ex:givenName "Jackie" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Jackie Blanchard" ;
+  ex:dateOfBirth "1993-01-06"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1170> rdf:type ex:Person, ex:male ;
+  ex:givenName "Lee" ;
+  ex:surname "Frye" ;
+  rdfs:label "Lee Frye" ;
+  ex:dateOfBirth "1987-12-02"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1179> rdf:type ex:Person, ex:male ;
+  ex:givenName "James" ;
+  ex:surname "Morse" ;
+  rdfs:label "James Morse" ;
+  ex:dateOfBirth "1985-02-23"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1185> rdf:type ex:Person, ex:female ;
+  ex:givenName "Marilyn" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Marilyn Blanchard" ;
+  ex:dateOfBirth "1984-04-04"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1192> rdf:type ex:Person, ex:female ;
+  ex:givenName "Natasha" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Natasha Blanchard" ;
+  ex:dateOfBirth "1987-03-07"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1200> rdf:type ex:Person, ex:male ;
+  ex:givenName "John" ;
+  ex:surname "Reese" ;
+  rdfs:label "John Reese" ;
+  ex:dateOfBirth "1991-11-18"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1205> rdf:type ex:Person, ex:female ;
+  ex:givenName "Veronica" ;
+  ex:surname "Blanchard" ;
+  rdfs:label "Veronica Blanchard" ;
+  ex:dateOfBirth "1984-09-02"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1209> rdf:type ex:Person, ex:male ;
+  ex:givenName "Gary" ;
+  ex:surname "Walters" ;
+  rdfs:label "Gary Walters" ;
+  ex:dateOfBirth "1985-07-07"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1215> rdf:type ex:Person, ex:male ;
+  ex:givenName "Thomas" ;
+  ex:surname "Chase" ;
+  rdfs:label "Thomas Chase" ;
+  ex:dateOfBirth "1992-09-08"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1224> rdf:type ex:Person, ex:female ;
+  ex:givenName "Amber" ;
+  ex:surname "Jackson" ;
+  rdfs:label "Amber Jackson" ;
+  ex:dateOfBirth "1993-10-18"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1229> rdf:type ex:Person, ex:female ;
+  ex:givenName "Cindy" ;
+  ex:surname "Jackson" ;
+  rdfs:label "Cindy Jackson" ;
+  ex:dateOfBirth "1985-02-06"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1232> rdf:type ex:Person, ex:female ;
+  ex:givenName "Ashlee" ;
+  ex:surname "Dorsey" ;
+  rdfs:label "Ashlee Dorsey" ;
+  ex:dateOfBirth "1985-10-24"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1239> rdf:type ex:Person, ex:male ;
+  ex:givenName "Michael" ;
+  ex:surname "Howard" ;
+  rdfs:label "Michael Howard" ;
+  ex:dateOfBirth "1988-12-20"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1246> rdf:type ex:Person, ex:female ;
+  ex:givenName "Catherine" ;
+  ex:surname "Dorsey" ;
+  rdfs:label "Catherine Dorsey" ;
+  ex:dateOfBirth "1987-11-16"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1252> rdf:type ex:Person, ex:male ;
+  ex:givenName "Bill" ;
+  ex:surname "Drake" ;
+  rdfs:label "Bill Drake" ;
+  ex:dateOfBirth "1993-11-26"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1255> rdf:type ex:Person, ex:female ;
+  ex:givenName "Cassandra" ;
+  ex:surname "Dorsey" ;
+  rdfs:label "Cassandra Dorsey" ;
+  ex:dateOfBirth "1989-11-02"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1259> rdf:type ex:Person, ex:female ;
+  ex:givenName "Kelly" ;
+  ex:surname "Dorsey" ;
+  rdfs:label "Kelly Dorsey" ;
+  ex:dateOfBirth "1985-10-06"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1265> rdf:type ex:Person, ex:male ;
+  ex:givenName "Mark" ;
+  ex:surname "Woods" ;
+  rdfs:label "Mark Woods" ;
+  ex:dateOfBirth "1985-10-03"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1269> rdf:type ex:Person, ex:male ;
+  ex:givenName "Thomas" ;
+  ex:surname "Weaver" ;
+  rdfs:label "Thomas Weaver" ;
+  ex:dateOfBirth "1992-08-28"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1277> rdf:type ex:Person, ex:female ;
+  ex:givenName "Sarah" ;
+  ex:surname "Brooks" ;
+  rdfs:label "Sarah Brooks" ;
+  ex:dateOfBirth "1988-11-21"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1284> rdf:type ex:Person, ex:female ;
+  ex:givenName "Jessica" ;
+  ex:surname "Brooks" ;
+  rdfs:label "Jessica Brooks" ;
+  ex:dateOfBirth "1988-10-22"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1290> rdf:type ex:Person, ex:male ;
+  ex:givenName "Charles" ;
+  ex:surname "Tapia" ;
+  rdfs:label "Charles Tapia" ;
+  ex:dateOfBirth "1991-07-26"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1298> rdf:type ex:Person, ex:female ;
+  ex:givenName "Misty" ;
+  ex:surname "Brooks" ;
+  rdfs:label "Misty Brooks" ;
+  ex:dateOfBirth "1987-03-18"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1307> rdf:type ex:Person, ex:male ;
+  ex:givenName "Wesley" ;
+  ex:surname "Mcgee" ;
+  rdfs:label "Wesley Mcgee" ;
+  ex:dateOfBirth "1987-05-27"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1313> rdf:type ex:Person, ex:male ;
+  ex:givenName "Adam" ;
+  ex:surname "Diaz" ;
+  rdfs:label "Adam Diaz" ;
+  ex:dateOfBirth "1983-03-28"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1319> rdf:type ex:Person, ex:female ;
+  ex:givenName "Sharon" ;
+  ex:surname "Lyons" ;
+  rdfs:label "Sharon Lyons" ;
+  ex:dateOfBirth "1989-03-24"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1326> rdf:type ex:Person, ex:male ;
+  ex:givenName "Fred" ;
+  ex:surname "Pham" ;
+  rdfs:label "Fred Pham" ;
+  ex:dateOfBirth "1983-06-02"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1331> rdf:type ex:Person, ex:male ;
+  ex:givenName "Antonio" ;
+  ex:surname "Ward" ;
+  rdfs:label "Antonio Ward" ;
+  ex:dateOfBirth "1988-02-04"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1340> rdf:type ex:Person, ex:male ;
+  ex:givenName "Joseph" ;
+  ex:surname "Holland" ;
+  rdfs:label "Joseph Holland" ;
+  ex:dateOfBirth "1984-03-01"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1348> rdf:type ex:Person, ex:female ;
+  ex:givenName "Melanie" ;
+  ex:surname "Newton" ;
+  rdfs:label "Melanie Newton" ;
+  ex:dateOfBirth "1987-01-08"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1355> rdf:type ex:Person, ex:male ;
+  ex:givenName "David" ;
+  ex:surname "Miles" ;
+  rdfs:label "David Miles" ;
+  ex:dateOfBirth "1984-04-11"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1364> rdf:type ex:Person, ex:female ;
+  ex:givenName "Tracy" ;
+  ex:surname "Newton" ;
+  rdfs:label "Tracy Newton" ;
+  ex:dateOfBirth "1987-07-03"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1371> rdf:type ex:Person, ex:female ;
+  ex:givenName "Robin" ;
+  ex:surname "Newton" ;
+  rdfs:label "Robin Newton" ;
+  ex:dateOfBirth "1991-07-13"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1378> rdf:type ex:Person, ex:female ;
+  ex:givenName "Teresa" ;
+  ex:surname "Newton" ;
+  rdfs:label "Teresa Newton" ;
+  ex:dateOfBirth "1993-02-21"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1382> rdf:type ex:Person, ex:male ;
+  ex:givenName "Robert" ;
+  ex:surname "Pitts" ;
+  rdfs:label "Robert Pitts" ;
+  ex:dateOfBirth "1983-10-15"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1383> rdf:type ex:Person, ex:male ;
+  ex:givenName "Troy" ;
+  ex:surname "Fox" ;
+  rdfs:label "Troy Fox" ;
+  ex:dateOfBirth "1984-11-27"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1386> rdf:type ex:Person, ex:male ;
+  ex:givenName "Gregory" ;
+  ex:surname "Cross" ;
+  rdfs:label "Gregory Cross" ;
+  ex:dateOfBirth "1985-08-20"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1392> rdf:type ex:Person, ex:male ;
+  ex:givenName "Michael" ;
+  ex:surname "Perry" ;
+  rdfs:label "Michael Perry" ;
+  ex:dateOfBirth "1990-09-02"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1397> rdf:type ex:Person, ex:male ;
+  ex:givenName "Michael" ;
+  ex:surname "Underwood" ;
+  rdfs:label "Michael Underwood" ;
+  ex:dateOfBirth "1988-05-03"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1401> rdf:type ex:Person, ex:female ;
+  ex:givenName "Katherine" ;
+  ex:surname "Foster" ;
+  rdfs:label "Katherine Foster" ;
+  ex:dateOfBirth "1985-01-02"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1405> rdf:type ex:Person, ex:female ;
+  ex:givenName "Cindy" ;
+  ex:surname "Foster" ;
+  rdfs:label "Cindy Foster" ;
+  ex:dateOfBirth "1988-09-12"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-1412> rdf:type ex:Person, ex:female ;
+  ex:givenName "Jessica" ;
+  ex:surname "Foster" ;
+  rdfs:label "Jessica Foster" ;
+  ex:dateOfBirth "1988-06-27"^^xsd:date ;
+  .
+
+<http://example.org/family/person/0-0> ex:parentOf <http://example.org/family/person/0-2> .
+<http://example.org/family/person/0-0> ex:parentOf <http://example.org/family/person/0-3> .
+<http://example.org/family/person/0-0> ex:parentOf <http://example.org/family/person/0-4> .
+<http://example.org/family/person/0-0> ex:parentOf <http://example.org/family/person/0-5> .
+<http://example.org/family/person/0-0> ex:parentOf <http://example.org/family/person/0-6> .
+<http://example.org/family/person/0-0> ex:parentOf <http://example.org/family/person/0-7> .
+<http://example.org/family/person/0-0> ex:parentOf <http://example.org/family/person/0-8> .
+<http://example.org/family/person/0-0> ex:parentOf <http://example.org/family/person/0-9> .
+<http://example.org/family/person/0-1> ex:parentOf <http://example.org/family/person/0-2> .
+<http://example.org/family/person/0-1> ex:parentOf <http://example.org/family/person/0-3> .
+<http://example.org/family/person/0-1> ex:parentOf <http://example.org/family/person/0-4> .
+<http://example.org/family/person/0-1> ex:parentOf <http://example.org/family/person/0-5> .
+<http://example.org/family/person/0-1> ex:parentOf <http://example.org/family/person/0-6> .
+<http://example.org/family/person/0-1> ex:parentOf <http://example.org/family/person/0-7> .
+<http://example.org/family/person/0-1> ex:parentOf <http://example.org/family/person/0-8> .
+<http://example.org/family/person/0-1> ex:parentOf <http://example.org/family/person/0-9> .
+<http://example.org/family/person/0-2> ex:parentOf <http://example.org/family/person/0-11> .
+<http://example.org/family/person/0-2> ex:parentOf <http://example.org/family/person/0-12> .
+<http://example.org/family/person/0-3> ex:parentOf <http://example.org/family/person/0-14> .
+<http://example.org/family/person/0-3> ex:parentOf <http://example.org/family/person/0-15> .
+<http://example.org/family/person/0-3> ex:parentOf <http://example.org/family/person/0-16> .
+<http://example.org/family/person/0-4> ex:parentOf <http://example.org/family/person/0-18> .
+<http://example.org/family/person/0-4> ex:parentOf <http://example.org/family/person/0-19> .
+<http://example.org/family/person/0-4> ex:parentOf <http://example.org/family/person/0-20> .
+<http://example.org/family/person/0-4> ex:parentOf <http://example.org/family/person/0-21> .
+<http://example.org/family/person/0-4> ex:parentOf <http://example.org/family/person/0-22> .
+<http://example.org/family/person/0-4> ex:parentOf <http://example.org/family/person/0-23> .
+<http://example.org/family/person/0-5> ex:parentOf <http://example.org/family/person/0-25> .
+<http://example.org/family/person/0-5> ex:parentOf <http://example.org/family/person/0-26> .
+<http://example.org/family/person/0-5> ex:parentOf <http://example.org/family/person/0-27> .
+<http://example.org/family/person/0-5> ex:parentOf <http://example.org/family/person/0-28> .
+<http://example.org/family/person/0-5> ex:parentOf <http://example.org/family/person/0-29> .
+<http://example.org/family/person/0-5> ex:parentOf <http://example.org/family/person/0-30> .
+<http://example.org/family/person/0-5> ex:parentOf <http://example.org/family/person/0-31> .
+<http://example.org/family/person/0-5> ex:parentOf <http://example.org/family/person/0-32> .
+<http://example.org/family/person/0-6> ex:parentOf <http://example.org/family/person/0-34> .
+<http://example.org/family/person/0-6> ex:parentOf <http://example.org/family/person/0-35> .
+<http://example.org/family/person/0-6> ex:parentOf <http://example.org/family/person/0-36> .
+<http://example.org/family/person/0-6> ex:parentOf <http://example.org/family/person/0-37> .
+<http://example.org/family/person/0-7> ex:parentOf <http://example.org/family/person/0-39> .
+<http://example.org/family/person/0-7> ex:parentOf <http://example.org/family/person/0-40> .
+<http://example.org/family/person/0-7> ex:parentOf <http://example.org/family/person/0-41> .
+<http://example.org/family/person/0-8> ex:parentOf <http://example.org/family/person/0-43> .
+<http://example.org/family/person/0-8> ex:parentOf <http://example.org/family/person/0-44> .
+<http://example.org/family/person/0-8> ex:parentOf <http://example.org/family/person/0-45> .
+<http://example.org/family/person/0-8> ex:parentOf <http://example.org/family/person/0-46> .
+<http://example.org/family/person/0-8> ex:parentOf <http://example.org/family/person/0-47> .
+<http://example.org/family/person/0-8> ex:parentOf <http://example.org/family/person/0-48> .
+<http://example.org/family/person/0-8> ex:parentOf <http://example.org/family/person/0-49> .
+<http://example.org/family/person/0-9> ex:parentOf <http://example.org/family/person/0-51> .
+<http://example.org/family/person/0-9> ex:parentOf <http://example.org/family/person/0-52> .
+<http://example.org/family/person/0-9> ex:parentOf <http://example.org/family/person/0-53> .
+<http://example.org/family/person/0-9> ex:parentOf <http://example.org/family/person/0-54> .
+<http://example.org/family/person/0-9> ex:parentOf <http://example.org/family/person/0-55> .
+<http://example.org/family/person/0-9> ex:parentOf <http://example.org/family/person/0-56> .
+<http://example.org/family/person/0-10> ex:parentOf <http://example.org/family/person/0-11> .
+<http://example.org/family/person/0-10> ex:parentOf <http://example.org/family/person/0-12> .
+<http://example.org/family/person/0-11> ex:parentOf <http://example.org/family/person/0-58> .
+<http://example.org/family/person/0-11> ex:parentOf <http://example.org/family/person/0-59> .
+<http://example.org/family/person/0-11> ex:parentOf <http://example.org/family/person/0-60> .
+<http://example.org/family/person/0-11> ex:parentOf <http://example.org/family/person/0-61> .
+<http://example.org/family/person/0-11> ex:parentOf <http://example.org/family/person/0-62> .
+<http://example.org/family/person/0-11> ex:parentOf <http://example.org/family/person/0-63> .
+<http://example.org/family/person/0-11> ex:parentOf <http://example.org/family/person/0-64> .
+<http://example.org/family/person/0-12> ex:parentOf <http://example.org/family/person/0-66> .
+<http://example.org/family/person/0-12> ex:parentOf <http://example.org/family/person/0-67> .
+<http://example.org/family/person/0-12> ex:parentOf <http://example.org/family/person/0-68> .
+<http://example.org/family/person/0-12> ex:parentOf <http://example.org/family/person/0-69> .
+<http://example.org/family/person/0-12> ex:parentOf <http://example.org/family/person/0-70> .
+<http://example.org/family/person/0-12> ex:parentOf <http://example.org/family/person/0-71> .
+<http://example.org/family/person/0-12> ex:parentOf <http://example.org/family/person/0-72> .
+<http://example.org/family/person/0-12> ex:parentOf <http://example.org/family/person/0-73> .
+<http://example.org/family/person/0-13> ex:parentOf <http://example.org/family/person/0-14> .
+<http://example.org/family/person/0-13> ex:parentOf <http://example.org/family/person/0-15> .
+<http://example.org/family/person/0-13> ex:parentOf <http://example.org/family/person/0-16> .
+<http://example.org/family/person/0-14> ex:parentOf <http://example.org/family/person/0-75> .
+<http://example.org/family/person/0-14> ex:parentOf <http://example.org/family/person/0-76> .
+<http://example.org/family/person/0-14> ex:parentOf <http://example.org/family/person/0-77> .
+<http://example.org/family/person/0-14> ex:parentOf <http://example.org/family/person/0-78> .
+<http://example.org/family/person/0-14> ex:parentOf <http://example.org/family/person/0-79> .
+<http://example.org/family/person/0-14> ex:parentOf <http://example.org/family/person/0-80> .
+<http://example.org/family/person/0-14> ex:parentOf <http://example.org/family/person/0-81> .
+<http://example.org/family/person/0-15> ex:parentOf <http://example.org/family/person/0-83> .
+<http://example.org/family/person/0-15> ex:parentOf <http://example.org/family/person/0-84> .
+<http://example.org/family/person/0-15> ex:parentOf <http://example.org/family/person/0-85> .
+<http://example.org/family/person/0-16> ex:parentOf <http://example.org/family/person/0-87> .
+<http://example.org/family/person/0-16> ex:parentOf <http://example.org/family/person/0-88> .
+<http://example.org/family/person/0-16> ex:parentOf <http://example.org/family/person/0-89> .
+<http://example.org/family/person/0-16> ex:parentOf <http://example.org/family/person/0-90> .
+<http://example.org/family/person/0-16> ex:parentOf <http://example.org/family/person/0-91> .
+<http://example.org/family/person/0-16> ex:parentOf <http://example.org/family/person/0-92> .
+<http://example.org/family/person/0-17> ex:parentOf <http://example.org/family/person/0-18> .
+<http://example.org/family/person/0-17> ex:parentOf <http://example.org/family/person/0-19> .
+<http://example.org/family/person/0-17> ex:parentOf <http://example.org/family/person/0-20> .
+<http://example.org/family/person/0-17> ex:parentOf <http://example.org/family/person/0-21> .
+<http://example.org/family/person/0-17> ex:parentOf <http://example.org/family/person/0-22> .
+<http://example.org/family/person/0-17> ex:parentOf <http://example.org/family/person/0-23> .
+<http://example.org/family/person/0-18> ex:parentOf <http://example.org/family/person/0-94> .
+<http://example.org/family/person/0-18> ex:parentOf <http://example.org/family/person/0-95> .
+<http://example.org/family/person/0-18> ex:parentOf <http://example.org/family/person/0-96> .
+<http://example.org/family/person/0-18> ex:parentOf <http://example.org/family/person/0-97> .
+<http://example.org/family/person/0-18> ex:parentOf <http://example.org/family/person/0-98> .
+<http://example.org/family/person/0-18> ex:parentOf <http://example.org/family/person/0-99> .
+<http://example.org/family/person/0-19> ex:parentOf <http://example.org/family/person/0-101> .
+<http://example.org/family/person/0-19> ex:parentOf <http://example.org/family/person/0-102> .
+<http://example.org/family/person/0-19> ex:parentOf <http://example.org/family/person/0-103> .
+<http://example.org/family/person/0-19> ex:parentOf <http://example.org/family/person/0-104> .
+<http://example.org/family/person/0-19> ex:parentOf <http://example.org/family/person/0-105> .
+<http://example.org/family/person/0-19> ex:parentOf <http://example.org/family/person/0-106> .
+<http://example.org/family/person/0-19> ex:parentOf <http://example.org/family/person/0-107> .
+<http://example.org/family/person/0-20> ex:parentOf <http://example.org/family/person/0-109> .
+<http://example.org/family/person/0-20> ex:parentOf <http://example.org/family/person/0-110> .
+<http://example.org/family/person/0-21> ex:parentOf <http://example.org/family/person/0-112> .
+<http://example.org/family/person/0-21> ex:parentOf <http://example.org/family/person/0-113> .
+<http://example.org/family/person/0-21> ex:parentOf <http://example.org/family/person/0-114> .
+<http://example.org/family/person/0-21> ex:parentOf <http://example.org/family/person/0-115> .
+<http://example.org/family/person/0-21> ex:parentOf <http://example.org/family/person/0-116> .
+<http://example.org/family/person/0-21> ex:parentOf <http://example.org/family/person/0-117> .
+<http://example.org/family/person/0-22> ex:parentOf <http://example.org/family/person/0-119> .
+<http://example.org/family/person/0-22> ex:parentOf <http://example.org/family/person/0-120> .
+<http://example.org/family/person/0-22> ex:parentOf <http://example.org/family/person/0-121> .
+<http://example.org/family/person/0-23> ex:parentOf <http://example.org/family/person/0-123> .
+<http://example.org/family/person/0-23> ex:parentOf <http://example.org/family/person/0-124> .
+<http://example.org/family/person/0-23> ex:parentOf <http://example.org/family/person/0-125> .
+<http://example.org/family/person/0-23> ex:parentOf <http://example.org/family/person/0-126> .
+<http://example.org/family/person/0-23> ex:parentOf <http://example.org/family/person/0-127> .
+<http://example.org/family/person/0-23> ex:parentOf <http://example.org/family/person/0-128> .
+<http://example.org/family/person/0-23> ex:parentOf <http://example.org/family/person/0-129> .
+<http://example.org/family/person/0-23> ex:parentOf <http://example.org/family/person/0-130> .
+<http://example.org/family/person/0-24> ex:parentOf <http://example.org/family/person/0-25> .
+<http://example.org/family/person/0-24> ex:parentOf <http://example.org/family/person/0-26> .
+<http://example.org/family/person/0-24> ex:parentOf <http://example.org/family/person/0-27> .
+<http://example.org/family/person/0-24> ex:parentOf <http://example.org/family/person/0-28> .
+<http://example.org/family/person/0-24> ex:parentOf <http://example.org/family/person/0-29> .
+<http://example.org/family/person/0-24> ex:parentOf <http://example.org/family/person/0-30> .
+<http://example.org/family/person/0-24> ex:parentOf <http://example.org/family/person/0-31> .
+<http://example.org/family/person/0-24> ex:parentOf <http://example.org/family/person/0-32> .
+<http://example.org/family/person/0-25> ex:parentOf <http://example.org/family/person/0-132> .
+<http://example.org/family/person/0-25> ex:parentOf <http://example.org/family/person/0-133> .
+<http://example.org/family/person/0-26> ex:parentOf <http://example.org/family/person/0-135> .
+<http://example.org/family/person/0-26> ex:parentOf <http://example.org/family/person/0-136> .
+<http://example.org/family/person/0-26> ex:parentOf <http://example.org/family/person/0-137> .
+<http://example.org/family/person/0-27> ex:parentOf <http://example.org/family/person/0-139> .
+<http://example.org/family/person/0-27> ex:parentOf <http://example.org/family/person/0-140> .
+<http://example.org/family/person/0-27> ex:parentOf <http://example.org/family/person/0-141> .
+<http://example.org/family/person/0-27> ex:parentOf <http://example.org/family/person/0-142> .
+<http://example.org/family/person/0-27> ex:parentOf <http://example.org/family/person/0-143> .
+<http://example.org/family/person/0-27> ex:parentOf <http://example.org/family/person/0-144> .
+<http://example.org/family/person/0-28> ex:parentOf <http://example.org/family/person/0-146> .
+<http://example.org/family/person/0-28> ex:parentOf <http://example.org/family/person/0-147> .
+<http://example.org/family/person/0-28> ex:parentOf <http://example.org/family/person/0-148> .
+<http://example.org/family/person/0-28> ex:parentOf <http://example.org/family/person/0-149> .
+<http://example.org/family/person/0-28> ex:parentOf <http://example.org/family/person/0-150> .
+<http://example.org/family/person/0-28> ex:parentOf <http://example.org/family/person/0-151> .
+<http://example.org/family/person/0-28> ex:parentOf <http://example.org/family/person/0-152> .
+<http://example.org/family/person/0-29> ex:parentOf <http://example.org/family/person/0-154> .
+<http://example.org/family/person/0-29> ex:parentOf <http://example.org/family/person/0-155> .
+<http://example.org/family/person/0-29> ex:parentOf <http://example.org/family/person/0-156> .
+<http://example.org/family/person/0-29> ex:parentOf <http://example.org/family/person/0-157> .
+<http://example.org/family/person/0-30> ex:parentOf <http://example.org/family/person/0-159> .
+<http://example.org/family/person/0-30> ex:parentOf <http://example.org/family/person/0-160> .
+<http://example.org/family/person/0-30> ex:parentOf <http://example.org/family/person/0-161> .
+<http://example.org/family/person/0-31> ex:parentOf <http://example.org/family/person/0-163> .
+<http://example.org/family/person/0-31> ex:parentOf <http://example.org/family/person/0-164> .
+<http://example.org/family/person/0-32> ex:parentOf <http://example.org/family/person/0-166> .
+<http://example.org/family/person/0-32> ex:parentOf <http://example.org/family/person/0-167> .
+<http://example.org/family/person/0-32> ex:parentOf <http://example.org/family/person/0-168> .
+<http://example.org/family/person/0-33> ex:parentOf <http://example.org/family/person/0-34> .
+<http://example.org/family/person/0-33> ex:parentOf <http://example.org/family/person/0-35> .
+<http://example.org/family/person/0-33> ex:parentOf <http://example.org/family/person/0-36> .
+<http://example.org/family/person/0-33> ex:parentOf <http://example.org/family/person/0-37> .
+<http://example.org/family/person/0-34> ex:parentOf <http://example.org/family/person/0-170> .
+<http://example.org/family/person/0-34> ex:parentOf <http://example.org/family/person/0-171> .
+<http://example.org/family/person/0-34> ex:parentOf <http://example.org/family/person/0-172> .
+<http://example.org/family/person/0-34> ex:parentOf <http://example.org/family/person/0-173> .
+<http://example.org/family/person/0-35> ex:parentOf <http://example.org/family/person/0-175> .
+<http://example.org/family/person/0-35> ex:parentOf <http://example.org/family/person/0-176> .
+<http://example.org/family/person/0-35> ex:parentOf <http://example.org/family/person/0-177> .
+<http://example.org/family/person/0-35> ex:parentOf <http://example.org/family/person/0-178> .
+<http://example.org/family/person/0-35> ex:parentOf <http://example.org/family/person/0-179> .
+<http://example.org/family/person/0-36> ex:parentOf <http://example.org/family/person/0-181> .
+<http://example.org/family/person/0-36> ex:parentOf <http://example.org/family/person/0-182> .
+<http://example.org/family/person/0-36> ex:parentOf <http://example.org/family/person/0-183> .
+<http://example.org/family/person/0-37> ex:parentOf <http://example.org/family/person/0-185> .
+<http://example.org/family/person/0-37> ex:parentOf <http://example.org/family/person/0-186> .
+<http://example.org/family/person/0-37> ex:parentOf <http://example.org/family/person/0-187> .
+<http://example.org/family/person/0-37> ex:parentOf <http://example.org/family/person/0-188> .
+<http://example.org/family/person/0-37> ex:parentOf <http://example.org/family/person/0-189> .
+<http://example.org/family/person/0-37> ex:parentOf <http://example.org/family/person/0-190> .
+<http://example.org/family/person/0-38> ex:parentOf <http://example.org/family/person/0-39> .
+<http://example.org/family/person/0-38> ex:parentOf <http://example.org/family/person/0-40> .
+<http://example.org/family/person/0-38> ex:parentOf <http://example.org/family/person/0-41> .
+<http://example.org/family/person/0-39> ex:parentOf <http://example.org/family/person/0-192> .
+<http://example.org/family/person/0-39> ex:parentOf <http://example.org/family/person/0-193> .
+<http://example.org/family/person/0-40> ex:parentOf <http://example.org/family/person/0-195> .
+<http://example.org/family/person/0-40> ex:parentOf <http://example.org/family/person/0-196> .
+<http://example.org/family/person/0-40> ex:parentOf <http://example.org/family/person/0-197> .
+<http://example.org/family/person/0-40> ex:parentOf <http://example.org/family/person/0-198> .
+<http://example.org/family/person/0-40> ex:parentOf <http://example.org/family/person/0-199> .
+<http://example.org/family/person/0-40> ex:parentOf <http://example.org/family/person/0-200> .
+<http://example.org/family/person/0-40> ex:parentOf <http://example.org/family/person/0-201> .
+<http://example.org/family/person/0-40> ex:parentOf <http://example.org/family/person/0-202> .
+<http://example.org/family/person/0-41> ex:parentOf <http://example.org/family/person/0-204> .
+<http://example.org/family/person/0-41> ex:parentOf <http://example.org/family/person/0-205> .
+<http://example.org/family/person/0-41> ex:parentOf <http://example.org/family/person/0-206> .
+<http://example.org/family/person/0-41> ex:parentOf <http://example.org/family/person/0-207> .
+<http://example.org/family/person/0-41> ex:parentOf <http://example.org/family/person/0-208> .
+<http://example.org/family/person/0-41> ex:parentOf <http://example.org/family/person/0-209> .
+<http://example.org/family/person/0-42> ex:parentOf <http://example.org/family/person/0-43> .
+<http://example.org/family/person/0-42> ex:parentOf <http://example.org/family/person/0-44> .
+<http://example.org/family/person/0-42> ex:parentOf <http://example.org/family/person/0-45> .
+<http://example.org/family/person/0-42> ex:parentOf <http://example.org/family/person/0-46> .
+<http://example.org/family/person/0-42> ex:parentOf <http://example.org/family/person/0-47> .
+<http://example.org/family/person/0-42> ex:parentOf <http://example.org/family/person/0-48> .
+<http://example.org/family/person/0-42> ex:parentOf <http://example.org/family/person/0-49> .
+<http://example.org/family/person/0-43> ex:parentOf <http://example.org/family/person/0-211> .
+<http://example.org/family/person/0-43> ex:parentOf <http://example.org/family/person/0-212> .
+<http://example.org/family/person/0-43> ex:parentOf <http://example.org/family/person/0-213> .
+<http://example.org/family/person/0-43> ex:parentOf <http://example.org/family/person/0-214> .
+<http://example.org/family/person/0-43> ex:parentOf <http://example.org/family/person/0-215> .
+<http://example.org/family/person/0-43> ex:parentOf <http://example.org/family/person/0-216> .
+<http://example.org/family/person/0-44> ex:parentOf <http://example.org/family/person/0-218> .
+<http://example.org/family/person/0-44> ex:parentOf <http://example.org/family/person/0-219> .
+<http://example.org/family/person/0-44> ex:parentOf <http://example.org/family/person/0-220> .
+<http://example.org/family/person/0-45> ex:parentOf <http://example.org/family/person/0-222> .
+<http://example.org/family/person/0-45> ex:parentOf <http://example.org/family/person/0-223> .
+<http://example.org/family/person/0-45> ex:parentOf <http://example.org/family/person/0-224> .
+<http://example.org/family/person/0-45> ex:parentOf <http://example.org/family/person/0-225> .
+<http://example.org/family/person/0-45> ex:parentOf <http://example.org/family/person/0-226> .
+<http://example.org/family/person/0-45> ex:parentOf <http://example.org/family/person/0-227> .
+<http://example.org/family/person/0-46> ex:parentOf <http://example.org/family/person/0-229> .
+<http://example.org/family/person/0-46> ex:parentOf <http://example.org/family/person/0-230> .
+<http://example.org/family/person/0-46> ex:parentOf <http://example.org/family/person/0-231> .
+<http://example.org/family/person/0-46> ex:parentOf <http://example.org/family/person/0-232> .
+<http://example.org/family/person/0-46> ex:parentOf <http://example.org/family/person/0-233> .
+<http://example.org/family/person/0-47> ex:parentOf <http://example.org/family/person/0-235> .
+<http://example.org/family/person/0-47> ex:parentOf <http://example.org/family/person/0-236> .
+<http://example.org/family/person/0-47> ex:parentOf <http://example.org/family/person/0-237> .
+<http://example.org/family/person/0-47> ex:parentOf <http://example.org/family/person/0-238> .
+<http://example.org/family/person/0-48> ex:parentOf <http://example.org/family/person/0-240> .
+<http://example.org/family/person/0-48> ex:parentOf <http://example.org/family/person/0-241> .
+<http://example.org/family/person/0-48> ex:parentOf <http://example.org/family/person/0-242> .
+<http://example.org/family/person/0-49> ex:parentOf <http://example.org/family/person/0-244> .
+<http://example.org/family/person/0-49> ex:parentOf <http://example.org/family/person/0-245> .
+<http://example.org/family/person/0-49> ex:parentOf <http://example.org/family/person/0-246> .
+<http://example.org/family/person/0-49> ex:parentOf <http://example.org/family/person/0-247> .
+<http://example.org/family/person/0-49> ex:parentOf <http://example.org/family/person/0-248> .
+<http://example.org/family/person/0-50> ex:parentOf <http://example.org/family/person/0-51> .
+<http://example.org/family/person/0-50> ex:parentOf <http://example.org/family/person/0-52> .
+<http://example.org/family/person/0-50> ex:parentOf <http://example.org/family/person/0-53> .
+<http://example.org/family/person/0-50> ex:parentOf <http://example.org/family/person/0-54> .
+<http://example.org/family/person/0-50> ex:parentOf <http://example.org/family/person/0-55> .
+<http://example.org/family/person/0-50> ex:parentOf <http://example.org/family/person/0-56> .
+<http://example.org/family/person/0-51> ex:parentOf <http://example.org/family/person/0-250> .
+<http://example.org/family/person/0-51> ex:parentOf <http://example.org/family/person/0-251> .
+<http://example.org/family/person/0-52> ex:parentOf <http://example.org/family/person/0-253> .
+<http://example.org/family/person/0-52> ex:parentOf <http://example.org/family/person/0-254> .
+<http://example.org/family/person/0-52> ex:parentOf <http://example.org/family/person/0-255> .
+<http://example.org/family/person/0-52> ex:parentOf <http://example.org/family/person/0-256> .
+<http://example.org/family/person/0-52> ex:parentOf <http://example.org/family/person/0-257> .
+<http://example.org/family/person/0-52> ex:parentOf <http://example.org/family/person/0-258> .
+<http://example.org/family/person/0-52> ex:parentOf <http://example.org/family/person/0-259> .
+<http://example.org/family/person/0-53> ex:parentOf <http://example.org/family/person/0-261> .
+<http://example.org/family/person/0-53> ex:parentOf <http://example.org/family/person/0-262> .
+<http://example.org/family/person/0-53> ex:parentOf <http://example.org/family/person/0-263> .
+<http://example.org/family/person/0-53> ex:parentOf <http://example.org/family/person/0-264> .
+<http://example.org/family/person/0-53> ex:parentOf <http://example.org/family/person/0-265> .
+<http://example.org/family/person/0-54> ex:parentOf <http://example.org/family/person/0-267> .
+<http://example.org/family/person/0-54> ex:parentOf <http://example.org/family/person/0-268> .
+<http://example.org/family/person/0-54> ex:parentOf <http://example.org/family/person/0-269> .
+<http://example.org/family/person/0-54> ex:parentOf <http://example.org/family/person/0-270> .
+<http://example.org/family/person/0-54> ex:parentOf <http://example.org/family/person/0-271> .
+<http://example.org/family/person/0-55> ex:parentOf <http://example.org/family/person/0-273> .
+<http://example.org/family/person/0-55> ex:parentOf <http://example.org/family/person/0-274> .
+<http://example.org/family/person/0-55> ex:parentOf <http://example.org/family/person/0-275> .
+<http://example.org/family/person/0-55> ex:parentOf <http://example.org/family/person/0-276> .
+<http://example.org/family/person/0-55> ex:parentOf <http://example.org/family/person/0-277> .
+<http://example.org/family/person/0-55> ex:parentOf <http://example.org/family/person/0-278> .
+<http://example.org/family/person/0-55> ex:parentOf <http://example.org/family/person/0-279> .
+<http://example.org/family/person/0-56> ex:parentOf <http://example.org/family/person/0-281> .
+<http://example.org/family/person/0-56> ex:parentOf <http://example.org/family/person/0-282> .
+<http://example.org/family/person/0-56> ex:parentOf <http://example.org/family/person/0-283> .
+<http://example.org/family/person/0-56> ex:parentOf <http://example.org/family/person/0-284> .
+<http://example.org/family/person/0-56> ex:parentOf <http://example.org/family/person/0-285> .
+<http://example.org/family/person/0-56> ex:parentOf <http://example.org/family/person/0-286> .
+<http://example.org/family/person/0-56> ex:parentOf <http://example.org/family/person/0-287> .
+<http://example.org/family/person/0-57> ex:parentOf <http://example.org/family/person/0-58> .
+<http://example.org/family/person/0-57> ex:parentOf <http://example.org/family/person/0-59> .
+<http://example.org/family/person/0-57> ex:parentOf <http://example.org/family/person/0-60> .
+<http://example.org/family/person/0-57> ex:parentOf <http://example.org/family/person/0-61> .
+<http://example.org/family/person/0-57> ex:parentOf <http://example.org/family/person/0-62> .
+<http://example.org/family/person/0-57> ex:parentOf <http://example.org/family/person/0-63> .
+<http://example.org/family/person/0-57> ex:parentOf <http://example.org/family/person/0-64> .
+<http://example.org/family/person/0-65> ex:parentOf <http://example.org/family/person/0-66> .
+<http://example.org/family/person/0-65> ex:parentOf <http://example.org/family/person/0-67> .
+<http://example.org/family/person/0-65> ex:parentOf <http://example.org/family/person/0-68> .
+<http://example.org/family/person/0-65> ex:parentOf <http://example.org/family/person/0-69> .
+<http://example.org/family/person/0-65> ex:parentOf <http://example.org/family/person/0-70> .
+<http://example.org/family/person/0-65> ex:parentOf <http://example.org/family/person/0-71> .
+<http://example.org/family/person/0-65> ex:parentOf <http://example.org/family/person/0-72> .
+<http://example.org/family/person/0-65> ex:parentOf <http://example.org/family/person/0-73> .
+<http://example.org/family/person/0-74> ex:parentOf <http://example.org/family/person/0-75> .
+<http://example.org/family/person/0-74> ex:parentOf <http://example.org/family/person/0-76> .
+<http://example.org/family/person/0-74> ex:parentOf <http://example.org/family/person/0-77> .
+<http://example.org/family/person/0-74> ex:parentOf <http://example.org/family/person/0-78> .
+<http://example.org/family/person/0-74> ex:parentOf <http://example.org/family/person/0-79> .
+<http://example.org/family/person/0-74> ex:parentOf <http://example.org/family/person/0-80> .
+<http://example.org/family/person/0-74> ex:parentOf <http://example.org/family/person/0-81> .
+<http://example.org/family/person/0-82> ex:parentOf <http://example.org/family/person/0-83> .
+<http://example.org/family/person/0-82> ex:parentOf <http://example.org/family/person/0-84> .
+<http://example.org/family/person/0-82> ex:parentOf <http://example.org/family/person/0-85> .
+<http://example.org/family/person/0-86> ex:parentOf <http://example.org/family/person/0-87> .
+<http://example.org/family/person/0-86> ex:parentOf <http://example.org/family/person/0-88> .
+<http://example.org/family/person/0-86> ex:parentOf <http://example.org/family/person/0-89> .
+<http://example.org/family/person/0-86> ex:parentOf <http://example.org/family/person/0-90> .
+<http://example.org/family/person/0-86> ex:parentOf <http://example.org/family/person/0-91> .
+<http://example.org/family/person/0-86> ex:parentOf <http://example.org/family/person/0-92> .
+<http://example.org/family/person/0-93> ex:parentOf <http://example.org/family/person/0-94> .
+<http://example.org/family/person/0-93> ex:parentOf <http://example.org/family/person/0-95> .
+<http://example.org/family/person/0-93> ex:parentOf <http://example.org/family/person/0-96> .
+<http://example.org/family/person/0-93> ex:parentOf <http://example.org/family/person/0-97> .
+<http://example.org/family/person/0-93> ex:parentOf <http://example.org/family/person/0-98> .
+<http://example.org/family/person/0-93> ex:parentOf <http://example.org/family/person/0-99> .
+<http://example.org/family/person/0-100> ex:parentOf <http://example.org/family/person/0-101> .
+<http://example.org/family/person/0-100> ex:parentOf <http://example.org/family/person/0-102> .
+<http://example.org/family/person/0-100> ex:parentOf <http://example.org/family/person/0-103> .
+<http://example.org/family/person/0-100> ex:parentOf <http://example.org/family/person/0-104> .
+<http://example.org/family/person/0-100> ex:parentOf <http://example.org/family/person/0-105> .
+<http://example.org/family/person/0-100> ex:parentOf <http://example.org/family/person/0-106> .
+<http://example.org/family/person/0-100> ex:parentOf <http://example.org/family/person/0-107> .
+<http://example.org/family/person/0-108> ex:parentOf <http://example.org/family/person/0-109> .
+<http://example.org/family/person/0-108> ex:parentOf <http://example.org/family/person/0-110> .
+<http://example.org/family/person/0-111> ex:parentOf <http://example.org/family/person/0-112> .
+<http://example.org/family/person/0-111> ex:parentOf <http://example.org/family/person/0-113> .
+<http://example.org/family/person/0-111> ex:parentOf <http://example.org/family/person/0-114> .
+<http://example.org/family/person/0-111> ex:parentOf <http://example.org/family/person/0-115> .
+<http://example.org/family/person/0-111> ex:parentOf <http://example.org/family/person/0-116> .
+<http://example.org/family/person/0-111> ex:parentOf <http://example.org/family/person/0-117> .
+<http://example.org/family/person/0-118> ex:parentOf <http://example.org/family/person/0-119> .
+<http://example.org/family/person/0-118> ex:parentOf <http://example.org/family/person/0-120> .
+<http://example.org/family/person/0-118> ex:parentOf <http://example.org/family/person/0-121> .
+<http://example.org/family/person/0-122> ex:parentOf <http://example.org/family/person/0-123> .
+<http://example.org/family/person/0-122> ex:parentOf <http://example.org/family/person/0-124> .
+<http://example.org/family/person/0-122> ex:parentOf <http://example.org/family/person/0-125> .
+<http://example.org/family/person/0-122> ex:parentOf <http://example.org/family/person/0-126> .
+<http://example.org/family/person/0-122> ex:parentOf <http://example.org/family/person/0-127> .
+<http://example.org/family/person/0-122> ex:parentOf <http://example.org/family/person/0-128> .
+<http://example.org/family/person/0-122> ex:parentOf <http://example.org/family/person/0-129> .
+<http://example.org/family/person/0-122> ex:parentOf <http://example.org/family/person/0-130> .
+<http://example.org/family/person/0-131> ex:parentOf <http://example.org/family/person/0-132> .
+<http://example.org/family/person/0-131> ex:parentOf <http://example.org/family/person/0-133> .
+<http://example.org/family/person/0-134> ex:parentOf <http://example.org/family/person/0-135> .
+<http://example.org/family/person/0-134> ex:parentOf <http://example.org/family/person/0-136> .
+<http://example.org/family/person/0-134> ex:parentOf <http://example.org/family/person/0-137> .
+<http://example.org/family/person/0-138> ex:parentOf <http://example.org/family/person/0-139> .
+<http://example.org/family/person/0-138> ex:parentOf <http://example.org/family/person/0-140> .
+<http://example.org/family/person/0-138> ex:parentOf <http://example.org/family/person/0-141> .
+<http://example.org/family/person/0-138> ex:parentOf <http://example.org/family/person/0-142> .
+<http://example.org/family/person/0-138> ex:parentOf <http://example.org/family/person/0-143> .
+<http://example.org/family/person/0-138> ex:parentOf <http://example.org/family/person/0-144> .
+<http://example.org/family/person/0-145> ex:parentOf <http://example.org/family/person/0-146> .
+<http://example.org/family/person/0-145> ex:parentOf <http://example.org/family/person/0-147> .
+<http://example.org/family/person/0-145> ex:parentOf <http://example.org/family/person/0-148> .
+<http://example.org/family/person/0-145> ex:parentOf <http://example.org/family/person/0-149> .
+<http://example.org/family/person/0-145> ex:parentOf <http://example.org/family/person/0-150> .
+<http://example.org/family/person/0-145> ex:parentOf <http://example.org/family/person/0-151> .
+<http://example.org/family/person/0-145> ex:parentOf <http://example.org/family/person/0-152> .
+<http://example.org/family/person/0-153> ex:parentOf <http://example.org/family/person/0-154> .
+<http://example.org/family/person/0-153> ex:parentOf <http://example.org/family/person/0-155> .
+<http://example.org/family/person/0-153> ex:parentOf <http://example.org/family/person/0-156> .
+<http://example.org/family/person/0-153> ex:parentOf <http://example.org/family/person/0-157> .
+<http://example.org/family/person/0-158> ex:parentOf <http://example.org/family/person/0-159> .
+<http://example.org/family/person/0-158> ex:parentOf <http://example.org/family/person/0-160> .
+<http://example.org/family/person/0-158> ex:parentOf <http://example.org/family/person/0-161> .
+<http://example.org/family/person/0-162> ex:parentOf <http://example.org/family/person/0-163> .
+<http://example.org/family/person/0-162> ex:parentOf <http://example.org/family/person/0-164> .
+<http://example.org/family/person/0-165> ex:parentOf <http://example.org/family/person/0-166> .
+<http://example.org/family/person/0-165> ex:parentOf <http://example.org/family/person/0-167> .
+<http://example.org/family/person/0-165> ex:parentOf <http://example.org/family/person/0-168> .
+<http://example.org/family/person/0-169> ex:parentOf <http://example.org/family/person/0-170> .
+<http://example.org/family/person/0-169> ex:parentOf <http://example.org/family/person/0-171> .
+<http://example.org/family/person/0-169> ex:parentOf <http://example.org/family/person/0-172> .
+<http://example.org/family/person/0-169> ex:parentOf <http://example.org/family/person/0-173> .
+<http://example.org/family/person/0-174> ex:parentOf <http://example.org/family/person/0-175> .
+<http://example.org/family/person/0-174> ex:parentOf <http://example.org/family/person/0-176> .
+<http://example.org/family/person/0-174> ex:parentOf <http://example.org/family/person/0-177> .
+<http://example.org/family/person/0-174> ex:parentOf <http://example.org/family/person/0-178> .
+<http://example.org/family/person/0-174> ex:parentOf <http://example.org/family/person/0-179> .
+<http://example.org/family/person/0-180> ex:parentOf <http://example.org/family/person/0-181> .
+<http://example.org/family/person/0-180> ex:parentOf <http://example.org/family/person/0-182> .
+<http://example.org/family/person/0-180> ex:parentOf <http://example.org/family/person/0-183> .
+<http://example.org/family/person/0-184> ex:parentOf <http://example.org/family/person/0-185> .
+<http://example.org/family/person/0-184> ex:parentOf <http://example.org/family/person/0-186> .
+<http://example.org/family/person/0-184> ex:parentOf <http://example.org/family/person/0-187> .
+<http://example.org/family/person/0-184> ex:parentOf <http://example.org/family/person/0-188> .
+<http://example.org/family/person/0-184> ex:parentOf <http://example.org/family/person/0-189> .
+<http://example.org/family/person/0-184> ex:parentOf <http://example.org/family/person/0-190> .
+<http://example.org/family/person/0-191> ex:parentOf <http://example.org/family/person/0-192> .
+<http://example.org/family/person/0-191> ex:parentOf <http://example.org/family/person/0-193> .
+<http://example.org/family/person/0-194> ex:parentOf <http://example.org/family/person/0-195> .
+<http://example.org/family/person/0-194> ex:parentOf <http://example.org/family/person/0-196> .
+<http://example.org/family/person/0-194> ex:parentOf <http://example.org/family/person/0-197> .
+<http://example.org/family/person/0-194> ex:parentOf <http://example.org/family/person/0-198> .
+<http://example.org/family/person/0-194> ex:parentOf <http://example.org/family/person/0-199> .
+<http://example.org/family/person/0-194> ex:parentOf <http://example.org/family/person/0-200> .
+<http://example.org/family/person/0-194> ex:parentOf <http://example.org/family/person/0-201> .
+<http://example.org/family/person/0-194> ex:parentOf <http://example.org/family/person/0-202> .
+<http://example.org/family/person/0-203> ex:parentOf <http://example.org/family/person/0-204> .
+<http://example.org/family/person/0-203> ex:parentOf <http://example.org/family/person/0-205> .
+<http://example.org/family/person/0-203> ex:parentOf <http://example.org/family/person/0-206> .
+<http://example.org/family/person/0-203> ex:parentOf <http://example.org/family/person/0-207> .
+<http://example.org/family/person/0-203> ex:parentOf <http://example.org/family/person/0-208> .
+<http://example.org/family/person/0-203> ex:parentOf <http://example.org/family/person/0-209> .
+<http://example.org/family/person/0-210> ex:parentOf <http://example.org/family/person/0-211> .
+<http://example.org/family/person/0-210> ex:parentOf <http://example.org/family/person/0-212> .
+<http://example.org/family/person/0-210> ex:parentOf <http://example.org/family/person/0-213> .
+<http://example.org/family/person/0-210> ex:parentOf <http://example.org/family/person/0-214> .
+<http://example.org/family/person/0-210> ex:parentOf <http://example.org/family/person/0-215> .
+<http://example.org/family/person/0-210> ex:parentOf <http://example.org/family/person/0-216> .
+<http://example.org/family/person/0-217> ex:parentOf <http://example.org/family/person/0-218> .
+<http://example.org/family/person/0-217> ex:parentOf <http://example.org/family/person/0-219> .
+<http://example.org/family/person/0-217> ex:parentOf <http://example.org/family/person/0-220> .
+<http://example.org/family/person/0-221> ex:parentOf <http://example.org/family/person/0-222> .
+<http://example.org/family/person/0-221> ex:parentOf <http://example.org/family/person/0-223> .
+<http://example.org/family/person/0-221> ex:parentOf <http://example.org/family/person/0-224> .
+<http://example.org/family/person/0-221> ex:parentOf <http://example.org/family/person/0-225> .
+<http://example.org/family/person/0-221> ex:parentOf <http://example.org/family/person/0-226> .
+<http://example.org/family/person/0-221> ex:parentOf <http://example.org/family/person/0-227> .
+<http://example.org/family/person/0-228> ex:parentOf <http://example.org/family/person/0-229> .
+<http://example.org/family/person/0-228> ex:parentOf <http://example.org/family/person/0-230> .
+<http://example.org/family/person/0-228> ex:parentOf <http://example.org/family/person/0-231> .
+<http://example.org/family/person/0-228> ex:parentOf <http://example.org/family/person/0-232> .
+<http://example.org/family/person/0-228> ex:parentOf <http://example.org/family/person/0-233> .
+<http://example.org/family/person/0-234> ex:parentOf <http://example.org/family/person/0-235> .
+<http://example.org/family/person/0-234> ex:parentOf <http://example.org/family/person/0-236> .
+<http://example.org/family/person/0-234> ex:parentOf <http://example.org/family/person/0-237> .
+<http://example.org/family/person/0-234> ex:parentOf <http://example.org/family/person/0-238> .
+<http://example.org/family/person/0-239> ex:parentOf <http://example.org/family/person/0-240> .
+<http://example.org/family/person/0-239> ex:parentOf <http://example.org/family/person/0-241> .
+<http://example.org/family/person/0-239> ex:parentOf <http://example.org/family/person/0-242> .
+<http://example.org/family/person/0-243> ex:parentOf <http://example.org/family/person/0-244> .
+<http://example.org/family/person/0-243> ex:parentOf <http://example.org/family/person/0-245> .
+<http://example.org/family/person/0-243> ex:parentOf <http://example.org/family/person/0-246> .
+<http://example.org/family/person/0-243> ex:parentOf <http://example.org/family/person/0-247> .
+<http://example.org/family/person/0-243> ex:parentOf <http://example.org/family/person/0-248> .
+<http://example.org/family/person/0-249> ex:parentOf <http://example.org/family/person/0-250> .
+<http://example.org/family/person/0-249> ex:parentOf <http://example.org/family/person/0-251> .
+<http://example.org/family/person/0-252> ex:parentOf <http://example.org/family/person/0-253> .
+<http://example.org/family/person/0-252> ex:parentOf <http://example.org/family/person/0-254> .
+<http://example.org/family/person/0-252> ex:parentOf <http://example.org/family/person/0-255> .
+<http://example.org/family/person/0-252> ex:parentOf <http://example.org/family/person/0-256> .
+<http://example.org/family/person/0-252> ex:parentOf <http://example.org/family/person/0-257> .
+<http://example.org/family/person/0-252> ex:parentOf <http://example.org/family/person/0-258> .
+<http://example.org/family/person/0-252> ex:parentOf <http://example.org/family/person/0-259> .
+<http://example.org/family/person/0-260> ex:parentOf <http://example.org/family/person/0-261> .
+<http://example.org/family/person/0-260> ex:parentOf <http://example.org/family/person/0-262> .
+<http://example.org/family/person/0-260> ex:parentOf <http://example.org/family/person/0-263> .
+<http://example.org/family/person/0-260> ex:parentOf <http://example.org/family/person/0-264> .
+<http://example.org/family/person/0-260> ex:parentOf <http://example.org/family/person/0-265> .
+<http://example.org/family/person/0-266> ex:parentOf <http://example.org/family/person/0-267> .
+<http://example.org/family/person/0-266> ex:parentOf <http://example.org/family/person/0-268> .
+<http://example.org/family/person/0-266> ex:parentOf <http://example.org/family/person/0-269> .
+<http://example.org/family/person/0-266> ex:parentOf <http://example.org/family/person/0-270> .
+<http://example.org/family/person/0-266> ex:parentOf <http://example.org/family/person/0-271> .
+<http://example.org/family/person/0-272> ex:parentOf <http://example.org/family/person/0-273> .
+<http://example.org/family/person/0-272> ex:parentOf <http://example.org/family/person/0-274> .
+<http://example.org/family/person/0-272> ex:parentOf <http://example.org/family/person/0-275> .
+<http://example.org/family/person/0-272> ex:parentOf <http://example.org/family/person/0-276> .
+<http://example.org/family/person/0-272> ex:parentOf <http://example.org/family/person/0-277> .
+<http://example.org/family/person/0-272> ex:parentOf <http://example.org/family/person/0-278> .
+<http://example.org/family/person/0-272> ex:parentOf <http://example.org/family/person/0-279> .
+<http://example.org/family/person/0-280> ex:parentOf <http://example.org/family/person/0-281> .
+<http://example.org/family/person/0-280> ex:parentOf <http://example.org/family/person/0-282> .
+<http://example.org/family/person/0-280> ex:parentOf <http://example.org/family/person/0-283> .
+<http://example.org/family/person/0-280> ex:parentOf <http://example.org/family/person/0-284> .
+<http://example.org/family/person/0-280> ex:parentOf <http://example.org/family/person/0-285> .
+<http://example.org/family/person/0-280> ex:parentOf <http://example.org/family/person/0-286> .
+<http://example.org/family/person/0-280> ex:parentOf <http://example.org/family/person/0-287> .
+
+<http://example.org/family/person/0-0> ex:marriedTo <http://example.org/family/person/0-1> .
+<http://example.org/family/person/0-2> ex:marriedTo <http://example.org/family/person/0-10> .
+<http://example.org/family/person/0-3> ex:marriedTo <http://example.org/family/person/0-13> .
+<http://example.org/family/person/0-4> ex:marriedTo <http://example.org/family/person/0-17> .
+<http://example.org/family/person/0-5> ex:marriedTo <http://example.org/family/person/0-24> .
+<http://example.org/family/person/0-6> ex:marriedTo <http://example.org/family/person/0-33> .
+<http://example.org/family/person/0-7> ex:marriedTo <http://example.org/family/person/0-38> .
+<http://example.org/family/person/0-8> ex:marriedTo <http://example.org/family/person/0-42> .
+<http://example.org/family/person/0-9> ex:marriedTo <http://example.org/family/person/0-50> .
+<http://example.org/family/person/0-11> ex:marriedTo <http://example.org/family/person/0-57> .
+<http://example.org/family/person/0-12> ex:marriedTo <http://example.org/family/person/0-65> .
+<http://example.org/family/person/0-14> ex:marriedTo <http://example.org/family/person/0-74> .
+<http://example.org/family/person/0-15> ex:marriedTo <http://example.org/family/person/0-82> .
+<http://example.org/family/person/0-16> ex:marriedTo <http://example.org/family/person/0-86> .
+<http://example.org/family/person/0-18> ex:marriedTo <http://example.org/family/person/0-93> .
+<http://example.org/family/person/0-19> ex:marriedTo <http://example.org/family/person/0-100> .
+<http://example.org/family/person/0-20> ex:marriedTo <http://example.org/family/person/0-108> .
+<http://example.org/family/person/0-21> ex:marriedTo <http://example.org/family/person/0-111> .
+<http://example.org/family/person/0-22> ex:marriedTo <http://example.org/family/person/0-118> .
+<http://example.org/family/person/0-23> ex:marriedTo <http://example.org/family/person/0-122> .
+<http://example.org/family/person/0-25> ex:marriedTo <http://example.org/family/person/0-131> .
+<http://example.org/family/person/0-26> ex:marriedTo <http://example.org/family/person/0-134> .
+<http://example.org/family/person/0-27> ex:marriedTo <http://example.org/family/person/0-138> .
+<http://example.org/family/person/0-28> ex:marriedTo <http://example.org/family/person/0-145> .
+<http://example.org/family/person/0-29> ex:marriedTo <http://example.org/family/person/0-153> .
+<http://example.org/family/person/0-30> ex:marriedTo <http://example.org/family/person/0-158> .
+<http://example.org/family/person/0-31> ex:marriedTo <http://example.org/family/person/0-162> .
+<http://example.org/family/person/0-32> ex:marriedTo <http://example.org/family/person/0-165> .
+<http://example.org/family/person/0-34> ex:marriedTo <http://example.org/family/person/0-169> .
+<http://example.org/family/person/0-35> ex:marriedTo <http://example.org/family/person/0-174> .
+<http://example.org/family/person/0-36> ex:marriedTo <http://example.org/family/person/0-180> .
+<http://example.org/family/person/0-37> ex:marriedTo <http://example.org/family/person/0-184> .
+<http://example.org/family/person/0-39> ex:marriedTo <http://example.org/family/person/0-191> .
+<http://example.org/family/person/0-40> ex:marriedTo <http://example.org/family/person/0-194> .
+<http://example.org/family/person/0-41> ex:marriedTo <http://example.org/family/person/0-203> .
+<http://example.org/family/person/0-43> ex:marriedTo <http://example.org/family/person/0-210> .
+<http://example.org/family/person/0-44> ex:marriedTo <http://example.org/family/person/0-217> .
+<http://example.org/family/person/0-45> ex:marriedTo <http://example.org/family/person/0-221> .
+<http://example.org/family/person/0-46> ex:marriedTo <http://example.org/family/person/0-228> .
+<http://example.org/family/person/0-47> ex:marriedTo <http://example.org/family/person/0-234> .
+<http://example.org/family/person/0-48> ex:marriedTo <http://example.org/family/person/0-239> .
+<http://example.org/family/person/0-49> ex:marriedTo <http://example.org/family/person/0-243> .
+<http://example.org/family/person/0-51> ex:marriedTo <http://example.org/family/person/0-249> .
+<http://example.org/family/person/0-52> ex:marriedTo <http://example.org/family/person/0-252> .
+<http://example.org/family/person/0-53> ex:marriedTo <http://example.org/family/person/0-260> .
+<http://example.org/family/person/0-54> ex:marriedTo <http://example.org/family/person/0-266> .
+<http://example.org/family/person/0-55> ex:marriedTo <http://example.org/family/person/0-272> .
+<http://example.org/family/person/0-56> ex:marriedTo <http://example.org/family/person/0-280> .
+<http://example.org/family/person/0-58> ex:marriedTo <http://example.org/family/person/0-288> .
+<http://example.org/family/person/0-59> ex:marriedTo <http://example.org/family/person/0-294> .
+<http://example.org/family/person/0-60> ex:marriedTo <http://example.org/family/person/0-298> .
+<http://example.org/family/person/0-61> ex:marriedTo <http://example.org/family/person/0-301> .
+<http://example.org/family/person/0-62> ex:marriedTo <http://example.org/family/person/0-304> .
+<http://example.org/family/person/0-63> ex:marriedTo <http://example.org/family/person/0-312> .
+<http://example.org/family/person/0-64> ex:marriedTo <http://example.org/family/person/0-317> .
+<http://example.org/family/person/0-66> ex:marriedTo <http://example.org/family/person/0-325> .
+<http://example.org/family/person/0-67> ex:marriedTo <http://example.org/family/person/0-331> .
+<http://example.org/family/person/0-68> ex:marriedTo <http://example.org/family/person/0-337> .
+<http://example.org/family/person/0-69> ex:marriedTo <http://example.org/family/person/0-346> .
+<http://example.org/family/person/0-70> ex:marriedTo <http://example.org/family/person/0-353> .
+<http://example.org/family/person/0-71> ex:marriedTo <http://example.org/family/person/0-360> .
+<http://example.org/family/person/0-72> ex:marriedTo <http://example.org/family/person/0-367> .
+<http://example.org/family/person/0-73> ex:marriedTo <http://example.org/family/person/0-371> .
+<http://example.org/family/person/0-75> ex:marriedTo <http://example.org/family/person/0-374> .
+<http://example.org/family/person/0-76> ex:marriedTo <http://example.org/family/person/0-377> .
+<http://example.org/family/person/0-77> ex:marriedTo <http://example.org/family/person/0-382> .
+<http://example.org/family/person/0-78> ex:marriedTo <http://example.org/family/person/0-387> .
+<http://example.org/family/person/0-79> ex:marriedTo <http://example.org/family/person/0-396> .
+<http://example.org/family/person/0-80> ex:marriedTo <http://example.org/family/person/0-399> .
+<http://example.org/family/person/0-81> ex:marriedTo <http://example.org/family/person/0-405> .
+<http://example.org/family/person/0-83> ex:marriedTo <http://example.org/family/person/0-410> .
+<http://example.org/family/person/0-84> ex:marriedTo <http://example.org/family/person/0-418> .
+<http://example.org/family/person/0-85> ex:marriedTo <http://example.org/family/person/0-425> .
+<http://example.org/family/person/0-87> ex:marriedTo <http://example.org/family/person/0-428> .
+<http://example.org/family/person/0-88> ex:marriedTo <http://example.org/family/person/0-432> .
+<http://example.org/family/person/0-89> ex:marriedTo <http://example.org/family/person/0-438> .
+<http://example.org/family/person/0-90> ex:marriedTo <http://example.org/family/person/0-443> .
+<http://example.org/family/person/0-91> ex:marriedTo <http://example.org/family/person/0-448> .
+<http://example.org/family/person/0-92> ex:marriedTo <http://example.org/family/person/0-454> .
+<http://example.org/family/person/0-94> ex:marriedTo <http://example.org/family/person/0-462> .
+<http://example.org/family/person/0-95> ex:marriedTo <http://example.org/family/person/0-469> .
+<http://example.org/family/person/0-96> ex:marriedTo <http://example.org/family/person/0-475> .
+<http://example.org/family/person/0-97> ex:marriedTo <http://example.org/family/person/0-479> .
+<http://example.org/family/person/0-98> ex:marriedTo <http://example.org/family/person/0-485> .
+<http://example.org/family/person/0-99> ex:marriedTo <http://example.org/family/person/0-489> .
+<http://example.org/family/person/0-101> ex:marriedTo <http://example.org/family/person/0-498> .
+<http://example.org/family/person/0-102> ex:marriedTo <http://example.org/family/person/0-503> .
+<http://example.org/family/person/0-103> ex:marriedTo <http://example.org/family/person/0-509> .
+<http://example.org/family/person/0-104> ex:marriedTo <http://example.org/family/person/0-516> .
+<http://example.org/family/person/0-105> ex:marriedTo <http://example.org/family/person/0-523> .
+<http://example.org/family/person/0-106> ex:marriedTo <http://example.org/family/person/0-529> .
+<http://example.org/family/person/0-107> ex:marriedTo <http://example.org/family/person/0-537> .
+<http://example.org/family/person/0-109> ex:marriedTo <http://example.org/family/person/0-540> .
+<http://example.org/family/person/0-110> ex:marriedTo <http://example.org/family/person/0-549> .
+<http://example.org/family/person/0-112> ex:marriedTo <http://example.org/family/person/0-553> .
+<http://example.org/family/person/0-113> ex:marriedTo <http://example.org/family/person/0-560> .
+<http://example.org/family/person/0-114> ex:marriedTo <http://example.org/family/person/0-563> .
+<http://example.org/family/person/0-115> ex:marriedTo <http://example.org/family/person/0-571> .
+<http://example.org/family/person/0-116> ex:marriedTo <http://example.org/family/person/0-579> .
+<http://example.org/family/person/0-117> ex:marriedTo <http://example.org/family/person/0-582> .
+<http://example.org/family/person/0-119> ex:marriedTo <http://example.org/family/person/0-591> .
+<http://example.org/family/person/0-120> ex:marriedTo <http://example.org/family/person/0-597> .
+<http://example.org/family/person/0-121> ex:marriedTo <http://example.org/family/person/0-600> .
+<http://example.org/family/person/0-123> ex:marriedTo <http://example.org/family/person/0-604> .
+<http://example.org/family/person/0-124> ex:marriedTo <http://example.org/family/person/0-612> .
+<http://example.org/family/person/0-125> ex:marriedTo <http://example.org/family/person/0-616> .
+<http://example.org/family/person/0-126> ex:marriedTo <http://example.org/family/person/0-623> .
+<http://example.org/family/person/0-127> ex:marriedTo <http://example.org/family/person/0-631> .
+<http://example.org/family/person/0-128> ex:marriedTo <http://example.org/family/person/0-635> .
+<http://example.org/family/person/0-129> ex:marriedTo <http://example.org/family/person/0-644> .
+<http://example.org/family/person/0-130> ex:marriedTo <http://example.org/family/person/0-649> .
+<http://example.org/family/person/0-132> ex:marriedTo <http://example.org/family/person/0-657> .
+<http://example.org/family/person/0-133> ex:marriedTo <http://example.org/family/person/0-658> .
+<http://example.org/family/person/0-135> ex:marriedTo <http://example.org/family/person/0-662> .
+<http://example.org/family/person/0-136> ex:marriedTo <http://example.org/family/person/0-670> .
+<http://example.org/family/person/0-137> ex:marriedTo <http://example.org/family/person/0-677> .
+<http://example.org/family/person/0-139> ex:marriedTo <http://example.org/family/person/0-686> .
+<http://example.org/family/person/0-140> ex:marriedTo <http://example.org/family/person/0-694> .
+<http://example.org/family/person/0-141> ex:marriedTo <http://example.org/family/person/0-703> .
+<http://example.org/family/person/0-142> ex:marriedTo <http://example.org/family/person/0-706> .
+<http://example.org/family/person/0-143> ex:marriedTo <http://example.org/family/person/0-707> .
+<http://example.org/family/person/0-144> ex:marriedTo <http://example.org/family/person/0-713> .
+<http://example.org/family/person/0-146> ex:marriedTo <http://example.org/family/person/0-720> .
+<http://example.org/family/person/0-147> ex:marriedTo <http://example.org/family/person/0-724> .
+<http://example.org/family/person/0-148> ex:marriedTo <http://example.org/family/person/0-733> .
+<http://example.org/family/person/0-149> ex:marriedTo <http://example.org/family/person/0-740> .
+<http://example.org/family/person/0-150> ex:marriedTo <http://example.org/family/person/0-748> .
+<http://example.org/family/person/0-151> ex:marriedTo <http://example.org/family/person/0-753> .
+<http://example.org/family/person/0-152> ex:marriedTo <http://example.org/family/person/0-760> .
+<http://example.org/family/person/0-154> ex:marriedTo <http://example.org/family/person/0-761> .
+<http://example.org/family/person/0-155> ex:marriedTo <http://example.org/family/person/0-769> .
+<http://example.org/family/person/0-156> ex:marriedTo <http://example.org/family/person/0-775> .
+<http://example.org/family/person/0-157> ex:marriedTo <http://example.org/family/person/0-778> .
+<http://example.org/family/person/0-159> ex:marriedTo <http://example.org/family/person/0-783> .
+<http://example.org/family/person/0-160> ex:marriedTo <http://example.org/family/person/0-789> .
+<http://example.org/family/person/0-161> ex:marriedTo <http://example.org/family/person/0-796> .
+<http://example.org/family/person/0-163> ex:marriedTo <http://example.org/family/person/0-802> .
+<http://example.org/family/person/0-164> ex:marriedTo <http://example.org/family/person/0-810> .
+<http://example.org/family/person/0-166> ex:marriedTo <http://example.org/family/person/0-818> .
+<http://example.org/family/person/0-167> ex:marriedTo <http://example.org/family/person/0-825> .
+<http://example.org/family/person/0-168> ex:marriedTo <http://example.org/family/person/0-829> .
+<http://example.org/family/person/0-170> ex:marriedTo <http://example.org/family/person/0-838> .
+<http://example.org/family/person/0-171> ex:marriedTo <http://example.org/family/person/0-845> .
+<http://example.org/family/person/0-172> ex:marriedTo <http://example.org/family/person/0-850> .
+<http://example.org/family/person/0-173> ex:marriedTo <http://example.org/family/person/0-854> .
+<http://example.org/family/person/0-175> ex:marriedTo <http://example.org/family/person/0-860> .
+<http://example.org/family/person/0-176> ex:marriedTo <http://example.org/family/person/0-865> .
+<http://example.org/family/person/0-177> ex:marriedTo <http://example.org/family/person/0-868> .
+<http://example.org/family/person/0-178> ex:marriedTo <http://example.org/family/person/0-873> .
+<http://example.org/family/person/0-179> ex:marriedTo <http://example.org/family/person/0-880> .
+<http://example.org/family/person/0-181> ex:marriedTo <http://example.org/family/person/0-884> .
+<http://example.org/family/person/0-182> ex:marriedTo <http://example.org/family/person/0-891> .
+<http://example.org/family/person/0-183> ex:marriedTo <http://example.org/family/person/0-896> .
+<http://example.org/family/person/0-185> ex:marriedTo <http://example.org/family/person/0-899> .
+<http://example.org/family/person/0-186> ex:marriedTo <http://example.org/family/person/0-908> .
+<http://example.org/family/person/0-187> ex:marriedTo <http://example.org/family/person/0-913> .
+<http://example.org/family/person/0-188> ex:marriedTo <http://example.org/family/person/0-918> .
+<http://example.org/family/person/0-189> ex:marriedTo <http://example.org/family/person/0-924> .
+<http://example.org/family/person/0-190> ex:marriedTo <http://example.org/family/person/0-925> .
+<http://example.org/family/person/0-192> ex:marriedTo <http://example.org/family/person/0-934> .
+<http://example.org/family/person/0-193> ex:marriedTo <http://example.org/family/person/0-940> .
+<http://example.org/family/person/0-195> ex:marriedTo <http://example.org/family/person/0-948> .
+<http://example.org/family/person/0-196> ex:marriedTo <http://example.org/family/person/0-951> .
+<http://example.org/family/person/0-197> ex:marriedTo <http://example.org/family/person/0-955> .
+<http://example.org/family/person/0-198> ex:marriedTo <http://example.org/family/person/0-963> .
+<http://example.org/family/person/0-199> ex:marriedTo <http://example.org/family/person/0-972> .
+<http://example.org/family/person/0-200> ex:marriedTo <http://example.org/family/person/0-980> .
+<http://example.org/family/person/0-201> ex:marriedTo <http://example.org/family/person/0-981> .
+<http://example.org/family/person/0-202> ex:marriedTo <http://example.org/family/person/0-989> .
+<http://example.org/family/person/0-204> ex:marriedTo <http://example.org/family/person/0-994> .
+<http://example.org/family/person/0-205> ex:marriedTo <http://example.org/family/person/0-998> .
+<http://example.org/family/person/0-206> ex:marriedTo <http://example.org/family/person/0-1005> .
+<http://example.org/family/person/0-207> ex:marriedTo <http://example.org/family/person/0-1014> .
+<http://example.org/family/person/0-208> ex:marriedTo <http://example.org/family/person/0-1022> .
+<http://example.org/family/person/0-209> ex:marriedTo <http://example.org/family/person/0-1031> .
+<http://example.org/family/person/0-211> ex:marriedTo <http://example.org/family/person/0-1039> .
+<http://example.org/family/person/0-212> ex:marriedTo <http://example.org/family/person/0-1045> .
+<http://example.org/family/person/0-213> ex:marriedTo <http://example.org/family/person/0-1050> .
+<http://example.org/family/person/0-214> ex:marriedTo <http://example.org/family/person/0-1054> .
+<http://example.org/family/person/0-215> ex:marriedTo <http://example.org/family/person/0-1057> .
+<http://example.org/family/person/0-216> ex:marriedTo <http://example.org/family/person/0-1060> .
+<http://example.org/family/person/0-218> ex:marriedTo <http://example.org/family/person/0-1064> .
+<http://example.org/family/person/0-219> ex:marriedTo <http://example.org/family/person/0-1073> .
+<http://example.org/family/person/0-220> ex:marriedTo <http://example.org/family/person/0-1079> .
+<http://example.org/family/person/0-222> ex:marriedTo <http://example.org/family/person/0-1088> .
+<http://example.org/family/person/0-223> ex:marriedTo <http://example.org/family/person/0-1091> .
+<http://example.org/family/person/0-224> ex:marriedTo <http://example.org/family/person/0-1098> .
+<http://example.org/family/person/0-225> ex:marriedTo <http://example.org/family/person/0-1105> .
+<http://example.org/family/person/0-226> ex:marriedTo <http://example.org/family/person/0-1112> .
+<http://example.org/family/person/0-227> ex:marriedTo <http://example.org/family/person/0-1113> .
+<http://example.org/family/person/0-229> ex:marriedTo <http://example.org/family/person/0-1122> .
+<http://example.org/family/person/0-230> ex:marriedTo <http://example.org/family/person/0-1127> .
+<http://example.org/family/person/0-231> ex:marriedTo <http://example.org/family/person/0-1134> .
+<http://example.org/family/person/0-232> ex:marriedTo <http://example.org/family/person/0-1142> .
+<http://example.org/family/person/0-233> ex:marriedTo <http://example.org/family/person/0-1147> .
+<http://example.org/family/person/0-235> ex:marriedTo <http://example.org/family/person/0-1155> .
+<http://example.org/family/person/0-236> ex:marriedTo <http://example.org/family/person/0-1158> .
+<http://example.org/family/person/0-237> ex:marriedTo <http://example.org/family/person/0-1159> .
+<http://example.org/family/person/0-238> ex:marriedTo <http://example.org/family/person/0-1167> .
+<http://example.org/family/person/0-240> ex:marriedTo <http://example.org/family/person/0-1170> .
+<http://example.org/family/person/0-241> ex:marriedTo <http://example.org/family/person/0-1179> .
+<http://example.org/family/person/0-242> ex:marriedTo <http://example.org/family/person/0-1185> .
+<http://example.org/family/person/0-244> ex:marriedTo <http://example.org/family/person/0-1192> .
+<http://example.org/family/person/0-245> ex:marriedTo <http://example.org/family/person/0-1200> .
+<http://example.org/family/person/0-246> ex:marriedTo <http://example.org/family/person/0-1205> .
+<http://example.org/family/person/0-247> ex:marriedTo <http://example.org/family/person/0-1209> .
+<http://example.org/family/person/0-248> ex:marriedTo <http://example.org/family/person/0-1215> .
+<http://example.org/family/person/0-250> ex:marriedTo <http://example.org/family/person/0-1224> .
+<http://example.org/family/person/0-251> ex:marriedTo <http://example.org/family/person/0-1229> .
+<http://example.org/family/person/0-253> ex:marriedTo <http://example.org/family/person/0-1232> .
+<http://example.org/family/person/0-254> ex:marriedTo <http://example.org/family/person/0-1239> .
+<http://example.org/family/person/0-255> ex:marriedTo <http://example.org/family/person/0-1246> .
+<http://example.org/family/person/0-256> ex:marriedTo <http://example.org/family/person/0-1252> .
+<http://example.org/family/person/0-257> ex:marriedTo <http://example.org/family/person/0-1255> .
+<http://example.org/family/person/0-258> ex:marriedTo <http://example.org/family/person/0-1259> .
+<http://example.org/family/person/0-259> ex:marriedTo <http://example.org/family/person/0-1265> .
+<http://example.org/family/person/0-261> ex:marriedTo <http://example.org/family/person/0-1269> .
+<http://example.org/family/person/0-262> ex:marriedTo <http://example.org/family/person/0-1277> .
+<http://example.org/family/person/0-263> ex:marriedTo <http://example.org/family/person/0-1284> .
+<http://example.org/family/person/0-264> ex:marriedTo <http://example.org/family/person/0-1290> .
+<http://example.org/family/person/0-265> ex:marriedTo <http://example.org/family/person/0-1298> .
+<http://example.org/family/person/0-267> ex:marriedTo <http://example.org/family/person/0-1307> .
+<http://example.org/family/person/0-268> ex:marriedTo <http://example.org/family/person/0-1313> .
+<http://example.org/family/person/0-269> ex:marriedTo <http://example.org/family/person/0-1319> .
+<http://example.org/family/person/0-270> ex:marriedTo <http://example.org/family/person/0-1326> .
+<http://example.org/family/person/0-271> ex:marriedTo <http://example.org/family/person/0-1331> .
+<http://example.org/family/person/0-273> ex:marriedTo <http://example.org/family/person/0-1340> .
+<http://example.org/family/person/0-274> ex:marriedTo <http://example.org/family/person/0-1348> .
+<http://example.org/family/person/0-275> ex:marriedTo <http://example.org/family/person/0-1355> .
+<http://example.org/family/person/0-276> ex:marriedTo <http://example.org/family/person/0-1364> .
+<http://example.org/family/person/0-277> ex:marriedTo <http://example.org/family/person/0-1371> .
+<http://example.org/family/person/0-278> ex:marriedTo <http://example.org/family/person/0-1378> .
+<http://example.org/family/person/0-279> ex:marriedTo <http://example.org/family/person/0-1382> .
+<http://example.org/family/person/0-281> ex:marriedTo <http://example.org/family/person/0-1383> .
+<http://example.org/family/person/0-282> ex:marriedTo <http://example.org/family/person/0-1386> .
+<http://example.org/family/person/0-283> ex:marriedTo <http://example.org/family/person/0-1392> .
+<http://example.org/family/person/0-284> ex:marriedTo <http://example.org/family/person/0-1397> .
+<http://example.org/family/person/0-285> ex:marriedTo <http://example.org/family/person/0-1401> .
+<http://example.org/family/person/0-286> ex:marriedTo <http://example.org/family/person/0-1405> .
+<http://example.org/family/person/0-287> ex:marriedTo <http://example.org/family/person/0-1412> .

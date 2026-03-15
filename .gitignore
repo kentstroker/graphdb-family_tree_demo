@@ -1,0 +1,34 @@
+### default output directory
+out
+
+### Mac
+.DS_Store
+._*
+
+### IntelliJ IDEA / PyCharm
+.idea
+*.iml
+*.iws
+
+### Python
+__pycache__/**
+*.py[cdo]
+*$py.class
+
+### DLV
+dlv.*
+
+### GraphDB license (binary, not for source control)
+*.license
+
+### PyInstaller build artifacts
+build/
+dist/
+*.spec
+
+### These files
+*.pdf
+
+### Container runtime data
+sandboxes/graphdb/graphdb-data/
+sandboxes/neo4j/data/

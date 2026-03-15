@@ -1,0 +1,32 @@
+# =============================================================================
+# schema-inlaws.ttl
+# OWL property declarations for the 6 in-law relationship types.
+#
+# This file extends the base schema.ttl with in-law designations derived
+# from marriedTo combined with parentOf, childOf, or siblingOf plus gender.
+#
+# Import this into GraphDB via Import → RDF → Server files AFTER the base
+# schema.ttl has been loaded.
+# =============================================================================
+
+@prefix ex:   <http://example.org/family/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+
+# -- Parent-in-law ------------------------------------------------------------
+ex:fatherInLawOf               a owl:ObjectProperty ;   # Father of Y's spouse
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+ex:motherInLawOf               a owl:ObjectProperty ;   # Mother of Y's spouse
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+
+# -- Child-in-law -------------------------------------------------------------
+ex:sonInLawOf                  a owl:ObjectProperty ;   # Husband of Y's child
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+ex:daughterInLawOf             a owl:ObjectProperty ;   # Wife of Y's child
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+
+# -- Sibling-in-law -----------------------------------------------------------
+ex:brotherInLawOf              a owl:ObjectProperty ;   # Spouse's brother OR sibling's husband
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .
+ex:sisterInLawOf               a owl:ObjectProperty ;   # Spouse's sister OR sibling's wife
+                               rdfs:domain ex:Person ; rdfs:range ex:Person .

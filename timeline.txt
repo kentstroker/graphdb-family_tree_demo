@@ -1,0 +1,80 @@
+GRAPH DATABASE EVOLUTION
+│
+├── Semantic Networks / Knowledge Representation
+│   │
+│   ├── 1977  KL-ONE
+│   │
+│   ├── 1983  KEE (Knowledge Engineering Environment)
+│   │
+│   ├── 1984  Cyc Project
+│   │
+│   ├── 1984  ART (Automated Reasoning Tool)
+│   │
+│   └── 1988  ConceptBase
+│
+├─ Deductive Databases
+│  │
+│  ├─ 1980s  Datalog
+│  │
+│  ├─ 1988   LDL (Logic Data Language)
+│  │
+│  ├─ 1990s  Object Databases (ObjectStore, Versant)
+│  │
+│  └─ 1994   GraphLog
+|
+├── RDF / Semantic Web Graph Databases
+│   │
+│   ├── 1997  RDF Proposed
+│   │
+│   ├── 1999  RDF W3C Standard
+│   │
+│   ├── 2000  Apache Jena
+│   │
+│   ├── 2001  Sesame (OpenRDF)
+│   │
+│   ├── 2003  Kowari
+│   │
+│   ├── 2004  Mulgara
+│   │
+│   ├── 2004  Ontotext GraphDB 1.0
+│   │
+│   └── 2006  SPARQL Standard
+│
+├── Property Graph Databases
+│   │
+│   ├── 2010  Neo4j 1.0
+│   │
+│   ├── 2011  Gremlin
+│   │
+│   ├── 2013  Titan
+│   │
+│   ├── 2013  OrientDB
+│   │
+│   └── 2017  JanusGraph
+│
+└── Modern Graph Ecosystem
+│   │
+│   ├── 2010s  Enterprise Knowledge Graphs
+│   │
+│   ├── 2010s  Stardog
+│   │
+│   ├── 2010s  Virtuoso RDF Graph Platform
+│   │
+│   └── 2024  ISO GQL Standard (LPG-only)
+│
+└──Large Language Models
+   │
+   ├─ 2017  Transformer Architecture
+   ├─ 2018  GPT
+   ├─ 2019  GPT-2
+   ├─ 2020  GPT-3
+   │
+   ├─ Hallucination Recognition
+   │  └─ 2018–2021  Neural generation hallucination research
+   │
+   └─ Grounding Approaches
+      │
+      ├─ 2020  Retrieval-Augmented Generation (RAG)
+      │
+      └─ Graph-Based Retrieval
+         └─ 2023–2024  GraphRAG

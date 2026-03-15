@@ -1,0 +1,368 @@
+/*
+ * kinship.pie
+ * Author:  Kent Stroker
+ * Date:    2026-03-09
+ *
+ * GraphDB custom ruleset for automatic kinship inference.
+ * Forward-chaining rules that derive all kinship relationships from two base
+ * facts: ex:parentOf and ex:marriedTo. Inference is automatic on data insert —
+ * no manual materialization step required.
+ *
+ * The kinship relationship vocabulary is derived from:
+ *   ontology.asp — Answer Set Programming ontology for family relationships
+ *   Author:  Patrick Hohenecker (mail@paho.at)
+ *   Version: 2018.1 (May 30, 2018)
+ *   License: 2-Clause BSD License
+ *   Source:  https://github.com/phohenecker/family-tree-data
+ *
+ * Usage:
+ *   1. Create a GraphDB repository with this file as the custom ruleset
+ *   2. Import schema-comments.ttl and data TTL files
+ *   3. All kinship triples are inferred automatically
+ *
+ * Derivation chain (13 gender-neutral + 28 gendered = 41 derived predicates):
+ *   Tier 1: parentOf → childOf, grandparentOf, siblingOf
+ *   Tier 2: grandparentOf → greatGrandparentOf, grandchildOf
+ *   Tier 3: greatGrandparentOf → greatGrandchildOf
+ *   Tier 4: siblingOf → auntUncleOf, greatAuntUncleOf
+ *   Tier 5: auntUncleOf → nieceNephewOf, cousinOf; greatAuntUncleOf → secondAuntUncleOf
+ *   Tier 6: cousinOf → firstCousinOnceRemovedOf; secondAuntUncleOf → secondCousinOf
+ *   Gendered: all above + rdf:type ex:female/ex:male → 28 gendered variants
+ *
+ * In-law relationships (6 additional, 8 rules) are defined separately in
+ * kinship-inlaws.pie and can be added as a later exercise.
+ */
+
+Prefices
+{
+    rdf  : http://www.w3.org/1999/02/22-rdf-syntax-ns#
+    rdfs : http://www.w3.org/2000/01/rdf-schema#
+    owl  : http://www.w3.org/2002/07/owl#
+    xsd  : http://www.w3.org/2001/XMLSchema#
+    ex   : http://example.org/family/
+}
+
+Axioms
+{
+    <ex:parentOf>    <rdf:type>  <rdf:Property>
+    <ex:marriedTo>   <rdf:type>  <rdf:Property>
+}
+
+Rules
+{
+    /* ═══════════════════════════════════════════════════════════════════════════
+     * BASE SYMMETRY
+     * ═══════════════════════════════════════════════════════════════════════════ */
+
+    /* marriedTo is symmetric */
+    Id: marriedTo_sym
+        x <ex:marriedTo> y
+        --------------------------------
+        y <ex:marriedTo> x
+
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+     * TIER 1: Direct from parentOf
+     * ═══════════════════════════════════════════════════════════════════════════ */
+
+    /* childOf(X,Y) :- parentOf(Y,X) */
+    Id: childOf
+        y <ex:parentOf> x
+        --------------------------------
+        x <ex:childOf> y
+
+    /* grandparentOf(X,Y) :- parentOf(X,Z), parentOf(Z,Y) */
+    Id: grandparentOf
+        x <ex:parentOf> z
+        z <ex:parentOf> y
+        --------------------------------
+        x <ex:grandparentOf> y
+
+    /* siblingOf(X,Y) :- parentOf(Z,X), parentOf(Z,Y), X!=Y */
+    Id: siblingOf
+        p <ex:parentOf> x
+        p <ex:parentOf> y    [Constraint x != y]
+        --------------------------------
+        x <ex:siblingOf> y
+
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+     * TIER 2: From grandparentOf
+     * ═══════════════════════════════════════════════════════════════════════════ */
+
+    /* greatGrandparentOf(X,Y) :- parentOf(X,Z), grandparentOf(Z,Y) */
+    Id: greatGrandparentOf
+        x <ex:parentOf> z
+        z <ex:grandparentOf> y
+        --------------------------------
+        x <ex:greatGrandparentOf> y
+
+    /* grandchildOf(X,Y) :- grandparentOf(Y,X) */
+    Id: grandchildOf
+        y <ex:grandparentOf> x
+        --------------------------------
+        x <ex:grandchildOf> y
+
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+     * TIER 3: From greatGrandparentOf
+     * ═══════════════════════════════════════════════════════════════════════════ */
+
+    /* greatGrandchildOf(X,Y) :- greatGrandparentOf(Y,X) */
+    Id: greatGrandchildOf
+        y <ex:greatGrandparentOf> x
+        --------------------------------
+        x <ex:greatGrandchildOf> y
+
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+     * TIER 4: From siblingOf
+     * ═══════════════════════════════════════════════════════════════════════════ */
+
+    /* auntUncleOf(X,Y) :- siblingOf(X,Z), parentOf(Z,Y) */
+    Id: auntUncleOf
+        x <ex:siblingOf> z
+        z <ex:parentOf> y
+        --------------------------------
+        x <ex:auntUncleOf> y
+
+    /* greatAuntUncleOf(X,Y) :- siblingOf(X,Z), grandparentOf(Z,Y) */
+    Id: greatAuntUncleOf
+        x <ex:siblingOf> z
+        z <ex:grandparentOf> y
+        --------------------------------
+        x <ex:greatAuntUncleOf> y
+
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+     * TIER 5: From auntUncleOf / greatAuntUncleOf
+     * ═══════════════════════════════════════════════════════════════════════════ */
+
+    /* nieceNephewOf(X,Y) :- auntUncleOf(Y,X) */
+    Id: nieceNephewOf
+        y <ex:auntUncleOf> x
+        --------------------------------
+        x <ex:nieceNephewOf> y
+
+    /* secondAuntUncleOf(X,Y) :- parentOf(Z,X), greatAuntUncleOf(Z,Y) */
+    Id: secondAuntUncleOf
+        z <ex:parentOf> x
+        z <ex:greatAuntUncleOf> y
+        --------------------------------
+        x <ex:secondAuntUncleOf> y
+
+    /* cousinOf(X,Y) :- parentOf(Z,X), auntUncleOf(Z,Y) */
+    Id: cousinOf
+        z <ex:parentOf> x
+        z <ex:auntUncleOf> y
+        --------------------------------
+        x <ex:cousinOf> y
+
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+     * TIER 6: From cousinOf / secondAuntUncleOf
+     * ═══════════════════════════════════════════════════════════════════════════ */
+
+    /* secondCousinOf(X,Y) :- parentOf(Z,X), secondAuntUncleOf(Z,Y) */
+    Id: secondCousinOf
+        z <ex:parentOf> x
+        z <ex:secondAuntUncleOf> y
+        --------------------------------
+        x <ex:secondCousinOf> y
+
+    /* firstCousinOnceRemovedOf(X,Y) :- cousinOf(Y,Z), parentOf(Z,X) */
+    Id: firstCousinOnceRemovedOf
+        y <ex:cousinOf> z
+        z <ex:parentOf> x
+        --------------------------------
+        x <ex:firstCousinOnceRemovedOf> y
+
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+     * GENDERED VARIANTS: base relation + rdf:type → gendered predicate
+     * ═══════════════════════════════════════════════════════════════════════════ */
+
+    /* ── Parent / Child ──────────────────────────────────────────────────────── */
+
+    Id: motherOf
+        x <ex:parentOf> y
+        x <rdf:type> <ex:female>
+        --------------------------------
+        x <ex:motherOf> y
+
+    Id: fatherOf
+        x <ex:parentOf> y
+        x <rdf:type> <ex:male>
+        --------------------------------
+        x <ex:fatherOf> y
+
+    Id: daughterOf
+        x <ex:childOf> y
+        x <rdf:type> <ex:female>
+        --------------------------------
+        x <ex:daughterOf> y
+
+    Id: sonOf
+        x <ex:childOf> y
+        x <rdf:type> <ex:male>
+        --------------------------------
+        x <ex:sonOf> y
+
+    /* ── Sibling ─────────────────────────────────────────────────────────────── */
+
+    Id: sisterOf
+        x <ex:siblingOf> y
+        x <rdf:type> <ex:female>
+        --------------------------------
+        x <ex:sisterOf> y
+
+    Id: brotherOf
+        x <ex:siblingOf> y
+        x <rdf:type> <ex:male>
+        --------------------------------
+        x <ex:brotherOf> y
+
+    /* ── Grandparent / Grandchild ────────────────────────────────────────────── */
+
+    Id: grandmotherOf
+        x <ex:grandparentOf> y
+        x <rdf:type> <ex:female>
+        --------------------------------
+        x <ex:grandmotherOf> y
+
+    Id: grandfatherOf
+        x <ex:grandparentOf> y
+        x <rdf:type> <ex:male>
+        --------------------------------
+        x <ex:grandfatherOf> y
+
+    Id: granddaughterOf
+        x <ex:grandchildOf> y
+        x <rdf:type> <ex:female>
+        --------------------------------
+        x <ex:granddaughterOf> y
+
+    Id: grandsonOf
+        x <ex:grandchildOf> y
+        x <rdf:type> <ex:male>
+        --------------------------------
+        x <ex:grandsonOf> y
+
+    /* ── Great-Grandparent / Great-Grandchild ────────────────────────────────── */
+
+    Id: greatGrandmotherOf
+        x <ex:greatGrandparentOf> y
+        x <rdf:type> <ex:female>
+        --------------------------------
+        x <ex:greatGrandmotherOf> y
+
+    Id: greatGrandfatherOf
+        x <ex:greatGrandparentOf> y
+        x <rdf:type> <ex:male>
+        --------------------------------
+        x <ex:greatGrandfatherOf> y
+
+    Id: greatGranddaughterOf
+        x <ex:greatGrandchildOf> y
+        x <rdf:type> <ex:female>
+        --------------------------------
+        x <ex:greatGranddaughterOf> y
+
+    Id: greatGrandsonOf
+        x <ex:greatGrandchildOf> y
+        x <rdf:type> <ex:male>
+        --------------------------------
+        x <ex:greatGrandsonOf> y
+
+    /* ── Aunt/Uncle / Niece/Nephew ───────────────────────────────────────────── */
+
+    Id: auntOf
+        x <ex:auntUncleOf> y
+        x <rdf:type> <ex:female>
+        --------------------------------
+        x <ex:auntOf> y
+
+    Id: uncleOf
+        x <ex:auntUncleOf> y
+        x <rdf:type> <ex:male>
+        --------------------------------
+        x <ex:uncleOf> y
+
+    Id: nieceOf
+        x <ex:nieceNephewOf> y
+        x <rdf:type> <ex:female>
+        --------------------------------
+        x <ex:nieceOf> y
+
+    Id: nephewOf
+        x <ex:nieceNephewOf> y
+        x <rdf:type> <ex:male>
+        --------------------------------
+        x <ex:nephewOf> y
+
+    /* ── Great-Aunt/Uncle ────────────────────────────────────────────────────── */
+
+    Id: greatAuntOf
+        x <ex:greatAuntUncleOf> y
+        x <rdf:type> <ex:female>
+        --------------------------------
+        x <ex:greatAuntOf> y
+
+    Id: greatUncleOf
+        x <ex:greatAuntUncleOf> y
+        x <rdf:type> <ex:male>
+        --------------------------------
+        x <ex:greatUncleOf> y
+
+    /* ── Second Aunt/Uncle ───────────────────────────────────────────────────── */
+
+    Id: secondAuntOf
+        x <ex:secondAuntUncleOf> y
+        x <rdf:type> <ex:female>
+        --------------------------------
+        x <ex:secondAuntOf> y
+
+    Id: secondUncleOf
+        x <ex:secondAuntUncleOf> y
+        x <rdf:type> <ex:male>
+        --------------------------------
+        x <ex:secondUncleOf> y
+
+    /* ── Cousins ─────────────────────────────────────────────────────────────── */
+
+    Id: girlCousinOf
+        x <ex:cousinOf> y
+        x <rdf:type> <ex:female>
+        --------------------------------
+        x <ex:girlCousinOf> y
+
+    Id: boyCousinOf
+        x <ex:cousinOf> y
+        x <rdf:type> <ex:male>
+        --------------------------------
+        x <ex:boyCousinOf> y
+
+    Id: girlSecondCousinOf
+        x <ex:secondCousinOf> y
+        x <rdf:type> <ex:female>
+        --------------------------------
+        x <ex:girlSecondCousinOf> y
+
+    Id: boySecondCousinOf
+        x <ex:secondCousinOf> y
+        x <rdf:type> <ex:male>
+        --------------------------------
+        x <ex:boySecondCousinOf> y
+
+    Id: girlFirstCousinOnceRemovedOf
+        x <ex:firstCousinOnceRemovedOf> y
+        x <rdf:type> <ex:female>
+        --------------------------------
+        x <ex:girlFirstCousinOnceRemovedOf> y
+
+    Id: boyFirstCousinOnceRemovedOf
+        x <ex:firstCousinOnceRemovedOf> y
+        x <rdf:type> <ex:male>
+        --------------------------------
+        x <ex:boyFirstCousinOnceRemovedOf> y
+}

@@ -1,0 +1,56 @@
+# =============================================================================
+# seventhSonOfSeventhSon.sparql
+# Find any person who is a 7th son of a 7th son.
+# A "7th son" means the father has at least 7 male children and this son
+# is the 7th by birth order (dateOfBirth).
+# Run in GraphDB Workbench SPARQL tab (SELECT mode).
+# =============================================================================
+
+PREFIX ex:   <http://example.org/family/>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?grandfatherName ?fatherName ?seventhSonName ?seventhSonDOB
+WHERE {
+  # Find a father who is himself the 7th son of his father (grandfather)
+  ?grandfather ex:parentOf ?father .
+  ?father rdf:type ex:male .
+  {
+    SELECT ?grandfather ?father
+    WHERE {
+      ?grandfather ex:parentOf ?father .
+      ?father rdf:type ex:male .
+      ?grandfather ex:parentOf ?olderBrother .
+      ?olderBrother rdf:type ex:male .
+      ?olderBrother ex:dateOfBirth ?obDOB .
+      ?father ex:dateOfBirth ?fDOB .
+      FILTER(?obDOB <= ?fDOB)
+    }
+    GROUP BY ?grandfather ?father
+    HAVING (COUNT(DISTINCT ?olderBrother) = 7)
+  }
+
+  # Find the 7th son of that father
+  ?father ex:parentOf ?seventhSon .
+  ?seventhSon rdf:type ex:male .
+  {
+    SELECT ?father ?seventhSon
+    WHERE {
+      ?father ex:parentOf ?seventhSon .
+      ?seventhSon rdf:type ex:male .
+      ?father ex:parentOf ?olderBrother2 .
+      ?olderBrother2 rdf:type ex:male .
+      ?olderBrother2 ex:dateOfBirth ?obDOB2 .
+      ?seventhSon ex:dateOfBirth ?sDOB .
+      FILTER(?obDOB2 <= ?sDOB)
+    }
+    GROUP BY ?father ?seventhSon
+    HAVING (COUNT(DISTINCT ?olderBrother2) = 7)
+  }
+
+  ?grandfather rdfs:label ?grandfatherName .
+  ?father rdfs:label ?fatherName .
+  ?seventhSon rdfs:label ?seventhSonName .
+  OPTIONAL { ?seventhSon ex:dateOfBirth ?seventhSonDOB }
+}
+ORDER BY ?seventhSonDOB

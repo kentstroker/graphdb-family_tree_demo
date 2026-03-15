@@ -1,0 +1,32 @@
+# =============================================================================
+# ex0-explicitRelationships.sparql — Exercise 0: What's actually in the data?
+# Author:  Kent Stroker
+#
+# Counts the distinct relationship types that exist between persons in the
+# explicit (asserted) graph only — excluding anything added by inference.
+#
+# Before inference is activated, this returns exactly 2 relationship types:
+#   parentOf and marriedTo
+#
+# This proves that the data contains only base facts — all other kinship
+# relationships (childOf, siblingOf, grandparentOf, cousinOf, etc.) are
+# derived by the reasoning engine.
+#
+# Usage: Run in GraphDB SPARQL tab (SELECT mode).
+# Requires: schema.ttl and 000.ttl imported.
+# =============================================================================
+
+PREFIX ex:   <http://example.org/family/>
+
+SELECT ?Relationship (COUNT(*) AS ?Count)
+FROM <http://www.ontotext.com/explicit>
+WHERE {
+  ?person ?rel ?related .
+  FILTER(STRSTARTS(STR(?person), "http://example.org/family/person/"))
+  FILTER(STRSTARTS(STR(?related), "http://example.org/family/person/"))
+  FILTER(STRSTARTS(STR(?rel), STR(ex:)))
+
+  BIND(REPLACE(STR(?rel), "^.*family/", "") AS ?Relationship)
+}
+GROUP BY ?Relationship
+ORDER BY ?Relationship

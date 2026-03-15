@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Family Tree — Neo4j Graph Visualization</title>
+  <script src="https://unpkg.com/neo4j-driver"></script>
+  <script src="https://unpkg.com/cytoscape@3/dist/cytoscape.min.js"></script>
+  <script src="https://unpkg.com/dagre@0.8/dist/dagre.min.js"></script>
+  <script src="https://unpkg.com/cytoscape-dagre@2/cytoscape-dagre.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #1a1a2e; color: #eee; }
+    #cy { width: 100%; height: 100vh; }
+
+    .panel {
+      position: absolute; background: rgba(22, 22, 40, 0.95); padding: 16px;
+      border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+      border: 1px solid rgba(255,255,255,0.08); z-index: 10;
+    }
+
+    #controls { top: 12px; left: 12px; width: 310px; }
+    #controls h2 { font-size: 16px; margin-bottom: 10px; color: #7ec8e3; }
+    #controls label { display: block; font-size: 12px; color: #aaa; margin-top: 8px; }
+    #controls input { width: 100%; padding: 5px 8px; border: 1px solid #444; border-radius: 4px;
+      background: #2a2a4a; color: #eee; font-size: 13px; margin-top: 2px; }
+    .row { display: flex; gap: 8px; }
+    .row > label { flex: 1; }
+
+    button {
+      padding: 8px 14px; border: none; border-radius: 6px; cursor: pointer;
+      font-size: 13px; font-weight: 600; transition: background 0.2s;
+    }
+    #loadBtn { background: #1e88e5; color: #fff; width: 100%; margin-top: 14px; }
+    #loadBtn:hover { background: #1565c0; }
+    #loadBtn:disabled { background: #555; cursor: wait; }
+    .toolbar { display: flex; gap: 6px; margin-top: 10px; }
+    .toolbar button { background: #333; color: #ccc; flex: 1; font-size: 12px; padding: 6px 8px; }
+    .toolbar button:hover { background: #444; }
+
+    #legend { bottom: 12px; left: 12px; min-width: 180px; }
+    #legend h3 { font-size: 13px; margin-bottom: 8px; color: #7ec8e3; }
+    .legend-item { display: flex; align-items: center; gap: 8px; margin: 3px 0; font-size: 12px; }
+    .legend-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+    .legend-diamond { width: 12px; height: 12px; flex-shrink: 0; transform: rotate(45deg); }
+    .legend-section { margin-top: 10px; font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    #status {
+      position: absolute; top: 12px; right: 12px; background: rgba(22, 22, 40, 0.95);
+      padding: 10px 16px; border-radius: 8px; font-size: 12px; z-index: 10;
+      border: 1px solid rgba(255,255,255,0.08); max-width: 400px;
+    }
+    #status.error { border-color: #e53935; color: #ef9a9a; }
+    #status.success { border-color: #43a047; color: #a5d6a7; }
+
+    #detail {
+      position: absolute; top: 12px; right: 12px; display: none; max-width: 320px;
+    }
+    #detail h3 { font-size: 14px; color: #7ec8e3; margin-bottom: 6px; }
+    #detail table { font-size: 12px; width: 100%; }
+    #detail td { padding: 2px 0; }
+    #detail td:first-child { color: #888; padding-right: 12px; white-space: nowrap; }
+    #detail .close { position: absolute; top: 8px; right: 12px; cursor: pointer; color: #888; font-size: 16px; }
+  </style>
+</head>
+<body>
+  <div id="cy"></div>
+
+  <div id="controls" class="panel">
+    <h2>Family Tree Visualization</h2>
+    <label>Bolt URL
+      <input id="boltUrl" value="bolt://localhost:7687">
+    </label>
+    <div class="row">
+      <label>User <input id="user" value="neo4j"></label>
+      <label>Password <input id="pass" type="password" value="neo4jadmin"></label>
+    </div>
+    <button id="loadBtn" onclick="loadGraph()">Load Graph</button>
+    <div class="toolbar">
+      <button onclick="cy && cy.fit(null, 30)">Fit</button>
+      <button onclick="toggleLabels()">Labels</button>
+      <button onclick="relayout('dagre')">Tree</button>
+      <button onclick="relayout('breadthfirst')">Radial</button>
+    </div>
+  </div>
+
+  <div id="legend" class="panel"></div>
+  <div id="status">Click <strong>Load Graph</strong> to connect to Neo4j</div>
+
+  <div id="detail" class="panel">
+    <span class="close" onclick="hideDetail()">&times;</span>
+    <h3 id="detailName"></h3>
+    <table id="detailTable"></table>
+  </div>
+
+  <script>
+    const GEN_COLORS = [
+      '#E53935', '#FB8C00', '#FDD835', '#43A047',
+      '#1E88E5', '#8E24AA', '#00897B', '#6D4C41',
+    ];
+
+    let cy = null;
+    let labelsVisible = true;
+
+    async function loadGraph() {
+      const btn = document.getElementById('loadBtn');
+      const statusEl = document.getElementById('status');
+      statusEl.className = '';
+      statusEl.style.display = '';
+      document.getElementById('detail').style.display = 'none';
+      btn.disabled = true;
+      btn.textContent = 'Loading…';
+
+      const driver = neo4j.driver(
+        document.getElementById('boltUrl').value,
+        neo4j.auth.basic(
+          document.getElementById('user').value,
+          document.getElementById('pass').value,
+        ),
+      );
+      const session = driver.session();
+
+      try {
+        statusEl.textContent = 'Querying Neo4j…';
+
+        const personResult = await session.run('MATCH (p:Person) RETURN p');
+        const edgeResult = await session.run(
+          'MATCH (a:Person)-[r:PARENT_OF|MARRIED_TO]->(b:Person) RETURN a, b, type(r) AS type',
+        );
+
+        // ── Parse ────────────────────────────────────────────────────────────────
+        const people = new Map();
+        const parentOf = [];
+        const marriedTo = [];
+        const childToParents = new Map();
+        const edgeSet = new Set();
+
+        for (const rec of personResult.records) {
+          const p = rec.get('p');
+          const pid = p.properties.id;
+          if (!people.has(pid)) people.set(pid, p.properties);
+        }
+
+        for (const rec of edgeResult.records) {
+          const from = rec.get('a').properties.id;
+          const to = rec.get('b').properties.id;
+          const type = rec.get('type');
+          const key = `${type}:${from}:${to}`;
+          if (edgeSet.has(key)) continue;
+          edgeSet.add(key);
+          if (type === 'PARENT_OF') {
+            parentOf.push({ from, to });
+            if (!childToParents.has(to)) childToParents.set(to, []);
+            childToParents.get(to).push(from);
+          } else {
+            marriedTo.push({ from, to });
+          }
+        }
+
+        console.log(`Parsed: ${people.size} people, ${parentOf.length} PARENT_OF, ${marriedTo.length} MARRIED_TO`);
+
+        // ── Compute generations ──────────────────────────────────────────────────
+        statusEl.textContent = `Computing generations for ${people.size} people…`;
+        const generation = new Map();
+
+        for (const [id] of people) {
+          if (!childToParents.has(id) || childToParents.get(id).length === 0) {
+            generation.set(id, 0);
+          }
+        }
+
+        let changed = true;
+        while (changed) {
+          changed = false;
+          for (const [id] of people) {
+            const parents = childToParents.get(id) || [];
+            let maxParentGen = -1;
+            for (const pid of parents) {
+              if (generation.has(pid)) maxParentGen = Math.max(maxParentGen, generation.get(pid));
+            }
+            if (maxParentGen >= 0) {
+              const newGen = maxParentGen + 1;
+              if (!generation.has(id) || generation.get(id) < newGen) {
+                generation.set(id, newGen);
+                changed = true;
+              }
+            }
+          }
+          for (const { from, to } of marriedTo) {
+            const gf = generation.get(from), gt = generation.get(to);
+            if (gf != null && (gt == null || gt < gf)) { generation.set(to, gf); changed = true; }
+            if (gt != null && (gf == null || gf < gt)) { generation.set(from, gt); changed = true; }
+          }
+        }
+
+        let maxGen = 0;
+        for (const g of generation.values()) maxGen = Math.max(maxGen, g);
+
+        // ── Build Cytoscape elements ─────────────────────────────────────────────
+        statusEl.textContent = 'Rendering…';
+        const elements = [];
+
+        for (const [id, props] of people) {
+          const gen = generation.get(id) ?? 0;
+          const isFemale = props.female === true || props.female === 'true';
+          const alive = !props.dateOfDeath;
+          const label = props.fullName || `${props.givenName || ''} ${props.surname || ''}`.trim() || id;
+
+          elements.push({
+            group: 'nodes',
+            data: {
+              id,
+              label,
+              gen,
+              color: GEN_COLORS[gen % GEN_COLORS.length],
+              shape: isFemale ? 'ellipse' : 'diamond',
+              borderColor: alive ? GEN_COLORS[gen % GEN_COLORS.length] : '#222',
+              borderWidth: alive ? 1 : 4,
+              isFemale,
+              alive,
+              dateOfBirth: props.dateOfBirth || '',
+              dateOfDeath: props.dateOfDeath || '',
+            },
+          });
+        }
+
+        for (let i = 0; i < parentOf.length; i++) {
+          const { from, to } = parentOf[i];
+          elements.push({
+            group: 'edges',
+            data: { id: `po_${i}`, source: from, target: to, edgeType: 'parentOf' },
+          });
+        }
+
+        for (let i = 0; i < marriedTo.length; i++) {
+          const { from, to } = marriedTo[i];
+          elements.push({
+            group: 'edges',
+            data: { id: `mt_${i}`, source: from, target: to, edgeType: 'marriedTo' },
+          });
+        }
+
+        console.log(`Cytoscape: ${people.size} nodes, ${parentOf.length + marriedTo.length} edges`);
+
+        // ── Render ───────────────────────────────────────────────────────────────
+        cy = cytoscape({
+          container: document.getElementById('cy'),
+          elements,
+          style: [
+            {
+              selector: 'node',
+              style: {
+                'label': 'data(label)',
+                'background-color': 'data(color)',
+                'shape': 'data(shape)',
+                'border-color': 'data(borderColor)',
+                'border-width': 'data(borderWidth)',
+                'width': 20,
+                'height': 20,
+                'font-size': 8,
+                'color': '#ddd',
+                'text-outline-color': '#000',
+                'text-outline-width': 1.5,
+                'text-valign': 'bottom',
+                'text-margin-y': 4,
+                'min-zoomed-font-size': 6,
+              },
+            },
+            {
+              selector: 'node:selected',
+              style: {
+                'border-color': '#ffffff',
+                'border-width': 3,
+                'overlay-opacity': 0.15,
+              },
+            },
+            {
+              selector: 'edge[edgeType="parentOf"]',
+              style: {
+                'line-color': '#888',
+                'target-arrow-color': '#888',
+                'target-arrow-shape': 'triangle',
+                'arrow-scale': 0.8,
+                'width': 1.5,
+                'curve-style': 'bezier',
+                'opacity': 0.7,
+              },
+            },
+            {
+              selector: 'edge[edgeType="marriedTo"]',
+              style: {
+                'line-color': '#E91E63',
+                'width': 2,
+                'line-style': 'dashed',
+                'curve-style': 'bezier',
+                'opacity': 0.6,
+              },
+            },
+            {
+              selector: 'edge:selected',
+              style: { 'opacity': 1, 'width': 3 },
+            },
+          ],
+          layout: { name: 'preset' }, // temporary; we run dagre next
+          wheelSensitivity: 0.3,
+        });
+
+        // Run dagre layout for tree structure
+        statusEl.textContent = 'Computing tree layout…';
+        await runLayout('dagre');
+
+        // Click handler for detail panel
+        cy.on('tap', 'node', (evt) => showDetail(evt.target.data()));
+        cy.on('tap', (evt) => { if (evt.target === cy) hideDetail(); });
+
+        // ── Legend ───────────────────────────────────────────────────────────────
+        let html = '<h3>Legend</h3>';
+        html += '<div class="legend-section">Generations</div>';
+        for (let g = 0; g <= maxGen; g++) {
+          html += `<div class="legend-item"><div class="legend-dot" style="background:${GEN_COLORS[g % GEN_COLORS.length]}"></div>Generation ${g}</div>`;
+        }
+        html += '<div class="legend-section">Gender</div>';
+        html += '<div class="legend-item"><div class="legend-diamond" style="background:#888"></div>Male</div>';
+        html += '<div class="legend-item"><div class="legend-dot" style="background:#888"></div>Female</div>';
+        html += '<div class="legend-section">Edges</div>';
+        html += '<div class="legend-item"><span style="color:#888">———</span> Parent &rarr; Child</div>';
+        html += '<div class="legend-item"><span style="color:#E91E63">- - -</span> Married</div>';
+        html += '<div class="legend-section">Border</div>';
+        html += '<div class="legend-item">Thin = Living</div>';
+        html += '<div class="legend-item">Thick dark = Deceased</div>';
+        document.getElementById('legend').innerHTML = html;
+
+        statusEl.className = 'success';
+        statusEl.textContent = `${people.size} people · ${parentOf.length} parent-of · ${marriedTo.length} married-to · ${maxGen + 1} generations`;
+
+      } catch (err) {
+        statusEl.className = 'error';
+        statusEl.textContent = `Error: ${err.message}`;
+        console.error(err);
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Load Graph';
+        await session.close();
+        await driver.close();
+      }
+    }
+
+    // ── Layout ───────────────────────────────────────────────────────────────────
+    function runLayout(name) {
+      if (!cy) return Promise.resolve();
+      return new Promise((resolve) => {
+        const opts = { name, animate: false, stop: resolve };
+        if (name === 'dagre') {
+          opts.rankDir = 'TB';
+          opts.nodeSep = 20;
+          opts.rankSep = 100;
+          opts.edgeSep = 10;
+        } else if (name === 'breadthfirst') {
+          opts.directed = true;
+          opts.spacingFactor = 1.2;
+          opts.circle = false;
+          opts.avoidOverlap = true;
+        }
+        cy.layout(opts).run();
+      });
+    }
+
+    async function relayout(name) {
+      if (!cy) return;
+      const statusEl = document.getElementById('status');
+      statusEl.textContent = `Running ${name} layout…`;
+      await runLayout(name);
+      cy.fit(null, 30);
+      statusEl.textContent = 'Layout complete.';
+    }
+
+    // ── Toolbar ──────────────────────────────────────────────────────────────────
+    function toggleLabels() {
+      if (!cy) return;
+      labelsVisible = !labelsVisible;
+      cy.style().selector('node').style('label', labelsVisible ? 'data(label)' : '').update();
+    }
+
+    // ── Detail panel ─────────────────────────────────────────────────────────────
+    function showDetail(d) {
+      if (!d) return;
+      document.getElementById('detailName').textContent = d.label;
+      const rows = [
+        ['Generation', d.gen],
+        ['Gender', d.isFemale ? 'Female' : 'Male'],
+      ];
+      if (d.dateOfBirth) rows.push(['Born', d.dateOfBirth]);
+      if (d.dateOfDeath) rows.push(['Died', d.dateOfDeath]);
+      else rows.push(['Status', 'Living']);
+      rows.push(['ID', d.id]);
+
+      document.getElementById('detailTable').innerHTML = rows.map(
+        ([k, v]) => `<tr><td>${k}</td><td>${v}</td></tr>`,
+      ).join('');
+      document.getElementById('detail').style.display = '';
+      document.getElementById('status').style.display = 'none';
+    }
+
+    function hideDetail() {
+      document.getElementById('detail').style.display = 'none';
+      document.getElementById('status').style.display = '';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+# =============================================================================
+# patrilinealSurname.sparql
+# Patrilineal descent: starting from the person with the lowest id,
+# trace all direct father→son links where the surname never changes.
+# Run in GraphDB Workbench SPARQL tab (SELECT mode).
+# =============================================================================
+
+PREFIX ex:   <http://example.org/family/>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?fatherName ?sonName ?sonDOB
+WHERE {
+  # Anchor: the founding father (person/0-0)
+  BIND(<http://example.org/family/person/0-0> AS ?root)
+  ?root ex:surname ?surname .
+
+  # Every direct father→son link in the male line
+  ?father rdf:type ex:male .
+  ?father ex:surname ?surname .
+  ?father ex:parentOf ?son .
+  ?son rdf:type ex:male .
+  ?son ex:surname ?surname .
+
+  # Father must be the root or a male-line descendant of the root
+  ?root ex:parentOf* ?father .
+
+  ?father rdfs:label ?fatherName .
+  ?son rdfs:label ?sonName .
+  OPTIONAL { ?son ex:dateOfBirth ?sonDOB }
+}
+ORDER BY ?sonDOB ?sonName

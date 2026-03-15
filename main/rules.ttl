@@ -1,0 +1,471 @@
+# =============================================================================
+# rules.ttl
+# SHACL SPARQLRules for automatic kinship inference in GraphDB.
+#
+# Derives 41 kinship relationships from two base facts: ex:parentOf and
+# ex:marriedTo.  When loaded into the SHACL shape graph, GraphDB's
+# reasoning engine materialises all derived triples automatically on
+# data insert — no manual SPARQL UPDATE required.
+#
+# Derivation chain:
+#   Tier 1 — parentOf → childOf, grandparentOf, siblingOf
+#   Tier 2 — → greatGrandparentOf, grandchildOf
+#   Tier 3 — → greatGrandchildOf
+#   Tier 4 — → auntUncleOf, greatAuntUncleOf
+#   Tier 5 — → nieceNephewOf, cousinOf, secondAuntUncleOf
+#   Tier 6 — → secondCousinOf, firstCousinOnceRemovedOf
+#   Gendered — all above + rdf:type → 28 gendered variants
+#
+# Total: 13 gender-neutral + 28 gendered = 41 derived
+#        (43 edge types including the 2 base)
+#
+# In-law relationships (6 additional, 8 rules) are defined separately in
+# rules-inlaws.ttl and can be added as a later exercise.
+#
+# The kinship relationship vocabulary is derived from:
+#   ontology.asp — Answer Set Programming ontology for family relationships
+#   Author:  Patrick Hohenecker (mail@paho.at)
+#   Version: 2018.1 (May 30, 2018)
+#   License: 2-Clause BSD License
+#   Source:  https://github.com/phohenecker/family-tree-data
+#
+# The original logic rules were translated from ASP syntax into SHACL
+# SPARQLRules for use with GraphDB.  In-law rules are original additions.
+# =============================================================================
+
+@prefix ex:   <http://example.org/family/> .
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+ex:KinshipRulesShape
+  a sh:NodeShape ;
+  sh:targetClass ex:Person ;
+
+
+  # ═══════════════════════════════════════════════════════════════════════════
+  # TIER 1 — Direct from parentOf
+  # ═══════════════════════════════════════════════════════════════════════════
+
+  # childOf: inverse of parentOf
+  # X is a child of Y when Y is a parent of X
+  sh:rule [
+    a sh:SPARQLRule ;
+    sh:construct """
+      PREFIX ex: <http://example.org/family/>
+      CONSTRUCT { ?x ex:childOf ?y . }
+      WHERE { ?y ex:parentOf ?x . }
+    """ ;
+  ] ;
+
+  # grandparentOf: two consecutive parentOf hops
+  # X is a grandparent of Y when X is a parent of Z and Z is a parent of Y
+  sh:rule [
+    a sh:SPARQLRule ;
+    sh:construct """
+      PREFIX ex: <http://example.org/family/>
+      CONSTRUCT { ?x ex:grandparentOf ?y . }
+      WHERE {
+        ?x ex:parentOf ?z .
+        ?z ex:parentOf ?y .
+      }
+    """ ;
+  ] ;
+
+  # siblingOf: two people who share at least one parent
+  # X is a sibling of Y when some parent Z has both X and Y as children (X ≠ Y)
+  sh:rule [
+    a sh:SPARQLRule ;
+    sh:construct """
+      PREFIX ex: <http://example.org/family/>
+      CONSTRUCT { ?x ex:siblingOf ?y . }
+      WHERE {
+        ?z ex:parentOf ?x .
+        ?z ex:parentOf ?y .
+        FILTER(?x != ?y)
+      }
+    """ ;
+  ] ;
+
+
+  # ═══════════════════════════════════════════════════════════════════════════
+  # TIER 2 — From grandparentOf
+  # ═══════════════════════════════════════════════════════════════════════════
+
+  # greatGrandparentOf: parentOf + grandparentOf
+  # X is a great-grandparent of Y when X is a parent of Z and Z is a grandparent of Y
+  sh:rule [
+    a sh:SPARQLRule ;
+    sh:construct """
+      PREFIX ex: <http://example.org/family/>
+      CONSTRUCT { ?x ex:greatGrandparentOf ?y . }
+      WHERE {
+        ?x ex:parentOf ?z .
+        ?z ex:grandparentOf ?y .
+      }
+    """ ;
+  ] ;
+
+  # grandchildOf: inverse of grandparentOf
+  # X is a grandchild of Y when Y is a grandparent of X
+  sh:rule [
+    a sh:SPARQLRule ;
+    sh:construct """
+      PREFIX ex: <http://example.org/family/>
+      CONSTRUCT { ?x ex:grandchildOf ?y . }
+      WHERE { ?y ex:grandparentOf ?x . }
+    """ ;
+  ] ;
+
+
+  # ═══════════════════════════════════════════════════════════════════════════
+  # TIER 3 — From greatGrandparentOf
+  # ═══════════════════════════════════════════════════════════════════════════
+
+  # greatGrandchildOf: inverse of greatGrandparentOf
+  # X is a great-grandchild of Y when Y is a great-grandparent of X
+  sh:rule [
+    a sh:SPARQLRule ;
+    sh:construct """
+      PREFIX ex: <http://example.org/family/>
+      CONSTRUCT { ?x ex:greatGrandchildOf ?y . }
+      WHERE { ?y ex:greatGrandparentOf ?x . }
+    """ ;
+  ] ;
+
+
+  # ═══════════════════════════════════════════════════════════════════════════
+  # TIER 4 — From siblingOf
+  # ═══════════════════════════════════════════════════════════════════════════
+
+  # auntUncleOf: sibling of a parent
+  # X is an aunt/uncle of Y when X is a sibling of Z and Z is a parent of Y
+  sh:rule [
+    a sh:SPARQLRule ;
+    sh:construct """
+      PREFIX ex: <http://example.org/family/>
+      CONSTRUCT { ?x ex:auntUncleOf ?y . }
+      WHERE {
+        ?x ex:siblingOf ?z .
+        ?z ex:parentOf ?y .
+      }
+    """ ;
+  ] ;
+
+  # greatAuntUncleOf: sibling of a grandparent
+  # X is a great-aunt/uncle of Y when X is a sibling of Z and Z is a grandparent of Y
+  sh:rule [
+    a sh:SPARQLRule ;
+    sh:construct """
+      PREFIX ex: <http://example.org/family/>
+      CONSTRUCT { ?x ex:greatAuntUncleOf ?y . }
+      WHERE {
+        ?x ex:siblingOf ?z .
+        ?z ex:grandparentOf ?y .
+      }
+    """ ;
+  ] ;
+
+
+  # ═══════════════════════════════════════════════════════════════════════════
+  # TIER 5 — From auntUncleOf / greatAuntUncleOf
+  # ═══════════════════════════════════════════════════════════════════════════
+
+  # nieceNephewOf: inverse of auntUncleOf
+  # X is a niece/nephew of Y when Y is an aunt/uncle of X
+  sh:rule [
+    a sh:SPARQLRule ;
+    sh:construct """
+      PREFIX ex: <http://example.org/family/>
+      CONSTRUCT { ?x ex:nieceNephewOf ?y . }
+      WHERE { ?y ex:auntUncleOf ?x . }
+    """ ;
+  ] ;
+
+  # secondAuntUncleOf: child of a great-aunt/uncle
+  # X is a second aunt/uncle of Y when Z is a parent of X and Z is a great-aunt/uncle of Y
+  sh:rule [
+    a sh:SPARQLRule ;
+    sh:construct """
+      PREFIX ex: <http://example.org/family/>
+      CONSTRUCT { ?x ex:secondAuntUncleOf ?y . }
+      WHERE {
+        ?z ex:parentOf ?x .
+        ?z ex:greatAuntUncleOf ?y .
+      }
+    """ ;
+  ] ;
+
+  # cousinOf: child of an aunt/uncle
+  # X is a cousin of Y when Z is a parent of X and Z is an aunt/uncle of Y
+  sh:rule [
+    a sh:SPARQLRule ;
+    sh:construct """
+      PREFIX ex: <http://example.org/family/>
+      CONSTRUCT { ?x ex:cousinOf ?y . }
+      WHERE {
+        ?z ex:parentOf ?x .
+        ?z ex:auntUncleOf ?y .
+      }
+    """ ;
+  ] ;
+
+
+  # ═══════════════════════════════════════════════════════════════════════════
+  # TIER 6 — From cousinOf / secondAuntUncleOf
+  # ═══════════════════════════════════════════════════════════════════════════
+
+  # secondCousinOf: child of a second aunt/uncle
+  # X is a second cousin of Y when Z is a parent of X and Z is a second aunt/uncle of Y
+  sh:rule [
+    a sh:SPARQLRule ;
+    sh:construct """
+      PREFIX ex: <http://example.org/family/>
+      CONSTRUCT { ?x ex:secondCousinOf ?y . }
+      WHERE {
+        ?z ex:parentOf ?x .
+        ?z ex:secondAuntUncleOf ?y .
+      }
+    """ ;
+  ] ;
+
+  # firstCousinOnceRemovedOf: child of someone's cousin
+  # X is a first cousin once removed of Y when Y is a cousin of Z and Z is a parent of X
+  sh:rule [
+    a sh:SPARQLRule ;
+    sh:construct """
+      PREFIX ex: <http://example.org/family/>
+      CONSTRUCT { ?x ex:firstCousinOnceRemovedOf ?y . }
+      WHERE {
+        ?y ex:cousinOf ?z .
+        ?z ex:parentOf ?x .
+      }
+    """ ;
+  ] ;
+
+
+  # ═══════════════════════════════════════════════════════════════════════════
+  # GENDERED VARIANTS (28 rules)
+  #
+  # Each gender-neutral property specialises into female and male variants
+  # by checking the person's rdf:type (ex:female or ex:male).
+  # ═══════════════════════════════════════════════════════════════════════════
+
+  # -- Parent (gendered) -------------------------------------------------------
+
+  # motherOf: female parent of Y
+  sh:rule [ a sh:SPARQLRule ; sh:construct """
+    PREFIX ex: <http://example.org/family/>
+    CONSTRUCT { ?x ex:motherOf ?y . }
+    WHERE { ?x ex:parentOf ?y . ?x a ex:female . }
+  """ ] ;
+
+  # fatherOf: male parent of Y
+  sh:rule [ a sh:SPARQLRule ; sh:construct """
+    PREFIX ex: <http://example.org/family/>
+    CONSTRUCT { ?x ex:fatherOf ?y . }
+    WHERE { ?x ex:parentOf ?y . ?x a ex:male . }
+  """ ] ;
+
+  # -- Child (gendered) --------------------------------------------------------
+
+  # daughterOf: female child of Y
+  sh:rule [ a sh:SPARQLRule ; sh:construct """
+    PREFIX ex: <http://example.org/family/>
+    CONSTRUCT { ?x ex:daughterOf ?y . }
+    WHERE { ?x ex:childOf ?y . ?x a ex:female . }
+  """ ] ;
+
+  # sonOf: male child of Y
+  sh:rule [ a sh:SPARQLRule ; sh:construct """
+    PREFIX ex: <http://example.org/family/>
+    CONSTRUCT { ?x ex:sonOf ?y . }
+    WHERE { ?x ex:childOf ?y . ?x a ex:male . }
+  """ ] ;
+
+  # -- Sibling (gendered) ------------------------------------------------------
+
+  # sisterOf: female sibling of Y
+  sh:rule [ a sh:SPARQLRule ; sh:construct """
+    PREFIX ex: <http://example.org/family/>
+    CONSTRUCT { ?x ex:sisterOf ?y . }
+    WHERE { ?x ex:siblingOf ?y . ?x a ex:female . }
+  """ ] ;
+
+  # brotherOf: male sibling of Y
+  sh:rule [ a sh:SPARQLRule ; sh:construct """
+    PREFIX ex: <http://example.org/family/>
+    CONSTRUCT { ?x ex:brotherOf ?y . }
+    WHERE { ?x ex:siblingOf ?y . ?x a ex:male . }
+  """ ] ;
+
+  # -- Grandparent (gendered) --------------------------------------------------
+
+  # grandmotherOf: female grandparent of Y
+  sh:rule [ a sh:SPARQLRule ; sh:construct """
+    PREFIX ex: <http://example.org/family/>
+    CONSTRUCT { ?x ex:grandmotherOf ?y . }
+    WHERE { ?x ex:grandparentOf ?y . ?x a ex:female . }
+  """ ] ;
+
+  # grandfatherOf: male grandparent of Y
+  sh:rule [ a sh:SPARQLRule ; sh:construct """
+    PREFIX ex: <http://example.org/family/>
+    CONSTRUCT { ?x ex:grandfatherOf ?y . }
+    WHERE { ?x ex:grandparentOf ?y . ?x a ex:male . }
+  """ ] ;
+
+  # -- Grandchild (gendered) ---------------------------------------------------
+
+  # granddaughterOf: female grandchild of Y
+  sh:rule [ a sh:SPARQLRule ; sh:construct """
+    PREFIX ex: <http://example.org/family/>
+    CONSTRUCT { ?x ex:granddaughterOf ?y . }
+    WHERE { ?x ex:grandchildOf ?y . ?x a ex:female . }
+  """ ] ;
+
+  # grandsonOf: male grandchild of Y
+  sh:rule [ a sh:SPARQLRule ; sh:construct """
+    PREFIX ex: <http://example.org/family/>
+    CONSTRUCT { ?x ex:grandsonOf ?y . }
+    WHERE { ?x ex:grandchildOf ?y . ?x a ex:male . }
+  """ ] ;
+
+  # -- Great-grandparent (gendered) --------------------------------------------
+
+  # greatGrandmotherOf: female great-grandparent of Y
+  sh:rule [ a sh:SPARQLRule ; sh:construct """
+    PREFIX ex: <http://example.org/family/>
+    CONSTRUCT { ?x ex:greatGrandmotherOf ?y . }
+    WHERE { ?x ex:greatGrandparentOf ?y . ?x a ex:female . }
+  """ ] ;
+
+  # greatGrandfatherOf: male great-grandparent of Y
+  sh:rule [ a sh:SPARQLRule ; sh:construct """
+    PREFIX ex: <http://example.org/family/>
+    CONSTRUCT { ?x ex:greatGrandfatherOf ?y . }
+    WHERE { ?x ex:greatGrandparentOf ?y . ?x a ex:male . }
+  """ ] ;
+
+  # -- Great-grandchild (gendered) ---------------------------------------------
+
+  # greatGranddaughterOf: female great-grandchild of Y
+  sh:rule [ a sh:SPARQLRule ; sh:construct """
+    PREFIX ex: <http://example.org/family/>
+    CONSTRUCT { ?x ex:greatGranddaughterOf ?y . }
+    WHERE { ?x ex:greatGrandchildOf ?y . ?x a ex:female . }
+  """ ] ;
+
+  # greatGrandsonOf: male great-grandchild of Y
+  sh:rule [ a sh:SPARQLRule ; sh:construct """
+    PREFIX ex: <http://example.org/family/>
+    CONSTRUCT { ?x ex:greatGrandsonOf ?y . }
+    WHERE { ?x ex:greatGrandchildOf ?y . ?x a ex:male . }
+  """ ] ;
+
+  # -- Aunt/uncle (gendered) ---------------------------------------------------
+
+  # auntOf: female aunt/uncle of Y
+  sh:rule [ a sh:SPARQLRule ; sh:construct """
+    PREFIX ex: <http://example.org/family/>
+    CONSTRUCT { ?x ex:auntOf ?y . }
+    WHERE { ?x ex:auntUncleOf ?y . ?x a ex:female . }
+  """ ] ;
+
+  # uncleOf: male aunt/uncle of Y
+  sh:rule [ a sh:SPARQLRule ; sh:construct """
+    PREFIX ex: <http://example.org/family/>
+    CONSTRUCT { ?x ex:uncleOf ?y . }
+    WHERE { ?x ex:auntUncleOf ?y . ?x a ex:male . }
+  """ ] ;
+
+  # -- Great-aunt/uncle (gendered) ---------------------------------------------
+
+  # greatAuntOf: female great-aunt/uncle of Y
+  sh:rule [ a sh:SPARQLRule ; sh:construct """
+    PREFIX ex: <http://example.org/family/>
+    CONSTRUCT { ?x ex:greatAuntOf ?y . }
+    WHERE { ?x ex:greatAuntUncleOf ?y . ?x a ex:female . }
+  """ ] ;
+
+  # greatUncleOf: male great-aunt/uncle of Y
+  sh:rule [ a sh:SPARQLRule ; sh:construct """
+    PREFIX ex: <http://example.org/family/>
+    CONSTRUCT { ?x ex:greatUncleOf ?y . }
+    WHERE { ?x ex:greatAuntUncleOf ?y . ?x a ex:male . }
+  """ ] ;
+
+  # -- Second aunt/uncle (gendered) --------------------------------------------
+
+  # secondAuntOf: female second aunt/uncle of Y
+  sh:rule [ a sh:SPARQLRule ; sh:construct """
+    PREFIX ex: <http://example.org/family/>
+    CONSTRUCT { ?x ex:secondAuntOf ?y . }
+    WHERE { ?x ex:secondAuntUncleOf ?y . ?x a ex:female . }
+  """ ] ;
+
+  # secondUncleOf: male second aunt/uncle of Y
+  sh:rule [ a sh:SPARQLRule ; sh:construct """
+    PREFIX ex: <http://example.org/family/>
+    CONSTRUCT { ?x ex:secondUncleOf ?y . }
+    WHERE { ?x ex:secondAuntUncleOf ?y . ?x a ex:male . }
+  """ ] ;
+
+  # -- Niece/nephew (gendered) -------------------------------------------------
+
+  # nieceOf: female niece/nephew of Y
+  sh:rule [ a sh:SPARQLRule ; sh:construct """
+    PREFIX ex: <http://example.org/family/>
+    CONSTRUCT { ?x ex:nieceOf ?y . }
+    WHERE { ?x ex:nieceNephewOf ?y . ?x a ex:female . }
+  """ ] ;
+
+  # nephewOf: male niece/nephew of Y
+  sh:rule [ a sh:SPARQLRule ; sh:construct """
+    PREFIX ex: <http://example.org/family/>
+    CONSTRUCT { ?x ex:nephewOf ?y . }
+    WHERE { ?x ex:nieceNephewOf ?y . ?x a ex:male . }
+  """ ] ;
+
+  # -- Cousin (gendered) -------------------------------------------------------
+
+  # girlCousinOf: female first cousin of Y
+  sh:rule [ a sh:SPARQLRule ; sh:construct """
+    PREFIX ex: <http://example.org/family/>
+    CONSTRUCT { ?x ex:girlCousinOf ?y . }
+    WHERE { ?x ex:cousinOf ?y . ?x a ex:female . }
+  """ ] ;
+
+  # boyCousinOf: male first cousin of Y
+  sh:rule [ a sh:SPARQLRule ; sh:construct """
+    PREFIX ex: <http://example.org/family/>
+    CONSTRUCT { ?x ex:boyCousinOf ?y . }
+    WHERE { ?x ex:cousinOf ?y . ?x a ex:male . }
+  """ ] ;
+
+  # girlSecondCousinOf: female second cousin of Y
+  sh:rule [ a sh:SPARQLRule ; sh:construct """
+    PREFIX ex: <http://example.org/family/>
+    CONSTRUCT { ?x ex:girlSecondCousinOf ?y . }
+    WHERE { ?x ex:secondCousinOf ?y . ?x a ex:female . }
+  """ ] ;
+
+  # boySecondCousinOf: male second cousin of Y
+  sh:rule [ a sh:SPARQLRule ; sh:construct """
+    PREFIX ex: <http://example.org/family/>
+    CONSTRUCT { ?x ex:boySecondCousinOf ?y . }
+    WHERE { ?x ex:secondCousinOf ?y . ?x a ex:male . }
+  """ ] ;
+
+  # girlFirstCousinOnceRemovedOf: female first cousin once removed of Y
+  sh:rule [ a sh:SPARQLRule ; sh:construct """
+    PREFIX ex: <http://example.org/family/>
+    CONSTRUCT { ?x ex:girlFirstCousinOnceRemovedOf ?y . }
+    WHERE { ?x ex:firstCousinOnceRemovedOf ?y . ?x a ex:female . }
+  """ ] ;
+
+  # boyFirstCousinOnceRemovedOf: male first cousin once removed of Y
+  sh:rule [ a sh:SPARQLRule ; sh:construct """
+    PREFIX ex: <http://example.org/family/>
+    CONSTRUCT { ?x ex:boyFirstCousinOnceRemovedOf ?y . }
+    WHERE { ?x ex:firstCousinOnceRemovedOf ?y . ?x a ex:male . }
+  """ ] .
